@@ -37,4 +37,10 @@ export class Variables {
     { name: 'Minnie Hopkins', city: 'Guapiara' },
     { name: 'Becky Farrah', city: 'Itapeva' },
   ];
+
+  constructor() {
+    this.courseName = "2233";
+
+    this.rollNo = 234;
+  }
 }

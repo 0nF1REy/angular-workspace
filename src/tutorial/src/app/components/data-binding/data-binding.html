@@ -1,1 +1,51 @@
-<p>data-binding works!</p>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <span>
+          {{ courseName }}
+        </span>
+      </td>
+      <td>
+        <strong>
+          {{ cityName }}
+        </strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" [value]="courseName" />
+      </td>
+      <td>
+        <p [class]="className">Bacana</p>
+      </td>
+      <td>
+        <input [type]="inputType" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="showWelcomeMessage()">Exibir Mensagem</button>
+      </td>
+      <td>
+        <select (change)="onStateChanged()">
+          <option>Buri</option>
+          <option>Guapiara</option>
+          <option>Indaiatuba</option>
+          <option>Itapeva</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="courseName" />
+      </td>
+      <td>
+        <button (click)="changeCourseName('Java')">Alterar para Java</button>
+      </td>
+      <td>
+        <button (click)="changeCourseName('C')">Alterar para C</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
