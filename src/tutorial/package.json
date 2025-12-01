@@ -1,6 +1,16 @@
 {
   "name": "tutorial",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A small Angular 21 tutorial application demonstrating components, data binding, and template variables.",
+  "keywords": [
+    "angular",
+    "tutorial",
+    "components",
+    "data-binding",
+    "template-variables",
+    "typescript",
+    "frontend"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
