@@ -1,1 +1,19 @@
-<p>signal works!</p>
+<div class="row">
+  <div class="col-3">courseName => {{ courseName() }}</div>
+  <div class="col-2">
+    {{ rollNo() }}
+  </div>
+  <div class="col-3">
+    {{ student().name }}
+    <br />
+    {{ student().city }}
+  </div>
+  <div class="col-2">
+    {{ cityList() }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button (click)="changeCourse()">Alterar Curso</button>
+  </div>
+</div>
