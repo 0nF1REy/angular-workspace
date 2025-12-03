@@ -11,3 +11,42 @@
   </div>
   }
 </div>
+
+<hr />
+
+<div class="row">
+  <div class="col-3">
+    @if(isSuccessDivVisiable() == true) {
+    <div class="bg-success p-3">Sucesso - div</div>
+    } @else {
+    <div class="bg-danger p-3">Erro - div</div>
+    }
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDivVisibility()">Alternar</button>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-3">
+    <input type="number" placeholder="%" [(ngModel)]="studentTotalMark" class="form-control" />
+  </div>
+
+  <div class="col">
+    @if (studentTotalMark !== null) { @if (studentTotalMark > 70) {
+    <strong class="text-success">Aluno Tem Nota A</strong>
+    } @else if (studentTotalMark <= 70 && studentTotalMark > 50) {
+    <span class="text-warning">Aluno Tem Nota B</span>
+    } @else if (studentTotalMark <= 50 && studentTotalMark > 35) {
+    <span class="text-primary">Aluno Tem Nota C</span>
+    } @else {
+    <span class="text-danger">Aluno Reprovou</span>
+    } } @if (studentTotalMark === null) {
+    <div class="mt-2">
+      <span>Digite a Nota</span>
+    </div>
+    }
+  </div>
+</div>
