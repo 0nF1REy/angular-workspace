@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-2">
+    <input type="checkbox" [(ngModel)]="isOfferCodeAvl" /> Você tem um código promocional?
+
+    <br />
+    --{{ isOfferCodeAvl }}
+  </div>
+  @if(isOfferCodeAvl == true) {
+  <div class="col-3">
+    <input type="text" class="form-control" placeholder="Insira o código da oferta" />
+  </div>
+  }
+</div>
