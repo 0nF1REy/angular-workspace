@@ -50,3 +50,53 @@
     }
   </div>
 </div>
+
+<hr />
+
+<div class="row">
+  <div class="col-3">
+    <ul>
+      @for (item of offerList; track $index) {
+      <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-8">
+    @for (item of productCategoryList; track $index) {
+    <button class="btn btn-primary m-2">{{ item }}</button>
+    }
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-6">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nº</th>
+          <th>Nome</th>
+          <th>Cidade</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of employeeList; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.city }}</td>
+          <td>
+            @if (item.isActive == true) {
+            <strong class="text-success">Ativo</strong>
+            } @else {
+            <strong class="text-danger">Inativo</strong>
+            }
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
