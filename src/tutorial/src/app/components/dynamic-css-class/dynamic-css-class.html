@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-3">
-    <div class="p-4" [ngClass]="myClassName">div 1</div>
+    <div class="p-4" [ngClass]="myClassName">div 01</div>
   </div>
   <div class="col-2">
-    <input type="text" [(ngModel)]="myClassName" />
+    <input type="text" class="form-control" [(ngModel)]="myClassName" />
   </div>
   <div class="col-3">
     <button
@@ -11,11 +11,34 @@
       (click)="isActive = !isActive"
       [ngClass]="isActive == true ? 'btn-success' : 'btn-danger'"
     >
-      Meu Botão
+      Status
     </button>
   </div>
 </div>
 
-<hr>
+<hr />
 
+<div class="row">
+  <div class="col-3">
+    <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary'">
+      Preço R$ {{ productPrice }}
+    </p>
+  </div>
+  <div class="col-2">
+    <input type="text" class="form-control" [(ngModel)]="productPrice" />
+  </div>
+</div>
 
+<hr />
+
+<div class="row">
+  <div class="col-3">
+    <div class="p-4" [ngStyle]="{ 'background-color': divBackColor }">div 02</div>
+  </div>
+  <div class="col-2">
+    <input type="text" class="form-control" [(ngModel)]="divBackColor" />
+  </div>
+  <div class="col-3" [ngStyle]="myCss">div 03</div>
+</div>
+
+<hr />
