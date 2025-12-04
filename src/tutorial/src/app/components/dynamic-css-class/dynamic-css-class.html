@@ -1,44 +1,94 @@
 <div class="row">
-  <div class="col-3">
-    <div class="p-4" [ngClass]="myClassName">div 01</div>
+  <div [ngClass]="isSidePanel() == true ? 'col-8' : 'col-12 '">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-8">Lista</div>
+          <div class="col-4 text-end">
+            <button class="btn btn-success" (click)="openSidePanel()">Abrir</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <div class="p-4" [ngClass]="myClassName">div 01</div>
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" [(ngModel)]="myClassName" />
+          </div>
+          <div class="col-3">
+            <button
+              class="btn"
+              (click)="isActive = !isActive"
+              [ngClass]="isActive == true ? 'btn-success' : 'btn-danger'"
+            >
+              Status
+            </button>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-3">
+            <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary'">
+              Preço R$ {{ productPrice }}
+            </p>
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" [(ngModel)]="productPrice" />
+          </div>
+        </div>
+
+        <hr />
+      </div>
+    </div>
   </div>
-  <div class="col-2">
-    <input type="text" class="form-control" [(ngModel)]="myClassName" />
+
+  @if (isSidePanel()) {
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-8">Formulário</div>
+          <div class="col-4 text-end">
+            <button class="btn btn-success" (click)="closeSidePanel()">Fechar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <div class="p-4" [ngStyle]="{ 'background-color': divBackColor }">div 02</div>
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" [(ngModel)]="divBackColor" />
+          </div>
+          <div class="col-3" [ngStyle]="myCss">div 00</div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-3">
+            <div [class]="'p-4 ' + myClassName">div 03</div>
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" [(ngModel)]="myClassName" />
+          </div>
+          <div class="col-3">
+            <button
+              class="btn"
+              (click)="isActive = !isActive"
+              [ngClass]="isActive == true ? 'btn-success' : 'btn-danger'"
+            >
+              Status
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-3">
-    <button
-      class="btn"
-      (click)="isActive = !isActive"
-      [ngClass]="isActive == true ? 'btn-success' : 'btn-danger'"
-    >
-      Status
-    </button>
-  </div>
+  }
 </div>
-
-<hr />
-
-<div class="row">
-  <div class="col-3">
-    <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary'">
-      Preço R$ {{ productPrice }}
-    </p>
-  </div>
-  <div class="col-2">
-    <input type="text" class="form-control" [(ngModel)]="productPrice" />
-  </div>
-</div>
-
-<hr />
-
-<div class="row">
-  <div class="col-3">
-    <div class="p-4" [ngStyle]="{ 'background-color': divBackColor }">div 02</div>
-  </div>
-  <div class="col-2">
-    <input type="text" class="form-control" [(ngModel)]="divBackColor" />
-  </div>
-  <div class="col-3" [ngStyle]="myCss">div 03</div>
-</div>
-
-<hr />

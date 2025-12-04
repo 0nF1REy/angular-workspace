@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -23,4 +23,14 @@ export class DynamicCssClass {
     'background-color': 'black',
     'font-size': '35px',
   };
+
+  isSidePanel = signal(false);
+
+  openSidePanel() {
+    this.isSidePanel.set(true);
+  }
+
+  closeSidePanel() {
+    this.isSidePanel.set(false);
+  }
 }
