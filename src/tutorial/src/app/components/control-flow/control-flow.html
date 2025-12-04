@@ -88,11 +88,15 @@
           <td>{{ item.name }}</td>
           <td>{{ item.city }}</td>
           <td>
-            @if (item.isActive == true) {
+            <!-- @if (item.isActive == true) {
             <strong class="text-success">Ativo</strong>
             } @else {
             <strong class="text-danger">Inativo</strong>
-            }
+            } -->
+
+            <strong [ngClass]="item.isActive == true ? 'text-success' : 'text-danger'">{{
+              item.isActive == true ? 'Ativo' : 'Inativo'
+            }}</strong>
           </td>
         </tr>
         }
