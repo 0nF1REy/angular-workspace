@@ -1,1 +1,68 @@
-<p>user-master works!</p>
+<form>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="name" class="form-label">Nome completo</label>
+      <input
+        id="name"
+        name="name"
+        class="form-control"
+        type="text"
+        placeholder="John Doe"
+        [(ngModel)]="userObj.name"
+      />
+      <div class="form-text text-muted">Obrigatório</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="username" class="form-label">Nome de usuário</label>
+      <input
+        id="username"
+        name="username"
+        class="form-control"
+        type="text"
+        placeholder="johndoe"
+        [(ngModel)]="userObj.username"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        name="email"
+        class="form-control"
+        type="email"
+        placeholder="nome@examplo.com"
+        [(ngModel)]="userObj.email"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">Senha</label>
+      <input
+        id="password"
+        name="password"
+        class="form-control"
+        type="password"
+        placeholder="••••••••"
+        [(ngModel)]="userObj.password"
+      />
+      <div class="form-text text-muted">Pelo menos 6 caracteres</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="city" class="form-label">Cidade</label>
+      <input id="city" name="city" class="form-control" type="text" [(ngModel)]="userObj.city" />
+    </div>
+
+    <div class="col-md-6">
+      <label for="state" class="form-label">Estado</label>
+      <input id="state" name="state" class="form-control" type="text" [(ngModel)]="userObj.state" />
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+      <button class="btn btn-primary" type="submit">Salvar</button>
+      <button class="btn btn-outline-secondary" type="reset">Resetar</button>
+    </div>
+  </div>
+</form>
