@@ -1,16 +1,29 @@
-<form>
+<form #formData="ngForm">
   <div class="row g-3">
     <div class="col-md-6">
       <label for="name" class="form-label">Nome completo</label>
       <input
         id="name"
         name="name"
+        required
+        minlength="5"
         class="form-control"
         type="text"
-        placeholder="John Doe"
+        placeholder="Alan Ryan"
+        #name="ngModel"
         [(ngModel)]="userObj.name"
       />
-      <div class="form-text text-muted">Obrigatório</div>
+      @if (name.touched || name.dirty) {
+
+      <div class="text-danger">
+        <!-- --{{ name.errors | json }} -->
+        @if(name.errors?.['required']) {
+        <span> Obrigatório </span>
+        } @else if (name.errors?.['minlength']) {
+        <span> Pelo menos 5 caracteres </span>
+        }
+      </div>
+      }
     </div>
 
     <div class="col-md-6">
@@ -20,7 +33,7 @@
         name="username"
         class="form-control"
         type="text"
-        placeholder="johndoe"
+        placeholder="0nF1REy"
         [(ngModel)]="userObj.username"
       />
     </div>
@@ -61,7 +74,7 @@
     </div>
 
     <div class="col-12 d-flex gap-2">
-      <button class="btn btn-primary" type="submit">Salvar</button>
+      <button class="btn btn-primary" type="submit" [disabled]="formData.invalid">Salvar</button>
       <button class="btn btn-outline-secondary" type="reset">Resetar</button>
     </div>
   </div>
