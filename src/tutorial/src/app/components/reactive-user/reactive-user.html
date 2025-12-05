@@ -1,0 +1,67 @@
+<form [formGroup]="userForm">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="name" class="form-label">Nome completo</label>
+      <input
+        id="name"
+        name="name"
+        class="form-control"
+        type="text"
+        formControlName="name"
+        placeholder="Alan Ryan"
+      />
+
+      @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
+      <div class="text-danger">
+        @if (userForm.controls['name'].errors?.['required']) {
+        <span> Obrigatório </span>
+        } @else if (userForm.controls['name'].errors?.['minlength']) {
+        <span> Pelo menos 4 caracteres </span>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="username" class="form-label">Nome de usuário</label>
+      <input
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="userName"
+        type="text"
+        placeholder="0nF1REy"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        name="email"
+        class="form-control"
+        formControlName="email"
+        type="email"
+        placeholder="nome@examplo.com"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">Senha</label>
+      <input
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        type="password"
+        placeholder="••••••••"
+      />
+      <div class="form-text text-muted">Pelo menos 6 caracteres</div>
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Salvar</button>
+      <button class="btn btn-outline-secondary" type="reset">Resetar</button>
+    </div>
+  </div>
+</form>
