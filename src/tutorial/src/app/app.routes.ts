@@ -17,8 +17,12 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'databinding',
+        redirectTo: 'variables',
         pathMatch: 'full',
+      },
+      {
+        path: 'variables',
+        component: Variables,
       },
       {
         path: 'databinding',
@@ -28,10 +32,7 @@ export const routes: Routes = [
         path: 'signal',
         component: SignalComponent,
       },
-      {
-        path: 'variables',
-        component: Variables,
-      },
+
       {
         path: 'control-flow',
         component: ControlFlow,
