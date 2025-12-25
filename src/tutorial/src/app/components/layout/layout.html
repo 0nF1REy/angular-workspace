@@ -1,70 +1,77 @@
 <div class="app-wrapper">
   <div class="container-fluid p-0">
     <div class="row g-0 min-vh-100">
-      <!-- Sidebar -->
-      <nav id="sidebar" class="sidebar col-12 col-md-3 col-lg-2 bg-dark">
+      <nav id="sidebar" class="sidebar col-12 col-md-3 col-lg-2">
         <div class="sidebar-header">
           <div class="logo-icon bg-transparent">
-            <img src="favicon.ico" alt="Angular Logo" width="32" height="32" />
+            <img
+              src="favicon.ico"
+              alt="Angular Logo"
+              width="36"
+              height="36"
+              style="filter: brightness(1.5)"
+            />
           </div>
-          <h5 class="m-0 text-white">Angular 21</h5>
+          <h5 class="m-0">Angular 21</h5>
         </div>
+
         <div class="sidebar-content">
-          <div class="menu-label">MENU PRINCIPAL</div>
+          <div class="menu-label">Menu de Operações</div>
           <ul class="nav flex-column custom-nav">
             <li class="nav-item">
               <a routerLink="/variables" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-code-square me-2"></i> Variável
+                <i class="bi bi-code-square me-3"></i> Variável
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/databinding" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-link-45deg me-2"></i> Vinculação de Dados
+                <i class="bi bi-link-45deg me-3"></i> Data Binding
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/signal" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-lightning-charge me-2"></i> Sinal (Signals)
+                <i class="bi bi-lightning-charge me-3"></i> Signals
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/control-flow" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-git me-2"></i> Fluxo de Controle
+                <i class="bi bi-git me-3"></i> Fluxo de Controle
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/dynamic-css-class" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-palette me-2"></i> ngClass & ngStyle
+                <i class="bi bi-palette me-3"></i> ngClass & ngStyle
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/users" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-people me-2"></i> Usuários
+                <i class="bi bi-people me-3"></i> Usuários
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/reactive-users" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-person-gear me-2"></i> Usuários Reativos
+                <i class="bi bi-person-gear me-3"></i> Usuários Reativos
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/batch" routerLinkActive="active" class="nav-link">
-                <i class="bi bi-layers me-2"></i> Lotes
+                <i class="bi bi-layers me-3"></i> Lotes
               </a>
             </li>
           </ul>
         </div>
 
         <div class="sidebar-footer">
-          <small>v0.0.6 - Alan Ryan</small>
+          <small>SISTEMA V0.0.6 - Alan Ryan</small>
         </div>
       </nav>
 
       <!-- Main Content -->
       <main class="main-content col-12 col-md-9 col-lg-10">
-        <div class="content-header shadow-sm">
-          <h2 class="h5 mb-0 text-muted">Painel</h2>
-        </div>
+        <header class="content-header shadow-lg">
+          <h2 class="mb-0">Painel</h2>
+        </header>
+
         <div class="p-4">
           <div class="fade-in-up">
             <router-outlet></router-outlet>
