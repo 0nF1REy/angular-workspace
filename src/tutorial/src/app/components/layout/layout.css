@@ -8,15 +8,17 @@
 
 .app-wrapper {
   background-color: var(--gintama-black);
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   color: var(--gintama-silver);
 }
 
 .sidebar {
   background-color: var(--gintama-black) !important;
   border-right: 1px solid rgba(243, 244, 246, 0.1);
-  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .sidebar-header {
@@ -81,17 +83,23 @@
 }
 
 .main-content {
-  background-color: var(--gintama-black);
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  overflow: hidden;
+}
+
+.main-content > .p-4 {
+  flex: 1;
   overflow-y: auto;
+  background-color: var(--gintama-black);
 }
 
 .content-header {
+  flex-shrink: 0;
   background-color: #252526;
   padding: 1.25rem 2.5rem;
   border-bottom: 2px solid var(--gintama-cyan);
-  display: flex;
-  align-items: center;
 }
 
 .content-header h2 {
@@ -115,6 +123,28 @@
 
 .fade-in-up {
   animation: fadeInUp 0.3s ease-out;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: var(--gintama-black);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(2, 197, 236, 0.702);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--gintama-cyan);
+}
+
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(76, 166, 184, 0.3) var(--gintama-black);
 }
 
 @keyframes fadeInUp {
