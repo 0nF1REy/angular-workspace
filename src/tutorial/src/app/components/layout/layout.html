@@ -1,38 +1,71 @@
-<div class="container-fluid">
-  <div class="row min-vh-100">
-    <!-- Sidebar -->
-    <nav id="sidebar" class="col-12 col-md-3 col-lg-2 bg-dark text-white p-3">
-      <h4 class="text-white mb-4">Minha Barra Lateral</h4>
+<div class="app-wrapper">
+  <div class="container-fluid p-0">
+    <div class="row g-0 min-vh-100">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="sidebar col-12 col-md-3 col-lg-2 bg-dark">
+        <div class="sidebar-header">
+          <div class="logo-icon bg-transparent">
+            <img src="favicon.ico" alt="Angular Logo" width="32" height="32" />
+          </div>
+          <h5 class="m-0 text-white">Angular 21</h5>
+        </div>
+        <div class="sidebar-content">
+          <div class="menu-label">MENU PRINCIPAL</div>
+          <ul class="nav flex-column custom-nav">
+            <li class="nav-item">
+              <a routerLink="/variables" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-code-square me-2"></i> Variável
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/databinding" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-link-45deg me-2"></i> Vinculação de Dados
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/signal" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-lightning-charge me-2"></i> Sinal (Signals)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/control-flow" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-git me-2"></i> Fluxo de Controle
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/dynamic-css-class" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-palette me-2"></i> ngClass & ngStyle
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/users" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-people me-2"></i> Usuários
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/reactive-users" routerLinkActive="active" class="nav-link">
+                <i class="bi bi-person-gear me-2"></i> Usuários Reativos
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a routerLink="/variables" class="nav-link text-white">Variável</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/databinding" class="nav-link text-white">Vinculação de Dados</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/signal" class="nav-link text-white">Sinal</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/control-flow" class="nav-link text-white">Fluxo de Controle</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/dynamic-css-class" class="nav-link text-white">ngClass & ngStyle</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/users" class="nav-link text-white">Usuários</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/reactive-users" class="nav-link text-white">Usuários Reativos</a>
-        </li>
-      </ul>
-    </nav>
+        <div class="sidebar-footer">
+          <small>v0.0.6 - Alan Ryan</small>
+        </div>
+      </nav>
 
-    <!-- Main Content -->
-    <main class="col-12 col-md-9 col-lg-10 p-4">
-      <!-- As páginas filhas serão renderizadas aqui -->
-      <router-outlet></router-outlet>
-    </main>
+      <!-- Main Content -->
+      <main class="main-content col-12 col-md-9 col-lg-10">
+        <div class="content-header shadow-sm">
+          <h2 class="h5 mb-0 text-muted">Painel</h2>
+        </div>
+        <div class="p-4">
+          <div class="fade-in-up">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </main>
+    </div>
   </div>
 </div>

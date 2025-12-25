@@ -1,0 +1,125 @@
+/* Paleta de Cores e Variáveis */
+:host {
+  --sidebar-bg: #1e1e2d;
+  --sidebar-active-bg: #2b2b40;
+  --sidebar-accent: #0095ff;
+  --content-bg: #f5f7f8;
+  --text-muted: #a1a5b7;
+}
+
+.app-wrapper {
+  background-color: var(--content-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Estilização */
+.sidebar {
+  background-color: var(--sidebar-bg) !important;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon img {
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.menu-label {
+  padding: 0 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Custom Nav Links */
+.custom-nav {
+  padding: 0 1rem;
+}
+
+.custom-nav .nav-link {
+  color: var(--text-muted);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.custom-nav .nav-link:hover {
+  background-color: var(--sidebar-active-bg);
+  color: white;
+}
+
+/* Estado Ativo (Onde a mágica acontece) */
+.custom-nav .nav-link.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--sidebar-accent) !important;
+  position: relative;
+}
+
+.custom-nav .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 4px;
+  background-color: var(--sidebar-accent);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Main Content area */
+.main-content {
+  background-color: var(--content-bg);
+  overflow-y: auto;
+}
+
+.content-header {
+  background: white;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #ebedf3;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+/* Animação suave para troca de páginas */
+.fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
