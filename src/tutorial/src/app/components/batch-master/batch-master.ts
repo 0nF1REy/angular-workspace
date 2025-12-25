@@ -1,41 +1,57 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'batch-master',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './batch-master.html',
   styleUrl: './batch-master.css',
 })
-export class BatchMaster {
+export class BatchMaster implements OnInit {
+  // Estado reativo da lista de lotes
+  batchList = signal<Batch[]>([]);
+
   newBatchObj: Batch = new Batch();
   http = inject(HttpClient);
 
+  ngOnInit(): void {
+    this.getAllBatches();
+  }
+
+  getAllBatches() {
+    this.http.get('https://api.freeprojectapi.com/api/FeesTracking/batches').subscribe({
+      next: (res: any) => {
+        if (res.data) {
+          this.batchList.set(res.data);
+        } else {
+          this.batchList.set(res);
+        }
+      },
+      error: (err) => console.error('Erro ao carregar:', err),
+    });
+  }
+
   onSaveBatch() {
-    debugger;
     this.http
       .post('https://api.freeprojectapi.com/api/FeesTracking/batches', this.newBatchObj)
       .subscribe({
         next: (result: any) => {
-          debugger;
+          alert('Lote criado com sucesso!');
+          this.newBatchObj = new Batch();
+          this.getAllBatches();
         },
         error: (error: any) => {
-          debugger;
-          alert('Lote criado com sucesso!');
+          alert('Erro ao salvar lote');
         },
       });
   }
 }
 
 class Batch {
-  batchId: number;
-  batchName: string;
-  createdDate: Date;
-
-  constructor() {
-    this.batchId = 0;
-    this.batchName = '';
-    this.createdDate = new Date();
-  }
+  batchId: number = 0;
+  batchName: string = '';
+  createdDate: string = new Date().toISOString().split('T')[0];
 }
