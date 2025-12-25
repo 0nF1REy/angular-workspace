@@ -8,6 +8,7 @@ import { ControlFlow } from './components/control-flow/control-flow';
 import { DynamicCssClass } from './components/dynamic-css-class/dynamic-css-class';
 import { UserMaster } from './components/user-master/user-master';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { BatchMaster } from './components/batch-master/batch-master';
 
 export const routes: Routes = [
   {
@@ -46,6 +47,10 @@ export const routes: Routes = [
       {
         path: 'reactive-users',
         component: ReactiveUser,
+      },
+      {
+        path: 'batch',
+        component: BatchMaster,
       },
       {
         path: '**',
