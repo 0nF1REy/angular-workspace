@@ -16,7 +16,6 @@
       @if (name.touched || name.dirty) {
 
       <div class="text-danger">
-        <!-- --{{ name.errors | json }} -->
         @if(name.errors?.['required']) {
         <span> Obrigatório </span>
         } @else if (name.errors?.['minlength']) {
