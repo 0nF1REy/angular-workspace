@@ -16,19 +16,19 @@ export class ThemeService {
       name: 'Snow Night',
       background: '#1b2735',
       snowColor: '#ffffff',
-      snowSpeed: 0.7,
+      snowSpeed: 2.0,
     },
     christmasLights: {
       name: 'Christmas Lights',
       background: 'https://loremflickr.com/1980/1080/christmas',
       snowColor: '#ffffff',
-      snowSpeed: 0.9,
+      snowSpeed: 2.4,
     },
     warmFireplace: {
       name: 'Warm Fireplace',
       background: '#8a3d12',
       snowColor: '#ffe9c4',
-      snowSpeed: 0.4,
+      snowSpeed: 2.2,
     },
   };
 
