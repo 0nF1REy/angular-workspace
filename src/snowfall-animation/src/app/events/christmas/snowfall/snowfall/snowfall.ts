@@ -46,14 +46,11 @@ export class Snowfall implements AfterViewInit {
   ngAfterViewInit(): void {
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d')!;
-
     this.resizeCanvas();
     this.initialSnowSetup();
-
     this.ngZone.runOutsideAngular(() => {
       this.animate();
     });
-
     window.addEventListener('resize', () => this.resizeCanvas());
   }
 
@@ -86,20 +83,17 @@ export class Snowfall implements AfterViewInit {
   animate() {
     const canvas = this.canvasRef.nativeElement;
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     this.snowflakes.forEach((flake) => {
       flake.y += flake.speed;
       if (flake.y > canvas.height) {
         flake.y = -flake.size;
         flake.x = Math.random() * canvas.width;
       }
-
       this.ctx.fillStyle = this.theme.snowColor;
       this.ctx.beginPath();
       this.ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
       this.ctx.fill();
     });
-
     requestAnimationFrame(() => this.animate());
   }
 }

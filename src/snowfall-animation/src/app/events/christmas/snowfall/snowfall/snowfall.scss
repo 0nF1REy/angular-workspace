@@ -9,12 +9,13 @@
   z-index: -1;
   pointer-events: none;
 
+  background-color: #1b2735;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed;
 
-  transition: background 0.5s ease-in-out;
+  transition: background 0.8s ease-in-out;
 }
 
 canvas {
