@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { Layout } from './components/layout/layout';
 import { DataBinding } from './components/data-binding/data-binding';
 import { SignalComponent } from './components/signal/signal';
 import { Variables } from './components/variables/variables';
@@ -11,39 +12,45 @@ import { ReactiveUser } from './components/reactive-user/reactive-user';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'databinding',
-    pathMatch: 'full',
-  },
-  {
-    path: 'databinding',
-    component: DataBinding,
-  },
-  {
-    path: 'signal',
-    component: SignalComponent,
-  },
-  {
-    path: 'variables',
-    component: Variables,
-  },
-  {
-    path: 'control-flow',
-    component: ControlFlow,
-  },
-  {
-    path: 'dynamic-css-class',
-    component: DynamicCssClass,
-  },
-  {
-    path: 'users',
-    component: UserMaster,
-  },
-  {
-    path: 'reactive-users',
-    component: ReactiveUser,
-  },
-  {
-    path: '**',
-    component: NotFound,
+    component: Layout,
+    children: [
+      {
+        path: '',
+        redirectTo: 'databinding',
+        pathMatch: 'full',
+      },
+      {
+        path: 'databinding',
+        component: DataBinding,
+      },
+      {
+        path: 'signal',
+        component: SignalComponent,
+      },
+      {
+        path: 'variables',
+        component: Variables,
+      },
+      {
+        path: 'control-flow',
+        component: ControlFlow,
+      },
+      {
+        path: 'dynamic-css-class',
+        component: DynamicCssClass,
+      },
+      {
+        path: 'users',
+        component: UserMaster,
+      },
+      {
+        path: 'reactive-users',
+        component: ReactiveUser,
+      },
+      {
+        path: '**',
+        component: NotFound,
+      },
+    ],
   },
 ];
