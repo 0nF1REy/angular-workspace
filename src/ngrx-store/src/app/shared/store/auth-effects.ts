@@ -87,7 +87,7 @@ export const registerEffect = createEffect(
   }
 );
 
-export const logoutEffects = createEffect(
+export const logoutEffect = createEffect(
   (
     actions$ = inject(Actions),
     storage = inject(MyStorage),
