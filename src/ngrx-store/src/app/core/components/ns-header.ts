@@ -5,7 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NsButton } from '../../shared/components/ns-button';
 import { authActions } from '../../shared/store/auth-actions';
 import { LucideAngularModule, LogOut, User, ShoppingCart } from 'lucide-angular';
-// import { cartFeature } from '../../pages/cart/store/cart-feature';
+import { cartFeature } from '../../pages/cart/store/cart-feature';
 
 @Component({
   selector: 'ns-header',
@@ -68,10 +68,9 @@ export class NsHeader {
   protected readonly icons = { LogOut, User, ShoppingCart };
   private readonly store = inject(Store);
 
-  protected readonly cartItemCount = toSignal(
-    this.store.select((state) => 0),
-    { initialValue: 0 }
-  );
+  protected readonly cartItemCount = toSignal(this.store.select(cartFeature.selectCartCount), {
+    initialValue: 0,
+  });
 
   protected logout() {
     this.store.dispatch(authActions.logout());
