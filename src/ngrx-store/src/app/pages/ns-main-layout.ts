@@ -4,7 +4,7 @@ import { NsFooter } from '../core/components/ns-footer';
 import { NsHeader } from '../core/components/ns-header';
 
 @Component({
-  selector: 'main-layout',
+  selector: 'ns-main-layout',
   imports: [RouterOutlet, NsFooter, NsHeader],
   template: `
     <ns-header />
@@ -12,6 +12,4 @@ import { NsHeader } from '../core/components/ns-header';
     <ns-footer />
   `,
 })
-export class MainLayout {
-  constructor() {}
-}
+export class NsMainLayout {}

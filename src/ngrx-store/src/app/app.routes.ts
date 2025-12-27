@@ -3,29 +3,29 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
+    loadComponent: () => import('./pages/login/ns-login').then((m) => m.NsLogin),
   },
   {
     path: 'register',
-    loadComponent: () => import('./pages/register/register').then((m) => m.Register),
+    loadComponent: () => import('./pages/register/ns-register').then((m) => m.NsRegister),
   },
 
   {
     path: '',
-    loadComponent: () => import('./pages/main-layout').then((m) => m.MainLayout),
+    loadComponent: () => import('./pages/ns-main-layout').then((m) => m.NsMainLayout),
     canActivate: [],
     children: [
       {
         path: 'products',
-        loadComponent: () => import('./pages/products/products').then((m) => m.Products),
+        loadComponent: () => import('./pages/products/ns-products').then((m) => m.NsProducts),
       },
       {
         path: 'profile',
-        loadComponent: () => import('./pages/profile/profile').then((m) => m.Profile),
+        loadComponent: () => import('./pages/profile/ns-profile').then((m) => m.NsProfile),
       },
       {
         path: 'cart',
-        loadComponent: () => import('./pages/cart/cart').then((m) => m.Cart),
+        loadComponent: () => import('./pages/cart/ns-cart').then((m) => m.NsCart),
       },
     ],
   },

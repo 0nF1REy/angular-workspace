@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cart',
+  selector: 'ns-cart',
   template: `<h1>Cart Page</h1>`,
 })
-export class Cart {}
+export class NsCart {}
