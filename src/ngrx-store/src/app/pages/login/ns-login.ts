@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { NsButton } from '../../shared/components/ns-button';
 
 @Component({
   selector: 'ns-login',
+  imports: [NsButton],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]">
       <!-- Login Container -->
@@ -28,8 +30,6 @@ import { Component } from '@angular/core';
                 type="email"
                 placeholder="seu@exemplo.com"
                 class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
-                (focus)="onEmailFocus(true)"
-                (blur)="onEmailFocus(false)"
               />
               <p class="text-xs h-5 text-[#C1272D]">
                 <!-- Error message will appear here -->
@@ -54,8 +54,6 @@ import { Component } from '@angular/core';
                 type="password"
                 placeholder="Digite sua senha"
                 class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
-                (focus)="onPasswordFocus(true)"
-                (blur)="onPasswordFocus(false)"
               />
               <p class="text-xs h-5 text-[#C1272D]">
                 <!-- Error message will appear here -->
@@ -63,18 +61,7 @@ import { Component } from '@angular/core';
             </div>
 
             <!-- Login Button -->
-            <button
-              type="submit"
-              class="w-full py-3 px-4 rounded-sm font-bold text-sm tracking-wide transition-all duration-200 text-gray-950 shadow-lg bg-[#4CA6B8]"
-              (mouseenter)="isLoginHovered = true"
-              (mouseleave)="isLoginHovered = false"
-              [style.transform]="isLoginHovered ? 'translateY(-2px)' : 'translateY(0)'"
-              [style.box-shadow]="
-                isLoginHovered
-                  ? '0 12px 24px rgba(76, 166, 184, 0.4)'
-                  : '0 8px 16px rgba(76, 166, 184, 0.3)'
-              "
-            >
+            <button variant="primary" size="md" nsButton type="submit" class="w-full">
               Entrar
             </button>
 
@@ -109,10 +96,4 @@ import { Component } from '@angular/core';
     class: 'min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]',
   },
 })
-export class NsLogin {
-  isLoginHovered = false;
-
-  onEmailFocus(focused: boolean) {}
-
-  onPasswordFocus(focused: boolean) {}
-}
+export class NsLogin {}
