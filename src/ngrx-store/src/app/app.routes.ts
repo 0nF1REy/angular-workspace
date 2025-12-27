@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
   {
@@ -9,12 +10,16 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./pages/register/ns-register').then((m) => m.NsRegister),
   },
-
   {
     path: '',
     loadComponent: () => import('./pages/ns-main-layout').then((m) => m.NsMainLayout),
-    canActivate: [],
+    canActivate: [authGuard],
     children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'products',
+      },
       {
         path: 'products',
         loadComponent: () => import('./pages/products/ns-products').then((m) => m.NsProducts),
