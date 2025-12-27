@@ -20,15 +20,15 @@ import { NsButton } from '../../shared/components/ns-button';
 
           <!-- Form -->
           <form>
-            <!-- Email/Username Field -->
+            <!-- Username Field -->
             <div class="space-y-2">
-              <label for="email" class="block text-sm font-semibold text-[#F3F4F6]">
-                Email ou Usuário
+              <label for="username" class="block text-sm font-semibold text-[#F3F4F6]">
+                Usuário
               </label>
               <input
-                id="email"
-                type="email"
-                placeholder="seu@exemplo.com"
+                id="username"
+                type="text"
+                placeholder="Digite seu nome de usuário"
                 class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
               />
               <p class="text-xs h-5 text-[#C1272D]">
