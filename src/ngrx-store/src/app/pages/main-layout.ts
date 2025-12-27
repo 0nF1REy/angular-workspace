@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from '../core/components/header';
-import { Footer } from '../core/components/footer';
+import { NsFooter } from '../core/components/ns-footer';
+import { NsHeader } from '../core/components/ns-header';
 
 @Component({
   selector: 'main-layout',
-  imports: [RouterOutlet, Header, Footer],
+  imports: [RouterOutlet, NsFooter, NsHeader],
   template: `
-    <header></header>
+    <ns-header />
     <router-outlet />
-    <footer></footer>
+    <ns-footer />
   `,
 })
 export class MainLayout {
