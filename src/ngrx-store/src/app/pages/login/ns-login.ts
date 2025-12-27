@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NsButton } from '../../shared/components/ns-button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'ns-login',
-  imports: [NsButton],
+  imports: [NsButton, RouterLink],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]">
       <!-- Login Container -->
@@ -76,7 +77,7 @@ import { NsButton } from '../../shared/components/ns-button';
             <p class="text-center text-sm text-[#F3F4F6]">
               Não tem uma conta?
               <a
-                href="/register"
+                routerLink="/register"
                 class="font-semibold transition-colors duration-200 text-[#4CA6B8] hover:opacity-80"
               >
                 Registre-se
