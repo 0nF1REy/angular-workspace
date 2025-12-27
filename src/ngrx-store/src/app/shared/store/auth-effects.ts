@@ -32,8 +32,22 @@ export const loginEffect = createEffect(
             return authActions.loginSuccess({ token: response.token, userId: null });
           }),
           catchError((error) => {
-            toast.danger('Falha no login', 'ERRO');
-            return of(authActions.loginFailure({ error: error.message }));
+            let errorMessage = 'Falha ao fazer login';
+
+            if (error?.status === 401) {
+              errorMessage = 'Usuário ou senha inválidos';
+            } else if (error?.status === 404) {
+              errorMessage = 'Usuário não encontrado';
+            } else if (error?.status === 500) {
+              errorMessage = 'Erro no servidor. Tente novamente mais tarde';
+            } else if (error?.error?.message) {
+              errorMessage = error.error.message;
+            } else if (error?.message) {
+              errorMessage = error.message;
+            }
+
+            toast.danger(errorMessage, 'ERRO');
+            return of(authActions.loginFailure({ error: errorMessage }));
           })
         );
       })

@@ -59,6 +59,13 @@ import { NsButton } from '../../shared/components/ns-button';
               <ns-form-errors [control]="loginForm.password()"></ns-form-errors>
             </div>
 
+            <!-- Error Message -->
+            @if (error()) {
+            <div class="p-4 rounded-sm bg-red-900/30 border border-red-600 text-red-400 text-sm">
+              {{ error() }}
+            </div>
+            }
+
             <!-- Button -->
             <button
               nsButton
@@ -104,6 +111,7 @@ export class NsLogin {
 
   private readonly store = inject(Store);
   protected readonly isLoading = toSignal(this.store.select(authFeatures.selectIsLoading));
+  protected readonly error = toSignal(this.store.select(authFeatures.selectError));
 
   onSubmit(event: Event) {
     event.preventDefault();

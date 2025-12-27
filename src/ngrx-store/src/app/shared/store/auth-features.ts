@@ -35,6 +35,7 @@ export const authFeatures = createFeature({
       ...state,
       token: null,
       error,
+      isLoading: false,
     })),
 
     on(authActions.login, (state) => ({
