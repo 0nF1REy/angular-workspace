@@ -1,17 +1,38 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
+import {
+  ApplicationConfig,
+  InjectionToken,
+  provideBrowserGlobalErrorListeners,
+  isDevMode,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideStore } from '@ngrx/store';
+import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideNgToast } from 'ng-angular-popup';
+import { authFeatures } from './shared/store/auth-features';
+
+import * as authEffects from './shared/store/auth-effects';
+
+export const API_URL = new InjectionToken<string>('API_URL');
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideStore(),
-    provideEffects(),
+    provideEffects(authEffects),
+    provideState(authFeatures),
+    {
+      provide: API_URL,
+      useValue: 'https://fakestoreapi.com',
+    },
+    provideNgToast({
+      duration: 2000,
+      position: 'toaster-top-right',
+      minWidth: 250,
+    }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
