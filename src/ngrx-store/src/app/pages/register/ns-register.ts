@@ -1,111 +1,101 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NsButton } from '../../shared/components/ns-button';
 import { RouterLink } from '@angular/router';
+import { form, Field } from '@angular/forms/signals';
+import { NsFormErrors } from '../../shared/components/ns-form-errors';
+import { registerSchema } from './register-schema';
+import { Store } from '@ngrx/store';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { authFeatures } from '../../shared/store/auth-features';
+import { authActions } from '../../shared/store/auth-actions';
 
 @Component({
   selector: 'ns-register',
-  imports: [NsButton, RouterLink],
+  imports: [NsButton, RouterLink, Field, NsFormErrors],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]">
-      <!-- Register Container -->
       <div class="w-full max-w-md">
-        <!-- Card -->
         <div class="rounded-sm p-8 shadow-2xl bg-[#1A1A1B]">
-          <!-- Header -->
           <div class="mb-8 text-center">
             <h1 class="text-3xl font-bold tracking-tight mb-2 text-[#F3F4F6]">Criar Conta</h1>
             <p class="text-sm text-[#4CA6B8]">Cadastre-se para começar a usar nossa plataforma</p>
           </div>
 
-          <!-- Form -->
-          <form>
-            <!-- Username Field -->
+          <form (ngSubmit)="onSubmit($event)" class="space-y-6">
+            <!-- Username -->
             <div class="space-y-2">
-              <label for="username" class="block text-sm font-semibold text-[#F3F4F6]">
-                Usuário
-              </label>
+              <label class="block text-sm font-semibold text-[#F3F4F6]">Usuário</label>
               <input
-                id="username"
                 type="text"
+                [field]="registerForm.username"
+                autocomplete="username"
                 placeholder="Digite seu nome de usuário"
-                class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
+                class="w-full px-4 py-3 rounded-sm text-sm border-2 border-[#4CA6B8]
+                       bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
               />
-              <p class="text-xs h-5 text-[#C1272D]">
-                <!-- Error message will appear here -->
-              </p>
+              <ns-form-errors [control]="registerForm.username()" />
             </div>
 
-            <!-- Email Field -->
+            <!-- Email -->
             <div class="space-y-2">
-              <label for="email" class="block text-sm font-semibold text-[#F3F4F6]"> Email </label>
+              <label class="block text-sm font-semibold text-[#F3F4F6]">Email</label>
               <input
-                id="email"
                 type="email"
+                [field]="registerForm.email"
+                autocomplete="email"
                 placeholder="Digite seu email"
-                class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
+                class="w-full px-4 py-3 rounded-sm text-sm border-2 border-[#4CA6B8]
+                       bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
               />
-              <p class="text-xs h-5 text-[#C1272D]">
-                <!-- Error message will appear here -->
-              </p>
+              <ns-form-errors [control]="registerForm.email()" />
             </div>
 
-            <!-- Password Field -->
+            <!-- Password -->
             <div class="space-y-2">
-              <label for="password" class="block text-sm font-semibold text-[#F3F4F6]">
-                Senha
-              </label>
+              <label class="block text-sm font-semibold text-[#F3F4F6]">Senha</label>
               <input
-                id="password"
                 type="password"
+                [field]="registerForm.password"
+                autocomplete="new-password"
                 placeholder="Digite sua senha"
-                class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
+                class="w-full px-4 py-3 rounded-sm text-sm border-2 border-[#4CA6B8]
+                       bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
               />
-              <p class="text-xs h-5 text-[#C1272D]">
-                <!-- Error message will appear here -->
-              </p>
+              <ns-form-errors [control]="registerForm.password()" />
             </div>
 
-            <!-- Confirm Password Field -->
+            <!-- Confirm Password -->
             <div class="space-y-2">
-              <label for="confirm-password" class="block text-sm font-semibold text-[#F3F4F6]">
-                Confirmar Senha
-              </label>
+              <label class="block text-sm font-semibold text-[#F3F4F6]"> Confirmar Senha </label>
               <input
-                id="confirm-password"
                 type="password"
+                [field]="registerForm.confirmPassword"
+                autocomplete="new-password"
                 placeholder="Confirme sua senha"
-                class="w-full px-4 py-3 rounded-sm text-sm transition-all duration-200 border-2 border-[#4CA6B8] bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
+                class="w-full px-4 py-3 rounded-sm text-sm border-2 border-[#4CA6B8]
+                       bg-[rgba(31,31,32,0.5)] text-[#F3F4F6] focus:outline-none"
               />
-              <p class="text-xs h-5 text-[#C1272D]">
-                <!-- Error message will appear here -->
-              </p>
+              <ns-form-errors [control]="registerForm.confirmPassword()" />
             </div>
 
-            <!-- Register Button -->
-            <button variant="primary" size="md" nsButton type="submit" class="w-full">
-              Registrar
+            <!-- Submit -->
+            <button
+              nsButton
+              variant="primary"
+              size="md"
+              type="submit"
+              class="w-full"
+              [disabled]="registerForm().invalid() || isLoading()"
+            >
+              {{ isLoading() ? 'Registrando...' : 'Registrar' }}
             </button>
 
-            <!-- Divider -->
-            <div class="flex items-center gap-3 my-6">
-              <div class="flex-1 h-px bg-[rgba(243,244,246,0.1)]"></div>
-              <span class="text-xs text-[#4CA6B8]">ou</span>
-              <div class="flex-1 h-px bg-[rgba(243,244,246,0.1)]"></div>
-            </div>
-
-            <!-- Login Link -->
             <p class="text-center text-sm text-[#F3F4F6]">
               Já tem uma conta?
-              <a
-                routerLink="/login"
-                class="font-semibold transition-colors duration-200 text-[#4CA6B8] hover:opacity-80"
-              >
-                Faça login
-              </a>
+              <a routerLink="/login" class="text-[#4CA6B8] font-semibold"> Faça login </a>
             </p>
           </form>
 
-          <!-- Footer Note -->
           <p class="text-xs text-center mt-8 text-[rgba(243,244,246,0.5)]">
             Ao se registrar, você concorda com nossos Termos de Serviço
           </p>
@@ -113,8 +103,28 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
   `,
-  host: {
-    class: 'min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]',
-  },
 })
-export class NsRegister {}
+export class NsRegister {
+  registerModel = signal({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  registerForm = form(this.registerModel, registerSchema);
+
+  private readonly store = inject(Store);
+  protected readonly isLoading = toSignal(this.store.select(authFeatures.selectIsLoading));
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+
+    if (this.registerForm().invalid()) return;
+
+    const id = Date.now();
+    const { confirmPassword, ...rest } = this.registerForm().value();
+
+    this.store.dispatch(authActions.register({ id, ...rest }));
+  }
+}
