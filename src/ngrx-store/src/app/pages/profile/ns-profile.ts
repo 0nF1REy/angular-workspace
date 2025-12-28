@@ -10,7 +10,7 @@ import { MyStorage } from '../../shared/services/storage';
 @Component({
   selector: 'ns-profile',
   imports: [LucideAngularModule],
-  template: `<div class="min-h-screen bg-[#1A1A1B] py-12 px-4">
+  template: `<div class="min-h-screen py-12 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl font-bold text-[#F3F4F6] mb-8">Meu Perfil</h1>
       @if(loading()) {
