@@ -41,7 +41,7 @@ import { CurrencyPipe } from '@angular/common';
       <div class="flex items-center justify-between pt-2">
         <span class="text-xl font-bold text-[#4CA6B8]">{{ product().price | currency }}</span>
         <button
-          appButton
+          nsButton
           size="sm"
           type="button"
           class="text-sm font-semibold"
