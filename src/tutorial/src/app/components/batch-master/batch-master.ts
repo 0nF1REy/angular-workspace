@@ -34,6 +34,12 @@ export class BatchMaster implements OnInit {
     });
   }
 
+  onEditBatch(data: Batch) {
+    const stringData = JSON.stringify(data);
+    const strObj = JSON.parse(stringData);
+    this.newBatchObj = strObj;
+  }
+
   onSaveBatch() {
     this.http
       .post('https://api.freeprojectapi.com/api/FeesTracking/batches', this.newBatchObj)
@@ -47,6 +53,40 @@ export class BatchMaster implements OnInit {
           alert('Erro ao salvar lote');
         },
       });
+  }
+
+  onUpdateBatch() {
+    this.http
+      .put(
+        'https://api.freeprojectapi.com/api/FeesTracking/batches/' + this.newBatchObj.batchId,
+        this.newBatchObj
+      )
+      .subscribe({
+        next: (result: any) => {
+          alert('Lote atualizado com sucesso!');
+          this.newBatchObj = new Batch();
+          this.getAllBatches();
+        },
+        error: (error: any) => {
+          alert('Erro ao atualizar lote');
+        },
+      });
+  }
+
+  onDeleteBatch(id: number) {
+    const isConfirmed = confirm('Tem certeza que deseja excluir?');
+    if (isConfirmed == true) {
+      this.http.delete('https://api.freeprojectapi.com/api/FeesTracking/batches/' + id).subscribe({
+        next: (result: any) => {
+          alert('Lote deletado com sucesso!');
+          this.newBatchObj = new Batch();
+          this.getAllBatches();
+        },
+        error: (error: any) => {
+          alert('Erro ao deletar lote');
+        },
+      });
+    }
   }
 }
 

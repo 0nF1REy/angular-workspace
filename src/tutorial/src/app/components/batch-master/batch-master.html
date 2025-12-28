@@ -28,10 +28,18 @@
                   <td>{{ item.batchName }}</td>
                   <td>{{ item.createdDate | date : 'dd/MM/yyyy' }}</td>
                   <td class="text-end">
-                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                    <button
+                      class="btn btn-sm btn-outline-primary me-2"
+                      title="Editar"
+                      (click)="onEditBatch(item)"
+                    >
                       <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      title="Excluir"
+                      (click)="onDeleteBatch(item.batchId)"
+                    >
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -81,12 +89,16 @@
             </div>
 
             <div class="d-grid gap-2">
+              @if(newBatchObj.batchId == 0) {
               <button type="button" (click)="onSaveBatch()" class="btn btn-primary">
                 Confirmar Registro
               </button>
-              <button type="button" class="btn btn-outline-secondary text-muted">
-                Limpar Campos
+              } @else {
+              <button type="button" (click)="onUpdateBatch()" class="btn btn-warning">
+                Atualizar Registro
               </button>
+              }
+              <button type="button" class="btn btn-outline-secondary text-muted">Cancelar</button>
             </div>
           </form>
         </div>
