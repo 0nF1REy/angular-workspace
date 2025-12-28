@@ -97,8 +97,8 @@ import { NsButton } from '../../shared/components/ns-button';
 })
 export class NsLogin {
   loginModel = signal({
-    username: '',
-    password: '',
+    username: 'johnd',
+    password: 'm38rmF$',
   });
 
   loginForm = form(this.loginModel, (root) => {
