@@ -2,14 +2,12 @@ import {
   ApplicationConfig,
   InjectionToken,
   provideBrowserGlobalErrorListeners,
-  isDevMode,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideNgToast } from 'ng-angular-popup';
 import { authFeatures } from './shared/store/auth-features';
 
@@ -33,6 +31,5 @@ export const appConfig: ApplicationConfig = {
       position: 'toaster-top-right',
       minWidth: 250,
     }),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
