@@ -1,12 +1,38 @@
 {
   "name": "ngrx-store",
   "version": "0.0.4",
+  "description": "Angular application demonstrating state management with NgRx, featuring product catalog, shopping cart, user authentication, and profile management.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "keywords": [
+    "angular",
+    "ngrx",
+    "state-management",
+    "rxjs",
+    "typescript",
+    "e-commerce",
+    "product-catalog",
+    "shopping-cart",
+    "authentication",
+    "tailwindcss"
+  ],
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
   },
   "prettier": {
     "printWidth": 100,
