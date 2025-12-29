@@ -13,8 +13,8 @@ export class ProjectCompetition {
     competitionId: new FormControl(0),
     title: new FormControl(''),
     description: new FormControl(''),
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
+    startDate: new FormControl(null),
+    endDate: new FormControl(null),
     status: new FormControl(''),
   });
 
@@ -38,16 +38,35 @@ export class ProjectCompetition {
 
   saveCompetition() {
     const formValue = this.projectForm.value;
+
+    const payload: any = {
+      title: formValue.title,
+      description: formValue.description,
+      status: formValue.status || 'Draft',
+    };
+
+    if (formValue.startDate) {
+      payload.startDate = new Date(formValue.startDate).toISOString();
+    }
+    if (formValue.endDate) {
+      payload.endDate = new Date(formValue.endDate).toISOString();
+    }
     this.http
-      .post('https://api.freeprojectapi.com/api/ProjectCompetition/competition', formValue)
+      .post('https://api.freeprojectapi.com/api/ProjectCompetition/competition', payload)
       .subscribe({
         next: (result: any) => {
           alert('Competição criada com sucesso!');
+          this.resetForm();
+          this.getAllCompetitions();
         },
         error: (error: any) => {
           alert(error.error.message);
         },
       });
+  }
+
+  resetForm() {
+    this.projectForm.reset();
   }
 }
 

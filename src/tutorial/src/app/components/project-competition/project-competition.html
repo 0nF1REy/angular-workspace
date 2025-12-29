@@ -21,7 +21,7 @@
               <tbody>
                 @for (item of competitionList(); track $index) {
                 <tr>
-                  <td>{{ $index }}</td>
+                  <td>{{ $index + 1 }}</td>
                   <td>{{ item.title }}</td>
                   <td>{{ item.description }}</td>
                   <td>{{ item.status }}</td>
@@ -106,7 +106,13 @@
               <button type="button" (click)="saveCompetition()" class="btn btn-primary">
                 Salvar
               </button>
-              <button type="button" class="btn btn-outline-secondary text-muted">Resetar</button>
+              <button
+                type="button"
+                (click)="resetForm()"
+                class="btn btn-outline-secondary text-muted"
+              >
+                Resetar
+              </button>
             </div>
           </form>
         </div>
