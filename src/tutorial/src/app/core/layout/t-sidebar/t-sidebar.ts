@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SIDEBAR_MENU } from './menu/t-sidebar-menu.data';
+import { TSidebarMenuItem } from './menu/t-sidebar-menu';
 
 @Component({
   selector: 't-sidebar',
@@ -7,4 +9,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './t-sidebar.html',
   styleUrl: './t-sidebar.css',
 })
-export class TSidebar {}
+export class TSidebar {
+  menu: TSidebarMenuItem[] = SIDEBAR_MENU;
+}

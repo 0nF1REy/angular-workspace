@@ -15,51 +15,14 @@
   <div class="sidebar-content">
     <div class="menu-label">Menu de Operações</div>
     <ul class="nav flex-column custom-nav">
+      @for (item of menu; track item.route) {
       <li class="nav-item">
-        <a routerLink="/variables" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-code-square me-3"></i> Variável
+        <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">
+          <i class="bi {{ item.icon }} me-3"></i>
+          {{ item.label }}
         </a>
       </li>
-      <li class="nav-item">
-        <a routerLink="/databinding" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-link-45deg me-3"></i> Data Binding
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/signal" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-lightning-charge me-3"></i> Signals
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/control-flow" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-git me-3"></i> Fluxo de Controle
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/dynamic-css-class" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-palette me-3"></i> ngClass & ngStyle
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/users" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-people me-3"></i> Usuários
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/reactive-users" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-person-gear me-3"></i> Usuários Reativos
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/batch" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-layers me-3"></i> Lotes
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/competition" routerLinkActive="active" class="nav-link">
-          <i class="bi bi-trophy me-3"></i> Competição
-        </a>
-      </li>
+      }
     </ul>
   </div>
 
