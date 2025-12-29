@@ -14,72 +14,15 @@
   color: var(--gintama-silver);
 }
 
-.sidebar {
-  background-color: var(--gintama-black) !important;
-  border-right: 1px solid rgba(243, 244, 246, 0.1);
+.layout-container {
+  display: flex;
   height: 100vh;
-  overflow-y: auto;
+  width: 100%;
 }
 
-.sidebar-header {
-  padding: 2.5rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-bottom: 1px solid rgba(76, 166, 184, 0.2);
-}
-
-.sidebar-header h5 {
-  color: var(--gintama-silver);
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.menu-label {
-  padding: 1.5rem 1.5rem 0.75rem;
-  font-size: 0.7rem;
-  color: var(--gintama-cyan);
-  letter-spacing: 2px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.custom-nav {
-  padding: 0 1rem;
-}
-
-.custom-nav .nav-link {
-  color: rgba(243, 244, 246, 0.7);
-  padding: 1rem 1.25rem;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-}
-
-.custom-nav .nav-link i {
-  font-size: 1.2rem;
-  transition: transform 0.2s ease;
-}
-
-.custom-nav .nav-link:hover {
-  background-color: rgba(76, 166, 184, 0.1);
-  color: var(--gintama-silver);
-  transform: translateX(5px);
-}
-
-.custom-nav .nav-link.active {
-  background-color: var(--gintama-cyan);
-  color: var(--gintama-black) !important;
-  font-weight: 800;
-  box-shadow: 0 4px 15px rgba(76, 166, 184, 0.3);
-}
-
-.custom-nav .nav-link.active i {
-  transform: scale(1.1);
+t-sidebar {
+  flex: 0 0 260px;
+  min-width: 260px;
 }
 
 .main-content {
@@ -111,40 +54,8 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar-footer {
-  margin-top: auto;
-  padding: 1.5rem;
-  border-top: 1px solid rgba(243, 244, 246, 0.05);
-  font-size: 0.75rem;
-  color: var(--gintama-cyan);
-  font-weight: bold;
-  text-align: center;
-}
-
 .fade-in-up {
   animation: fadeInUp 0.3s ease-out;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: var(--gintama-black);
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: rgba(2, 197, 236, 0.702);
-  border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: var(--gintama-cyan);
-}
-
-.sidebar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(76, 166, 184, 0.3) var(--gintama-black);
 }
 
 @keyframes fadeInUp {

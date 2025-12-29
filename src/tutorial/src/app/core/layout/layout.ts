@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { TSidebar } from './t-sidebar/t-sidebar';
 
 @Component({
   selector: 'layout',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, TSidebar],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
