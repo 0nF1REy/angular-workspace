@@ -20,14 +20,18 @@
               </thead>
               <tbody>
                 @for (item of competitionList(); track $index) {
-                <tr>
+                <tr style="height: 50px">
                   <td>{{ $index + 1 }}</td>
-                  <td>{{ item.title }}</td>
-                  <td>{{ item.description }}</td>
+                  <td style="max-width: 170px" title="{{ item.title }}">
+                    {{ item.title }}
+                  </td>
+                  <td class="text-truncate" style="max-width: 200px" title="{{ item.description }}">
+                    {{ item.description }}
+                  </td>
                   <td>{{ item.status }}</td>
-                  <td class="text-end">
+                  <td>
                     <button
-                      class="btn btn-sm btn-outline-primary me-2"
+                      class="btn btn-sm btn-outline-primary"
                       title="Editar"
                       (click)="onEdit(item)"
                     >
@@ -36,7 +40,6 @@
                     <button
                       class="btn btn-sm btn-outline-danger"
                       title="Excluir"
-                      (click)="onEdit(item)"
                       (click)="deleteCompetition(item.competitionId)"
                     >
                       <i class="bi bi-trash"></i>
