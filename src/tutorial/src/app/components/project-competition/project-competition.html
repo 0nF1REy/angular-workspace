@@ -1,0 +1,116 @@
+<div class="container-fluid px-4">
+  <div class="row">
+    <!-- Table Column (col-7) -->
+    <div class="col-7">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+          <h5 class="mb-0">Lista de competições</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table table-sm table-light">
+                <tr>
+                  <th>Sr</th>
+                  <th>Título</th>
+                  <th>Descrição</th>
+                  <th>Status</th>
+                  <th class="text-center">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (item of competitionList(); track $index) {
+                <tr>
+                  <td>{{ $index }}</td>
+                  <td>{{ item.title }}</td>
+                  <td>{{ item.description }}</td>
+                  <td>{{ item.status }}</td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Column (col-5) -->
+    <div class="col-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+          <h5 class="mb-0">Formulário de competição</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="projectForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Título</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Digite o título da competição"
+                formControlName="title"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Descrição</label>
+              <textarea
+                class="form-control"
+                id="description"
+                rows="3"
+                placeholder="Descreva a competição..."
+                formControlName="description"
+              ></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="startDate" class="form-label">Data de início</label>
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="startDate"
+                  formControlName="startDate"
+                />
+              </div>
+              <div class="col-6 mb-3">
+                <label for="endDate" class="form-label">Data de término</label>
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="endDate"
+                  formControlName="endDate"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status" formControlName="status">
+                <option value="">Selecione...</option>
+                <option value="Draft">Rascunho</option>
+                <option value="Active">Ativa</option>
+                <option value="Completed">Concluída</option>
+              </select>
+            </div>
+            <div>
+              <button type="button" (click)="saveCompetition()" class="btn btn-primary">
+                Salvar
+              </button>
+              <button type="button" class="btn btn-outline-secondary text-muted">Resetar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

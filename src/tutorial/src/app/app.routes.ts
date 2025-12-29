@@ -9,6 +9,7 @@ import { DynamicCssClass } from './components/dynamic-css-class/dynamic-css-clas
 import { UserMaster } from './components/user-master/user-master';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
 import { BatchMaster } from './components/batch-master/batch-master';
+import { ProjectCompetition } from './components/project-competition/project-competition';
 
 export const routes: Routes = [
   {
@@ -52,6 +53,10 @@ export const routes: Routes = [
       {
         path: 'batch',
         component: BatchMaster,
+      },
+      {
+        path: 'competition',
+        component: ProjectCompetition,
       },
       {
         path: '**',
