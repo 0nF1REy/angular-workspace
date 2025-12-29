@@ -26,10 +26,19 @@
                   <td>{{ item.description }}</td>
                   <td>{{ item.status }}</td>
                   <td class="text-end">
-                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                    <button
+                      class="btn btn-sm btn-outline-primary me-2"
+                      title="Editar"
+                      (click)="onEdit(item)"
+                    >
                       <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      title="Excluir"
+                      (click)="onEdit(item)"
+                      (click)="deleteCompetition(item.competitionId)"
+                    >
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -96,16 +105,22 @@
             <div class="mb-3">
               <label for="status" class="form-label">Status</label>
               <select class="form-select" id="status" formControlName="status">
-                <option value="">Selecione...</option>
                 <option value="Draft">Rascunho</option>
                 <option value="Active">Ativa</option>
                 <option value="Completed">Concluída</option>
               </select>
             </div>
             <div>
+              @if(projectForm.controls['competitionId'].value === 0) {
               <button type="button" (click)="saveCompetition()" class="btn btn-primary">
                 Salvar
               </button>
+              } @else {
+              <button type="button" (click)="updateCompetition()" class="btn btn-warning">
+                Atualizar
+              </button>
+              }
+
               <button
                 type="button"
                 (click)="resetForm()"
