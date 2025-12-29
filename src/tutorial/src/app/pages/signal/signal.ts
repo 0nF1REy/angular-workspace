@@ -2,6 +2,7 @@ import { Component, Signal, signal } from '@angular/core';
 
 @Component({
   selector: 'signal',
+  standalone: true,
   imports: [],
   templateUrl: './signal.html',
   styleUrl: './signal.css',

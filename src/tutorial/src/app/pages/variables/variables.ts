@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'variables',
+  standalone: true,
   imports: [],
   templateUrl: './variables.html',
   styleUrl: './variables.css',
@@ -39,7 +40,7 @@ export class Variables {
   ];
 
   constructor() {
-    this.courseName = "2233";
+    this.courseName = '2233';
 
     this.rollNo = 234;
   }

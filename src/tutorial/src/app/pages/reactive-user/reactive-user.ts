@@ -3,12 +3,12 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 @Component({
   selector: 'reactive-user',
+  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './reactive-user.html',
   styleUrl: './reactive-user.css',
 })
 export class ReactiveUser {
-
   userForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     userName: new FormControl('', [Validators.required]),

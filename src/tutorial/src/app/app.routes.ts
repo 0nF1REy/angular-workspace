@@ -1,15 +1,5 @@
 import { Routes } from '@angular/router';
 import { Layout } from './core/layout/layout';
-import { DataBinding } from './pages/data-binding/data-binding';
-import { SignalComponent } from './pages/signal/signal';
-import { Variables } from './pages/variables/variables';
-import { NotFound } from './pages/not-found/not-found';
-import { ControlFlow } from './pages/control-flow/control-flow';
-import { DynamicCssClass } from './pages/dynamic-css-class/dynamic-css-class';
-import { UserMaster } from './pages/user-master/user-master';
-import { ReactiveUser } from './pages/reactive-user/reactive-user';
-import { BatchMaster } from './pages/batch-master/batch-master';
-import { ProjectCompetition } from './pages/project-competition/project-competition';
 
 export const routes: Routes = [
   {
@@ -21,46 +11,60 @@ export const routes: Routes = [
         redirectTo: 'variables',
         pathMatch: 'full',
       },
+
       {
         path: 'variables',
-        component: Variables,
+        loadComponent: () => import('./pages/variables/variables').then((m) => m.Variables),
       },
+
       {
         path: 'databinding',
-        component: DataBinding,
+        loadComponent: () => import('./pages/data-binding/data-binding').then((m) => m.DataBinding),
       },
+
       {
         path: 'signal',
-        component: SignalComponent,
+        loadComponent: () => import('./pages/signal/signal').then((m) => m.SignalComponent),
       },
 
       {
         path: 'control-flow',
-        component: ControlFlow,
+        loadComponent: () => import('./pages/control-flow/control-flow').then((m) => m.ControlFlow),
       },
+
       {
         path: 'dynamic-css-class',
-        component: DynamicCssClass,
+        loadComponent: () =>
+          import('./pages/dynamic-css-class/dynamic-css-class').then((m) => m.DynamicCssClass),
       },
+
       {
         path: 'users',
-        component: UserMaster,
+        loadComponent: () => import('./pages/user-master/user-master').then((m) => m.UserMaster),
       },
+
       {
         path: 'reactive-users',
-        component: ReactiveUser,
+        loadComponent: () =>
+          import('./pages/reactive-user/reactive-user').then((m) => m.ReactiveUser),
       },
+
       {
         path: 'batch',
-        component: BatchMaster,
+        loadComponent: () => import('./pages/batch-master/batch-master').then((m) => m.BatchMaster),
       },
+
       {
         path: 'competition',
-        component: ProjectCompetition,
+        loadComponent: () =>
+          import('./pages/project-competition/project-competition').then(
+            (m) => m.ProjectCompetition
+          ),
       },
+
       {
         path: '**',
-        component: NotFound,
+        loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
       },
     ],
   },
