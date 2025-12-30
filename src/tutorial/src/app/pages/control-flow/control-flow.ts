@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../service/master';
 
 @Component({
   selector: 'control-flow',
@@ -41,6 +42,11 @@ export class ControlFlow {
     { name: 'Bruna Oliveira Costa', city: 'Recife', isActive: false },
     { name: 'Eduardo Ramos Figueiredo', city: 'Porto Alegre', isActive: true },
   ];
+
+  constructor(private masterSrv: Master) {
+    debugger;
+    const result = masterSrv.addTwoNum(12, 15);
+  }
 
   toggleDivVisibility() {
     this.isSuccessDivVisiable.set(!this.isSuccessDivVisiable());

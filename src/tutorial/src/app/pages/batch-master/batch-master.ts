@@ -1,7 +1,9 @@
+import { BatchService } from './../../service/batch-service';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Master } from '../../service/master';
 
 @Component({
   selector: 'batch-master',
@@ -17,20 +19,35 @@ export class BatchMaster implements OnInit {
   newBatchObj: Batch = new Batch();
   http = inject(HttpClient);
 
+  masterSr = inject(Master); // angular 16
+  BatchService = inject(BatchService);
+
   ngOnInit(): void {
+    debugger;
+    const courseName = this.masterSr.courseName;
+    const result = this.masterSr.addTwoNum(22, 44);
     this.getAllBatches();
   }
 
   getAllBatches() {
-    this.http.get('https://api.freeprojectapi.com/api/FeesTracking/batches').subscribe({
+    debugger;
+    // this.http.get('https://api.freeprojectapi.com/api/FeesTracking/batches').subscribe({
+    //   next: (res: any) => {
+    //     if (res.data) {
+    //       this.batchList.set(res.data);
+    //     } else {
+    //       this.batchList.set(res);
+    //     }
+    //   },
+    //   error: (err) => console.error('Erro ao carregar:', err),
+    // });
+    this.BatchService.getAllBatches().subscribe({
       next: (res: any) => {
-        if (res.data) {
-          this.batchList.set(res.data);
-        } else {
-          this.batchList.set(res);
-        }
+        this.batchList.set(res.data ?? res);
       },
-      error: (err) => console.error('Erro ao carregar:', err),
+      error: (err) => {
+        console.error(err);
+      },
     });
   }
 
@@ -41,18 +58,30 @@ export class BatchMaster implements OnInit {
   }
 
   onSaveBatch() {
-    this.http
-      .post('https://api.freeprojectapi.com/api/FeesTracking/batches', this.newBatchObj)
-      .subscribe({
-        next: (result: any) => {
-          alert('Lote criado com sucesso!');
-          this.newBatchObj = new Batch();
-          this.getAllBatches();
-        },
-        error: (error: any) => {
-          alert('Erro ao salvar lote');
-        },
-      });
+    debugger;
+    // this.http
+    //   .post('https://api.freeprojectapi.com/api/FeesTracking/batches', this.newBatchObj)
+    //   .subscribe({
+    //     next: (result: any) => {
+    //       alert('Lote criado com sucesso!');
+    //       this.newBatchObj = new Batch();
+    //       this.getAllBatches();
+    //     },
+    //     error: (error: any) => {
+    //       alert('Erro ao salvar lote');
+    //     },
+    //   });
+    this.BatchService.saveBatch(this.newBatchObj).subscribe({
+      next: (res) => {
+        alert('Lote criado com sucesso!');
+        this.newBatchObj = new Batch();
+        this.getAllBatches();
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Erro ao salvar lote');
+      },
+    });
   }
 
   onUpdateBatch() {
