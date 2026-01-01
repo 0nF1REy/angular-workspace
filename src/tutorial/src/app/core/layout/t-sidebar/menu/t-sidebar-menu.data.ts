@@ -46,4 +46,9 @@ export const SIDEBAR_MENU: TSidebarMenuItem[] = [
     icon: 'bi-trophy',
     route: 'competition',
   },
+  {
+    label: 'Signal Form',
+    icon: 'bi-ui-checks',
+    route: 'signal-form',
+  },
 ];

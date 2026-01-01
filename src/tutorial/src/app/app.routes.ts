@@ -61,6 +61,11 @@ export const routes: Routes = [
             (m) => m.ProjectCompetition
           ),
       },
+      {
+        path: 'signal-form',
+        loadComponent: () =>
+          import('./pages/signal-form-ex/signal-form-ex').then((m) => m.SignalFormEx),
+      },
 
       {
         path: '**',

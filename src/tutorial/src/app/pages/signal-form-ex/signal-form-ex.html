@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-3">
+    <input type="email" [field]="loginForm.email" />
+    <div>
+      <!-- @if(loginForm.email().invalid()) {
+      <span class="text-danger">Email não válido</span>
+      } -->
+      @if (loginForm.email().errors()) { @for (item of loginForm.email().errors(); track $index) {
+      <span class="text-danger d-block">{{ item.message }}</span>
+      } }
+    </div>
+  </div>
+  <div class="col-3">
+    <input type="password" [field]="loginForm.password" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    {{ loginForm().value() | json }}
+  </div>
+</div>
