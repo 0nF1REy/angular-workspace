@@ -1,12 +1,40 @@
 {
   "name": "snowfall-animation",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "An Angular application featuring a beautiful snowfall animation effect with customizable themes, perfect for creating winter and Christmas atmosphere on web pages",
+  "keywords": [
+    "angular",
+    "snowfall",
+    "animation",
+    "christmas",
+    "winter",
+    "canvas",
+    "particles",
+    "weather-effect",
+    "festive",
+    "seasonal",
+    "typescript",
+    "standalone-components"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
   },
   "prettier": {
     "printWidth": 100,
