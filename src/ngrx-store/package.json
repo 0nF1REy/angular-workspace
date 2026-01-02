@@ -1,7 +1,7 @@
 {
   "name": "ngrx-store",
   "version": "0.0.5",
-  "description": "Angular application demonstrating state management with NgRx, featuring product catalog, shopping cart, user authentication, and profile management.",
+  "description": "Angular application demonstrating state management with NgRx, featuring product catalog, shopping cart, user authentication, and profile management",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

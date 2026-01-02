@@ -1,7 +1,7 @@
 {
   "name": "modern",
   "version": "0.1.0",
-  "description": "A minimal Angular 21 project.",
+  "description": "A minimal Angular 21 project",
   "keywords": [
     "angular",
     "scss",
@@ -22,7 +22,6 @@
     "url": "https://github.com/0nF1REy"
   },
   "license": "MIT",
-  "homepage": "https://alan-ryan.vercel.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/0nF1REy/angular-workspace.git"

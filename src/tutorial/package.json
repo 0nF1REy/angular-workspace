@@ -1,7 +1,7 @@
 {
   "name": "tutorial",
   "version": "0.3.0",
-  "description": "A small Angular 21 tutorial application demonstrating components, data binding, and template variables.",
+  "description": "A small Angular 21 tutorial application demonstrating components, data binding, and template variables",
   "keywords": [
     "angular",
     "tutorial",
@@ -24,7 +24,6 @@
     "url": "https://github.com/0nF1REy"
   },
   "license": "MIT",
-  "homepage": "https://alan-ryan.vercel.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/0nF1REy/angular-workspace.git"
