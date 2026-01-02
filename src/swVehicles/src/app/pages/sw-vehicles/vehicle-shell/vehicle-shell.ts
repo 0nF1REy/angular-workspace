@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { VehicleList } from "../vehicle-list/vehicle-list";
 import { VehicleDetail } from "../vehicle-detail/vehicle-detail";
-import { CartTotal } from '../../cart/cart-total/cart-total';
+import { CartTotal } from '../../../cart/cart-total/cart-total';
 
 @Component({
     selector: 'sw-vehicle-shell',

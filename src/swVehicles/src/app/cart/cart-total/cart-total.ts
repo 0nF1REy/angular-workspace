@@ -3,7 +3,7 @@ import { DecimalPipe } from '@angular/common';
 
 import { CartService } from '../cart.service';
 import { FormsModule } from '@angular/forms';
-import { VehicleService } from '../../vehicles/vehicle.service';
+import { VehicleService } from '../../pages/sw-vehicles/vehicle.service';
 
 @Component({
   selector: 'sw-cart-total',

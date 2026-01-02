@@ -1,5 +1,5 @@
 import { Injectable, computed, effect, inject, linkedSignal } from "@angular/core";
-import { VehicleService } from "../vehicles/vehicle.service";
+import { VehicleService } from "../pages/sw-vehicles/vehicle.service";
 
 @Injectable({
   providedIn: 'root'

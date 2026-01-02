@@ -7,7 +7,7 @@ export const routes: Routes = [
   {
     path: 'vehicles',
     loadComponent: () =>
-      import('./vehicles/vehicle-shell/vehicle-shell').then((c) => c.VehicleShell),
+      import('./pages/sw-vehicles/vehicle-shell/vehicle-shell').then((c) => c.VehicleShell),
   },
   {
     path: 'subscribe',

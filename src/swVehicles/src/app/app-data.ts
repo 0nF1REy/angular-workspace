@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Vehicle } from './vehicles/vehicle';
-import { VehicleData } from './vehicles/vehicle-data';
+import { Vehicle } from './pages/sw-vehicles/vehicle';
+import { VehicleData } from './pages/sw-vehicles/vehicle-data';
 import { Film } from './films/film';
 import { FilmData } from './films/film-data';
 

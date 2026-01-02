@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { VehicleService } from '../vehicle.service';
-import { FilmService } from '../../films/film.service';
+import { FilmService } from '../../../films/film.service';
 
 @Component({
   selector: 'sw-vehicle-detail',
