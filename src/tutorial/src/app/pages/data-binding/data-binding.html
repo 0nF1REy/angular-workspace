@@ -1,34 +1,36 @@
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <span>
+<table class="data-table-container">
+  <tbody class="table-body">
+    <tr class="table-row-header">
+      <td class="table-cell">
+        <span class="text-accent-primary">
           {{ courseName }}
         </span>
       </td>
-      <td>
-        <strong>
+      <td class="table-cell">
+        <strong class="text-title-bold">
           {{ cityName }}
         </strong>
       </td>
     </tr>
-    <tr>
-      <td>
-        <input type="text" [value]="courseName" />
+    <tr class="table-row-input">
+      <td class="table-cell">
+        <input type="text" [value]="courseName" class="input-field-primary" />
       </td>
-      <td>
+      <td class="table-cell">
         <p [class]="className">Bacana</p>
       </td>
-      <td>
-        <input [type]="inputType" />
+      <td class="table-cell">
+        <input [type]="inputType" class="input-field-secondary" />
       </td>
     </tr>
-    <tr>
-      <td>
-        <button (click)="showWelcomeMessage()">Exibir Mensagem</button>
+    <tr class="table-row-action">
+      <td class="table-cell">
+        <button (click)="showWelcomeMessage()" class="action-button-neutral">
+          Exibir Mensagem
+        </button>
       </td>
-      <td>
-        <select (change)="onStateChanged()">
+      <td class="table-cell">
+        <select (change)="onStateChanged()" class="selection-control">
           <option>Buri</option>
           <option>Guapiara</option>
           <option>Indaiatuba</option>
@@ -36,15 +38,17 @@
         </select>
       </td>
     </tr>
-    <tr>
-      <td>
-        <input type="text" [(ngModel)]="courseName" />
+    <tr class="table-row-modifier">
+      <td class="table-cell">
+        <input type="text" [(ngModel)]="courseName" class="input-field-dark" />
       </td>
-      <td>
-        <button (click)="changeCourseName('Java')">Alterar para Java</button>
+      <td class="table-cell">
+        <button (click)="changeCourseName('Java')" class="action-button-accent">
+          Alterar para Java
+        </button>
       </td>
-      <td>
-        <button (click)="changeCourseName('C')">Alterar para C</button>
+      <td class="table-cell">
+        <button (click)="changeCourseName('C')" class="action-button-accent">Alterar para C</button>
       </td>
     </tr>
   </tbody>

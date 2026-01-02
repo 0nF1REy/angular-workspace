@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class DataBinding {
   courseName = 'Angular v-21 Full Course';
   cityName = 'Itapeva';
-  className = 'primary';
+  className = 'status-label-text';
   inputType = 'date';
 
   // function name() {
