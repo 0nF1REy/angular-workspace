@@ -15,6 +15,10 @@ export const routes: Routes = [
           import('./pages/sw-vehicles/vehicle-shell/vehicle-shell').then((m) => m.VehicleShell),
       },
       {
+        path: 'films',
+        loadComponent: () => import('./pages/sw-films/sw-films').then((m) => m.SwFilms),
+      },
+      {
         path: 'subscribe',
         loadComponent: () =>
           import('./pages/sw-newsletter/sw-subscribe-form/sw-subscribe-form').then(

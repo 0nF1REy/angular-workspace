@@ -1,8 +1,8 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Vehicle } from './pages/sw-vehicles/vehicle';
 import { VehicleData } from './pages/sw-vehicles/vehicle-data';
-import { Film } from './films/film';
-import { FilmData } from './films/film-data';
+import { Film } from './pages/sw-films/film';
+import { FilmData } from './pages/sw-films/film-data';
 
 // Classe necessária para a In Memory Web API
 export class AppData implements InMemoryDbService {

@@ -2,7 +2,7 @@ import { Vehicle } from "./vehicle";
 
 export class VehicleData {
 
-  // Source: 'https://swapi.py4e.com/api/vehicles'
+  // Fonte: 'https://swapi.py4e.com/api/vehicles'
   static vehicles: Vehicle[] = [
     {
       cargo_capacity: 50000,

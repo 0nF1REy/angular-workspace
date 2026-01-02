@@ -1,0 +1,35 @@
+<div class="display-panel-wrapper panel-yorozuya-style">
+  <div class="panel-header-accent">
+    {{ pageTitle }}
+  </div>
+  <div class="panel-content-body">
+    @if (vehicleFilms() && vehicleFilms().length > 0) {
+    <div class="films-list-container">
+      @for (film of vehicleFilms(); track film.episode_id) {
+      <div class="film-card">
+        <div class="film-header">
+          <span class="film-id">{{ film.episode_id }}</span>
+          <span class="film-title">{{ film.title }}</span>
+        </div>
+        <div class="film-details">
+          <p class="film-info"><strong>Diretor:</strong> {{ film.director }}</p>
+          <p class="film-info"><strong>Ano:</strong> {{ film.release_date | date : 'yyyy' }}</p>
+          <p class="film-info"><strong>Produtor:</strong> {{ film.producer }}</p>
+          <p class="film-synopsis">
+            {{ film.opening_crawl }}
+          </p>
+        </div>
+      </div>
+      }
+    </div>
+    } @else if (error()) {
+    <div class="error-message">
+      <p>{{ errorMessage() }}</p>
+    </div>
+    } @else {
+    <div class="empty-state">
+      <p>Selecione um veículo para visualizar seus filmes associados.</p>
+    </div>
+    }
+  </div>
+</div>
