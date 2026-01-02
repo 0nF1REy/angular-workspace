@@ -1,41 +1,51 @@
-<div class="row">
-  <div class="col-3">
+<div class="row section-container primary-theme">
+  <div class="col-3 data-item text-bold">
     courseName => {{ courseName }}
     <br />
     uppercase => {{ courseName | uppercase }}
   </div>
-  <div class="col-3">
+  <div class="col-3 data-item text-bold">
     courseName => {{ courseName }}
     <br />
     lowercase => {{ courseName | lowercase }}
   </div>
-  <div class="col-3">
+  <div class="col-3 data-item text-bold">
     courseDuration => {{ courseDuration }}
     <br />
     courseDuration => {{ courseDuration | titlecase }}
   </div>
 </div>
-<hr />
-<div class="row">
-  <div class="col-3">currentDate => {{ currentDate }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MM-yyyy' }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MM-yy' }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MMM-yy' }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MMMM-yy' }}</div>
-  <div class="col-2">currentDate => {{ currentDate | date : 'hh:mm:ss' }}</div>
+<hr class="separator-line" />
+<div class="row section-container secondary-theme">
+  <div class="col-3 data-label">currentDate => {{ currentDate }}</div>
+  <div class="col-2 data-label highlight-box">currentDate => {{ currentDate | date }}</div>
+  <div class="col-2 data-label highlight-box">
+    currentDate => {{ currentDate | date : 'dd-MM-yyyy' }}
+  </div>
+  <div class="col-2 data-label highlight-box">
+    currentDate => {{ currentDate | date : 'dd-MM-yy' }}
+  </div>
+  <div class="col-2 data-label highlight-box">
+    currentDate => {{ currentDate | date : 'dd-MMM-yy' }}
+  </div>
+  <div class="col-2 data-label highlight-box">
+    currentDate => {{ currentDate | date : 'dd-MMMM-yy' }}
+  </div>
+  <div class="col-2 data-label highlight-box">
+    currentDate => {{ currentDate | date : 'hh:mm:ss' }}
+  </div>
 </div>
-<hr />
-<div class="row">
-  <div class="col-3">rollNoArray => {{ rollNoArray }}</div>
-  <div class="col-3">slice => {{ rollNoArray | slice : 0 : 3 }}</div>
+<hr class="separator-line" />
+<div class="row section-container minimal-theme">
+  <div class="col-3 border-accent">rollNoArray => {{ rollNoArray }}</div>
+  <div class="col-3 border-accent">slice => {{ rollNoArray | slice : 0 : 3 }}</div>
 </div>
-<hr />
-<div class="row">
-  <div class="col-3">
+<hr class="separator-line" />
+<div class="row section-container board-theme">
+  <div class="col-3 content-panel">
     {{ studentObj }}
   </div>
-  <div class="col-4">
+  <div class="col-4 content-panel code-output">
     {{ studentObj | json }}
   </div>
 </div>
