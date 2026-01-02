@@ -6,18 +6,21 @@ import { FormsModule } from '@angular/forms';
   selector: 'sw-vehicle-list',
   imports: [FormsModule],
   templateUrl: './vehicle-list.html',
-  styleUrl: './vehicle-list.css'
+  styleUrl: './vehicle-list.css',
 })
 export class VehicleList {
-  pageTitle = 'Vehicles';
+  pageTitle = 'Veículos';
+
   private vehicleService = inject(VehicleService);
 
   // Component signals
   selectedVehicle = this.vehicleService.selectedVehicle;
 
   vehicles = this.vehicleService.vehiclesResource.value;
-  isLoading = this.vehicleService.vehiclesResource.isLoading;
-  error = this.vehicleService.vehiclesResource.error;
-  errorMessage = computed(() => this.error() ? this.error()?.message : '');
 
+  isLoading = this.vehicleService.vehiclesResource.isLoading;
+
+  error = this.vehicleService.vehiclesResource.error;
+
+  errorMessage = computed(() => (this.error() ? this.error()?.message : ''));
 }
