@@ -1,0 +1,212 @@
+.system-wrapper-layout {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, #dee2e6 1px, transparent 1px),
+    linear-gradient(#dee2e6 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.content-display-module,
+.content-form-module {
+  background: #ffffff;
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  height: 100%;
+}
+
+.main-data-shadow {
+  box-shadow: 10px 10px 0px #58b2dc;
+}
+
+.side-panel-accent {
+  box-shadow: 10px 10px 0px #e60012;
+}
+
+.header-banner-primary {
+  background-color: #58b2dc;
+  border-bottom: 3px solid #1a1a1a;
+  padding: 15px 20px;
+  color: #ffffff;
+}
+
+.header-banner-dark {
+  background-color: #1a1a1a;
+  border-bottom: 4px solid #e60012;
+  padding: 15px 20px;
+  color: #ffffff;
+}
+
+.header-title-text {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.helper-subtitle-text {
+  color: #f0f0f0 !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.data-management-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.column-header-text {
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 20px !important;
+  font-size: 0.95rem;
+  border-bottom: 3px solid #1a1a1a !important;
+}
+
+.data-record-item {
+  border-bottom: 1px solid #dee2e6;
+  transition: background 0.2s;
+}
+
+.data-record-item td {
+  padding: 18px !important;
+  font-size: 1rem;
+}
+
+.data-record-item:hover {
+  background-color: #f0faff;
+}
+
+.cell-id-marker {
+  font-family: 'Consolas', monospace;
+  font-weight: 900;
+  color: #e60012;
+  font-size: 1.05rem;
+}
+
+.cell-primary-text {
+  font-weight: 700;
+  color: #333;
+  font-size: 1rem;
+}
+
+.cell-secondary-text {
+  font-weight: 700;
+  color: #5a5757;
+  font-size: 1rem;
+}
+
+.action-btn-edit {
+  border: 2px solid #1a1a1a;
+  background: #ffffff;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  font-weight: bold;
+}
+
+.action-btn-edit:hover {
+  background: #58b2dc;
+  color: white;
+  transform: translate(-1px, -1px);
+}
+
+.action-btn-delete {
+  border: 2px solid #1a1a1a;
+  background: #ffffff;
+  color: #e60012;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  font-weight: bold;
+}
+
+.action-btn-delete:hover {
+  background: #e60012;
+  color: white;
+  transform: translate(-1px, -1px);
+}
+
+.control-label-bold {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  border-left: 4px solid #58b2dc;
+  padding-left: 8px;
+}
+
+.input-control-styled {
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  padding: 12px;
+  font-weight: 600;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s;
+}
+
+.input-control-styled:focus {
+  box-shadow: 5px 5px 0px #58b2dc;
+  border-color: #1a1a1a;
+  outline: none;
+}
+
+.module-body-container {
+  padding: 25px;
+}
+
+.btn-trigger-submit {
+  background-color: #e60012;
+  color: white;
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  font-weight: 900;
+  padding: 12px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #1a1a1a;
+}
+
+.btn-trigger-update {
+  background-color: #d4af37;
+  color: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  font-weight: 900;
+  padding: 12px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #1a1a1a;
+}
+
+.btn-trigger-cancel {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.btn-trigger-submit:hover,
+.btn-trigger-update:hover {
+  filter: brightness(1.1);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #1a1a1a;
+}
+
+.btn-trigger-submit:active,
+.btn-trigger-update:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+.status-empty-row {
+  background: #ffffff;
+}
+
+.feedback-empty-text {
+  border: 2px dashed #dee2e6;
+  color: #adb5bd;
+  font-weight: 700;
+  text-transform: uppercase;
+}
