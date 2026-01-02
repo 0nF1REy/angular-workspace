@@ -1,46 +1,91 @@
-/* Cart Total grid and color styles */
-.row {
-	display: grid;
-	grid-template-columns: .7fr 1fr;
-	align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+.cart-summary-container {
+  background-color: #ffffff;
+  border: 4px solid #1a1a1a;
+  border-radius: 0;
+  box-shadow: 10px 10px 0px #e60012;
+  overflow: hidden;
 }
 
-.row-label {
-  padding: 3px;
-  text-align: left;
-  grid-column: 1 / 2;
+.cart-summary-header {
+  background-color: #1a1a1a !important;
+  color: #d4af37 !important;
+  padding: 15px 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 4px solid #d4af37;
+  text-align: center;
 }
 
-.row-value {
-  font-weight: bold;
-  padding: 3px;
-  text-align: right;
-  grid-column: 2 / 3;
+.cart-summary-body {
+  padding: 20px;
+  background-image: linear-gradient(45deg, #f0faff 25%, transparent 25%),
+    linear-gradient(-45deg, #f0faff 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #dee2e6;
+}
+
+.cart-item-label {
+  font-weight: 800;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-left: 4px solid #58b2dc;
+  padding-left: 10px;
+}
+
+.cart-item-value {
+  font-weight: 700;
+  color: #333;
+  font-family: 'Consolas', monospace;
+}
+
+.quantity-control-field {
+  border: 2px solid #1a1a1a;
+  padding: 5px;
+  width: 70px;
+  font-weight: 900;
+  text-align: center;
+  box-shadow: 3px 3px 0px #58b2dc;
+}
+
+.quantity-control-field:focus {
+  outline: none;
+  box-shadow: 3px 3px 0px #e60012;
+}
+
+.status-free-badge {
+  background-color: #58b2dc;
+  color: #ffffff;
+  padding: 2px 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transform: rotate(-2deg);
+}
+
+.total-highlight-section {
+  border-top: 4px solid #1a1a1a;
+  border-bottom: none;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.total-amount-highlight {
+  font-size: 1.5rem;
+  color: #e60012;
+  text-shadow: 2px 2px 0px #1a1a1a;
+  font-weight: 900;
 }
 
 .cell-bold {
-  font-weight: var(--font-weight-bold);
+  color: #1a1a1a;
 }
-
-.qty-input {
-	font-size: var(--font-size-base);
-  width: 100px;
-	text-align: right;
-	border: 1px solid var(--base-color);
-	border-radius: 4px;
-	padding: 2px 6px;
-}
-
-.free {
-	color: var(--success-color);
-	font-weight: bold;
-}
-
-.total {
-	font-weight: bold;
-	font-size: larger;
-  color: var(--rebel-orange);
-}
-
