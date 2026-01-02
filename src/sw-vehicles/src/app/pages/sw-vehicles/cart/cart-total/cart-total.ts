@@ -9,13 +9,13 @@ import { VehicleService } from '../../vehicle.service';
   selector: 'sw-cart-total',
   imports: [DecimalPipe, FormsModule],
   templateUrl: './cart-total.html',
-  styleUrl: './cart-total.css'
+  styleUrl: './cart-total.css',
 })
 export class CartTotal {
   private cartService = inject(CartService);
   private vehicleService = inject(VehicleService);
 
-  // Signals used in the UI
+  // Signals usados na UI
   selectedVehicle = this.vehicleService.selectedVehicle;
   price = this.cartService.price;
   quantity = this.cartService.quantity;
@@ -24,5 +24,4 @@ export class CartTotal {
   deliveryFee = this.cartService.deliveryFee;
   tax = this.cartService.tax;
   totalPrice = this.cartService.totalPrice;
-
 }

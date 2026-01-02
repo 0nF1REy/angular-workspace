@@ -1,45 +1,53 @@
 @if (vehicle()) {
-<div class="card">
-  <div class="card-header">
+<div class="card vehicle-detail-container">
+  <div class="card-header detail-header-banner">
     {{ pageTitle() }}
   </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="row-label">Name:</div>
-      <div class="row-value">{{ vehicle()?.name }}</div>
-    </div>
-    <div class="row">
-      <div class="row-label">Classification:</div>
-      <div class="row-value">{{ vehicle()?.vehicle_class }}</div>
-    </div>
-    <div class="row">
-      <div class="row-label">Price (in credits):</div>
-      <div class="row-value">{{ vehicle()?.cost_in_credits | number : '1.2-2' }}</div>
-    </div>
-    <div class="row">
-      <div class="row-label">Crew:</div>
-      <div class="row-value">{{ vehicle()?.crew }}</div>
-    </div>
-    <div class="row">
-      <div class="row-label">Passengers:</div>
-      <div class="row-value">{{ vehicle()?.passengers }}</div>
-    </div>
-    <div class="row">
-      <div class="row-label">Cargo Capacity:</div>
-      <div class="row-value">{{ vehicle()?.cargo_capacity }}</div>
+  <div class="card-body detail-body-layout">
+    <!-- Coluna da Esquerda: Informações Técnicas -->
+    <div class="detail-info-column">
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Nome:</div>
+        <div class="row-value detail-value-text">{{ vehicle()?.name }}</div>
+      </div>
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Classificação:</div>
+        <div class="row-value detail-value-text">{{ vehicle()?.vehicle_class }}</div>
+      </div>
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Preço (créditos):</div>
+        <div class="row-value detail-value-text">
+          {{ vehicle()?.cost_in_credits | number : '1.2-2' }}
+        </div>
+      </div>
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Tripulação:</div>
+        <div class="row-value detail-value-text">{{ vehicle()?.crew }}</div>
+      </div>
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Passageiros:</div>
+        <div class="row-value detail-value-text">{{ vehicle()?.passengers }}</div>
+      </div>
+      <div class="row detail-info-row">
+        <div class="row-label detail-label-accent">Carga:</div>
+        <div class="row-value detail-value-text">{{ vehicle()?.cargo_capacity }}</div>
+      </div>
+
+      @if (errorMessage()) {
+      <div class="alert alert-danger detail-error-signboard">
+        {{ errorMessage() }}
+      </div>
+      }
     </div>
 
-    @if (errorMessage()) {
-    <div class="alert alert-danger">
-      {{ errorMessage() }}
-    </div>
-    } @else if (vehicleFilms()) {
-    <div class="row">
-      <div class="row-label">Films:</div>
-      <div class="row-value">
-        <ul class="list-group">
+    <!-- Coluna da Direita: Lista de Filmes -->
+    @if (vehicleFilms()) {
+    <div class="detail-films-column">
+      <div class="detail-label-accent films-title-tag">Filmes Relacionados:</div>
+      <div class="detail-films-wrapper">
+        <ul class="list-group films-list-container">
           @for (film of vehicleFilms(); track film) {
-          <li class="list-group-item">
+          <li class="list-group-item film-item-row">
             {{ film | translate }}
           </li>
           }

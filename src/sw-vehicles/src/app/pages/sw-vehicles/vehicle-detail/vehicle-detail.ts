@@ -16,7 +16,7 @@ export class VehicleDetail {
 
   // Signals usados no template
   vehicle = this.vehicleService.selectedVehicle;
-  pageTitle = computed(() => (this.vehicle() ? `Detail for: ${this.vehicle()?.name}` : ''));
+  pageTitle = computed(() => (this.vehicle() ? `Detalhes de: ${this.vehicle()?.name}` : ''));
 
   vehicleFilms = this.filmService.vehicleFilmsResource.value;
   error = this.filmService.vehicleFilmsResource.error;
