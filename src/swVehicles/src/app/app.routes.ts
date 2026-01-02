@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { PageNotFound } from './page-not-found';
-import { Home } from './home/home';
+import { SwHome } from './pages/sw-home/sw-home';
 
 export const routes: Routes = [
-  { path: 'home', component: Home },
+  { path: 'home', component: SwHome },
   {
     path: 'vehicles',
     loadComponent: () =>
