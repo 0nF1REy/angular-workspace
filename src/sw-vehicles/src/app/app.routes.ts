@@ -18,8 +18,15 @@ export const routes: Routes = [
         path: 'subscribe',
         loadComponent: () =>
           import('./pages/sw-newsletter/sw-subscribe-form/sw-subscribe-form').then(
-            (c) => c.SwSubscribeForm
+            (m) => m.SwSubscribeForm
           ),
+      },
+      {
+        path: 'subscribe-02',
+        loadComponent: () =>
+          import(
+            './pages/sw-newsletter/sw-signal-forms-conditional-validation/sw-signal-forms-conditional-validation'
+          ).then((m) => m.SwSignalFormsConditionalValidation),
       },
       {
         path: '**',

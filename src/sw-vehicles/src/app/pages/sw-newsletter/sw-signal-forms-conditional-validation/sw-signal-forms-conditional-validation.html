@@ -1,0 +1,137 @@
+<div class="card">
+  <div class="card-header">Inscreva-se em nosso Boletim Informativo</div>
+  <div class="card-body">
+    <form autocomplete="off">
+      <div class="row">
+        <label class="row-label" for="firstNameId"> Primeiro Nome </label>
+        <div class="row-value">
+          <input
+            type="text"
+            class="form-control"
+            [field]="subscribeForm.firstName"
+            id="firstNameId"
+            placeholder="Primeiro Nome"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="row-label" for="lastNameId"> Sobrenome </label>
+        <div class="row-value">
+          <input
+            type="text"
+            class="form-control"
+            [field]="subscribeForm.lastName"
+            id="lastNameId"
+            placeholder="Sobrenome"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="row-label" for="emailId">
+          Email @if (subscribeForm.email().required()) {
+          <span class="text-danger">*</span>
+          }
+        </label>
+        <div class="row-value">
+          <input
+            type="email"
+            class="form-control"
+            [field]="subscribeForm.email"
+            id="emailId"
+            placeholder="Email"
+          />
+        </div>
+        @if (subscribeForm.email().invalid() && subscribeForm.email().touched()) {
+        <div class="alert alert-danger">
+          @for (error of subscribeForm.email().errors(); track error.kind) {
+          <div>{{ error.message }}</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="row">
+        <label class="row-label" for="phoneId">
+          Telefone @if (subscribeForm.phone().required()) {
+          <span class="text-danger">*</span>
+          }
+        </label>
+        <div class="row-value">
+          <input
+            type="tel"
+            class="form-control"
+            [field]="subscribeForm.phone"
+            id="phoneId"
+            placeholder="Número de Celular"
+          />
+        </div>
+        @if (subscribeForm.phone().invalid() && subscribeForm.phone().touched()) {
+        <div class="alert alert-danger">
+          @for (error of subscribeForm.phone().errors(); track error.kind) {
+          <div>{{ error.message }}</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="row">
+        <label class="row-label"> Enviar via </label>
+        <div class="row-value">
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              [field]="subscribeForm.sendViaEmail"
+              id="sendViaEmailId"
+            />
+            <label class="form-check-label" for="sendViaEmailId"> Email </label>
+          </div>
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              [field]="subscribeForm.sendViaText"
+              id="sendViaTextId"
+            />
+            <label class="form-check-label" for="sendViaTextId"> SMS </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="row-label" for="yearsAsFanId"> Anos como Fã </label>
+        <div class="row-value">
+          <input
+            type="number"
+            class="form-control"
+            [field]="subscribeForm.yearsAsFan"
+            id="yearsAsFanId"
+            placeholder="Há quantos anos você é fã de Star Wars?"
+          />
+        </div>
+        @if (subscribeForm.yearsAsFan().invalid() && subscribeForm.yearsAsFan().touched()) {
+        <div class="alert alert-danger">
+          @for (error of subscribeForm.yearsAsFan().errors(); track error.kind) {
+          <div>{{ error.message }}</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="row">
+        <div class="row-value">
+          <button
+            type="button"
+            title="Certifique-se de que o formulário é válido e que os campos obrigatórios foram preenchidos antes de se inscrever"
+            class="btn btn-primary"
+          >
+            Inscrever-se
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
