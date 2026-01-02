@@ -1,9 +1,17 @@
+import {
+  DatePipe,
+  JsonPipe,
+  LowerCasePipe,
+  SlicePipe,
+  TitleCasePipe,
+  UpperCasePipe,
+} from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'variables',
   standalone: true,
-  imports: [],
+  imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, SlicePipe, JsonPipe],
   templateUrl: './variables.html',
   styleUrl: './variables.css',
 })
@@ -13,6 +21,7 @@ export class Variables {
 
   // string || number || boolean || date
   courseName: string = 'Angular 21';
+  courseDuration = 'Esse curso possui duração de 3 meses';
   currentVersion = 'v.21';
 
   rollNo: number = 121;
@@ -40,7 +49,7 @@ export class Variables {
   ];
 
   constructor() {
-    this.courseName = '2233';
+    // this.courseName = '2233';
 
     this.rollNo = 234;
   }

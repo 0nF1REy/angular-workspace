@@ -66,6 +66,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/signal-form-ex/signal-form-ex').then((m) => m.SignalFormEx),
       },
+      {
+        path: 'life-cycle',
+        loadComponent: () =>
+          import('./pages/life-cycle-ex/life-cycle-ex').then((m) => m.LifeCycleEx),
+      },
 
       {
         path: '**',

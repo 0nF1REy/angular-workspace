@@ -51,4 +51,9 @@ export const SIDEBAR_MENU: TSidebarMenuItem[] = [
     icon: 'bi-ui-checks',
     route: 'signal-form',
   },
+  {
+    label: 'Life Cycle',
+    icon: 'bi-arrow-repeat',
+    route: 'life-cycle',
+  },
 ];

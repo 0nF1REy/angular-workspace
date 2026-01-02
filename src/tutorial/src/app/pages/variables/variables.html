@@ -1,7 +1,41 @@
-<p>variables works!</p>
-
-<input type="text" placeholder="Digite o seu nome" />
-
-<br />
-
-<button type="button">Salvar</button>
+<div class="row">
+  <div class="col-3">
+    courseName => {{ courseName }}
+    <br />
+    uppercase => {{ courseName | uppercase }}
+  </div>
+  <div class="col-3">
+    courseName => {{ courseName }}
+    <br />
+    lowercase => {{ courseName | lowercase }}
+  </div>
+  <div class="col-3">
+    courseDuration => {{ courseDuration }}
+    <br />
+    courseDuration => {{ courseDuration | titlecase }}
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-3">currentDate => {{ currentDate }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MM-yyyy' }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MM-yy' }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MMM-yy' }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date : 'dd-MMMM-yy' }}</div>
+  <div class="col-2">currentDate => {{ currentDate | date : 'hh:mm:ss' }}</div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-3">rollNoArray => {{ rollNoArray }}</div>
+  <div class="col-3">slice => {{ rollNoArray | slice : 0 : 3 }}</div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-3">
+    {{ studentObj }}
+  </div>
+  <div class="col-4">
+    {{ studentObj | json }}
+  </div>
+</div>

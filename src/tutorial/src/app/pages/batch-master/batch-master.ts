@@ -22,10 +22,13 @@ export class BatchMaster implements OnInit {
   masterSr = inject(Master); // angular 16
   BatchService = inject(BatchService);
 
-  ngOnInit(): void {
+  constructor() {
     debugger;
     const courseName = this.masterSr.courseName;
     const result = this.masterSr.addTwoNum(22, 44);
+  }
+
+  ngOnInit(): void {
     this.getAllBatches();
   }
 
