@@ -1,0 +1,94 @@
+.data-display-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 5px solid #58b2dc;
+  background-image: linear-gradient(
+    135deg,
+    #f0faff 25%,
+    transparent 25%,
+    transparent 50%,
+    #f0faff 50%,
+    #f0faff 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 40px 40px;
+}
+
+.info-block {
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.status-line {
+  font-weight: 800;
+  color: #2c3e50;
+  border-left: 6px solid #58b2dc;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.numeric-highlight {
+  background-color: #1a1a1a;
+  color: #d4af37;
+  text-align: center;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  border: 2px solid #d4af37;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.profile-card {
+  background: #ffffff;
+  border: 3px solid #333;
+  position: relative;
+  font-weight: 700;
+  box-shadow: 5px 5px 0px #333;
+}
+
+.profile-card::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #e60012;
+  border-radius: 50%;
+}
+
+.collection-list {
+  color: #555;
+  font-style: italic;
+  border-bottom: 2px dashed #58b2dc;
+}
+
+.action-container {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.btn-primary-action {
+  background-color: #e60012;
+  color: white;
+  border: 3px solid #333;
+  padding: 10px 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s;
+  box-shadow: 6px 6px 0px #333;
+}
+
+.btn-primary-action:hover {
+  background-color: #ff1a1a;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #333;
+}
+
+.btn-primary-action:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #333;
+}

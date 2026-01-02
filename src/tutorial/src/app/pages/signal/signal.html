@@ -1,19 +1,19 @@
-<div class="row">
-  <div class="col-3">courseName => {{ courseName() }}</div>
-  <div class="col-2">
+<div class="row data-display-container theme-yorozuya">
+  <div class="col-3 info-block status-line">courseName => {{ courseName() }}</div>
+  <div class="col-2 info-block numeric-highlight">
     {{ rollNo() }}
   </div>
-  <div class="col-3">
+  <div class="col-3 info-block profile-card">
     {{ student().name }}
     <br />
     {{ student().city }}
   </div>
-  <div class="col-2">
+  <div class="col-2 info-block collection-list">
     {{ cityList() }}
   </div>
 </div>
-<div class="row">
+<div class="row action-container">
   <div class="col-3">
-    <button (click)="changeCourse()">Alterar Curso</button>
+    <button (click)="changeCourse()" class="btn-primary-action">Alterar Curso</button>
   </div>
 </div>
