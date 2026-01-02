@@ -1,49 +1,60 @@
-<div class="container-fluid px-4">
-  <div class="row">
-    <!-- Table Column (col-7) -->
-    <div class="col-7">
-      <div class="card shadow-sm">
-        <div class="card-header bg-warning text-dark">
-          <h5 class="mb-0">Lista de competições</h5>
+<div class="container-fluid px-4 competition-main-wrapper">
+  <div class="row g-4">
+    <div class="col-12 col-lg-7">
+      <div class="card competition-card-table h-100">
+        <div class="card-header card-header-competition-list">
+          <h5 class="mb-0 competition-header-title">Lista de competições</h5>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-hover align-middle">
-              <thead class="table table-sm table-light">
+        <div class="card-body competition-form-body">
+          <div class="table-responsive competition-scroll-container">
+            <table class="table competition-table-wrapper">
+              <thead>
                 <tr>
-                  <th>Sr</th>
-                  <th>Título</th>
-                  <th>Descrição</th>
-                  <th>Status</th>
-                  <th class="text-center">Ações</th>
+                  <th class="competition-table-header">Sr</th>
+                  <th class="competition-table-header">Título</th>
+                  <th class="competition-table-header">Descrição</th>
+                  <th class="competition-table-header">Status</th>
+                  <th class="competition-table-header text-center">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 @for (item of competitionList(); track $index) {
-                <tr style="height: 50px">
-                  <td>{{ $index + 1 }}</td>
-                  <td style="max-width: 170px" title="{{ item.title }}">
+                <tr class="competition-table-row">
+                  <td class="competition-cell-index">{{ $index + 1 }}</td>
+                  <td
+                    class="competition-cell-title"
+                    style="max-width: 170px"
+                    title="{{ item.title }}"
+                  >
                     {{ item.title }}
                   </td>
-                  <td class="text-truncate" style="max-width: 200px" title="{{ item.description }}">
+                  <td
+                    class="competition-cell-description text-truncate"
+                    style="max-width: 200px"
+                    title="{{ item.description }}"
+                  >
                     {{ item.description }}
                   </td>
-                  <td>{{ item.status }}</td>
-                  <td>
-                    <button
-                      class="btn btn-sm btn-outline-primary"
-                      title="Editar"
-                      (click)="onEdit(item)"
-                    >
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button
-                      class="btn btn-sm btn-outline-danger"
-                      title="Excluir"
-                      (click)="deleteCompetition(item.competitionId)"
-                    >
-                      <i class="bi bi-trash"></i>
-                    </button>
+                  <td class="competition-cell-status">
+                    <span class="status-badge-accent">{{ item.status }}</span>
+                  </td>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center gap-2 action-container-padding">
+                      <button
+                        class="btn btn-sm competition-btn-edit"
+                        title="Editar"
+                        (click)="onEdit(item)"
+                      >
+                        <i class="bi bi-pencil-square"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm competition-btn-delete"
+                        title="Excluir"
+                        (click)="deleteCompetition(item.competitionId)"
+                      >
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 }
@@ -54,19 +65,18 @@
       </div>
     </div>
 
-    <!-- Form Column (col-5) -->
-    <div class="col-5">
-      <div class="card shadow-sm">
-        <div class="card-header bg-warning text-dark">
-          <h5 class="mb-0">Formulário de competição</h5>
+    <div class="col-12 col-lg-5">
+      <div class="card competition-card-form">
+        <div class="card-header card-header-competition-form">
+          <h5 class="mb-0 competition-header-title">Formulário de competição</h5>
         </div>
-        <div class="card-body">
+        <div class="card-body competition-form-body">
           <form [formGroup]="projectForm">
             <div class="mb-3">
-              <label for="title" class="form-label">Título</label>
+              <label for="title" class="form-label competition-form-label">Título</label>
               <input
                 type="text"
-                class="form-control"
+                class="form-control competition-form-input"
                 id="title"
                 placeholder="Digite o título da competição"
                 formControlName="title"
@@ -74,9 +84,9 @@
             </div>
 
             <div class="mb-3">
-              <label for="description" class="form-label">Descrição</label>
+              <label for="description" class="form-label competition-form-label">Descrição</label>
               <textarea
-                class="form-control"
+                class="form-control competition-form-textarea"
                 id="description"
                 rows="3"
                 placeholder="Descreva a competição..."
@@ -86,19 +96,23 @@
 
             <div class="row">
               <div class="col-6 mb-3">
-                <label for="startDate" class="form-label">Data de início</label>
+                <label for="startDate" class="form-label competition-form-label"
+                  >Data de início</label
+                >
                 <input
                   type="datetime-local"
-                  class="form-control"
+                  class="form-control competition-form-input"
                   id="startDate"
                   formControlName="startDate"
                 />
               </div>
               <div class="col-6 mb-3">
-                <label for="endDate" class="form-label">Data de término</label>
+                <label for="endDate" class="form-label competition-form-label"
+                  >Data de término</label
+                >
                 <input
                   type="datetime-local"
-                  class="form-control"
+                  class="form-control competition-form-input"
                   id="endDate"
                   formControlName="endDate"
                 />
@@ -106,29 +120,33 @@
             </div>
 
             <div class="mb-3">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status" formControlName="status">
+              <label for="status" class="form-label competition-form-label">Status</label>
+              <select
+                class="form-select competition-form-select"
+                id="status"
+                formControlName="status"
+              >
                 <option value="Draft">Rascunho</option>
                 <option value="Active">Ativa</option>
                 <option value="Completed">Concluída</option>
               </select>
             </div>
-            <div>
+            <div class="action-footer-spacing">
               @if(projectForm.controls['competitionId'].value === 0) {
-              <button type="button" (click)="saveCompetition()" class="btn btn-primary">
+              <button type="button" (click)="saveCompetition()" class="btn competition-btn-save">
                 Salvar
               </button>
               } @else {
-              <button type="button" (click)="updateCompetition()" class="btn btn-warning">
+              <button
+                type="button"
+                (click)="updateCompetition()"
+                class="btn competition-btn-update"
+              >
                 Atualizar
               </button>
               }
 
-              <button
-                type="button"
-                (click)="resetForm()"
-                class="btn btn-outline-secondary text-muted"
-              >
+              <button type="button" (click)="resetForm()" class="btn competition-btn-reset">
                 Resetar
               </button>
             </div>

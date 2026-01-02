@@ -1,0 +1,195 @@
+.competition-main-wrapper {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, #dee2e6 1px, transparent 1px),
+    linear-gradient(#dee2e6 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding-top: 20px;
+}
+
+.competition-card-table,
+.competition-card-form {
+  background: #ffffff;
+  border: 4px solid #1a1a1a;
+}
+
+.competition-card-table {
+  min-height: 600px;
+  box-shadow: 12px 12px 0px #58b2dc;
+}
+
+.competition-card-form {
+  box-shadow: 12px 12px 0px #e60012;
+}
+
+.card-header-competition-list {
+  background-color: #58b2dc !important;
+  border-bottom: 4px solid #1a1a1a;
+  padding: 15px 20px;
+  color: #ffffff !important;
+}
+
+.card-header-competition-form {
+  background-color: #1a1a1a !important;
+  border-bottom: 4px solid #e60012;
+  padding: 15px 20px;
+  color: #ffffff !important;
+}
+
+.competition-header-title {
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.competition-scroll-container {
+  overflow: visible !important;
+}
+
+.competition-table-wrapper {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.competition-table-header {
+  background-color: #f8f9fa;
+  color: #1a1a1a !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  padding: 18px !important;
+  font-size: 0.9rem;
+  border-bottom: 4px solid #1a1a1a !important;
+}
+
+.competition-table-row {
+  transition: background 0.2s;
+}
+
+.competition-table-row td {
+  padding: 15px !important;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.competition-table-row:hover {
+  background-color: #f0faff;
+}
+
+.competition-cell-index {
+  font-family: 'Consolas', monospace;
+  font-weight: 900;
+  color: #e60012;
+}
+
+.status-badge-accent {
+  background: #1a1a1a;
+  color: #d4af37;
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-left: 3px solid #d4af37;
+}
+
+.action-container-padding {
+  padding: 5px 0;
+}
+
+.competition-btn-edit,
+.competition-btn-delete {
+  border: 2px solid #1a1a1a !important;
+  background: #ffffff !important;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  width: 38px;
+  height: 38px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  overflow: visible !important;
+  transition: all 0.1s;
+}
+
+.competition-btn-edit i,
+.competition-btn-delete i {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: block;
+}
+
+.competition-btn-edit {
+  color: #58b2dc !important;
+}
+
+.competition-btn-delete {
+  color: #e60012 !important;
+}
+
+.competition-btn-edit:hover {
+  background: #58b2dc !important;
+  color: white !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.competition-btn-delete:hover {
+  background: #e60012 !important;
+  color: white !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.competition-form-label {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  border-left: 4px solid #58b2dc;
+  padding-left: 8px;
+}
+
+.competition-form-input,
+.competition-form-textarea,
+.competition-form-select {
+  border: 3px solid #1a1a1a !important;
+  padding: 10px !important;
+  font-weight: 600;
+}
+
+.competition-btn-save {
+  background-color: #e60012 !important;
+  color: white !important;
+  border: 3px solid #1a1a1a !important;
+  font-weight: 900;
+  padding: 10px 20px !important;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.competition-btn-update {
+  background-color: #d4af37 !important;
+  color: #1a1a1a !important;
+  border: 3px solid #1a1a1a !important;
+  font-weight: 900;
+  padding: 10px 20px !important;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.competition-btn-reset {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 3px solid #1a1a1a !important;
+  font-weight: 800;
+  padding: 10px 20px !important;
+  text-transform: uppercase;
+}
+
+.action-footer-spacing {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px dashed #dee2e6;
+}
