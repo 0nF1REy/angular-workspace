@@ -1,0 +1,110 @@
+.registration-form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-left: 12px solid #58b2dc;
+  border-right: 4px solid #333;
+  border-top: 4px solid #333;
+  border-bottom: 4px solid #333;
+  box-shadow: 10px 10px 0px #333;
+  background-image: radial-gradient(#58b2dc 0.5px, transparent 0.5px);
+  background-size: 15px 15px;
+}
+
+.field-label-accent {
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial Black', sans-serif;
+  border-bottom: 2px solid #e60012;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.field-input-primary {
+  border: 3px solid #333;
+  border-radius: 0;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.field-input-primary:focus {
+  border-color: #58b2dc;
+  box-shadow: 4px 4px 0px #58b2dc;
+  outline: none;
+}
+
+.validation-error-container {
+  margin-top: 10px;
+  background-color: #e60012;
+  color: white !important;
+  padding: 2px 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  display: inline-block;
+  transform: skew(-10deg);
+}
+
+.helper-text-muted {
+  font-style: italic;
+  font-weight: 700;
+  color: #555 !important;
+}
+
+.submit-action-button {
+  background-color: #58b2dc;
+  color: #fff;
+  border: 3px solid #333;
+  border-radius: 0;
+  font-weight: 900;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #333;
+  transition: all 0.1s;
+}
+
+.submit-action-button:hover:not(:disabled) {
+  background-color: #46a1cb;
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #333;
+}
+
+.submit-action-button:disabled {
+  background-color: #cccccc;
+  border-color: #999999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.reset-action-button {
+  background-color: #1a1a1a;
+  color: #d4af37;
+  border: 3px solid #d4af37;
+  border-radius: 0;
+  font-weight: 900;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #333;
+}
+
+.reset-action-button:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.action-button-row {
+  margin-top: 20px;
+  border-top: 3px dashed #333;
+  padding-top: 20px;
+}
+
+.form-field-group {
+  margin-bottom: 15px;
+}
+
+.field-input-primary::placeholder {
+  color: #bbb;
+  font-weight: 400;
+}

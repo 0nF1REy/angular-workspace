@@ -1,80 +1,97 @@
-<form #formData="ngForm">
-  <div class="row g-3">
-    <div class="col-md-6">
-      <label for="name" class="form-label">Nome completo</label>
+<form #formData="ngForm" class="registration-form-container">
+  <div class="row g-3 form-grid-layout">
+    <div class="col-md-6 form-field-group">
+      <label for="name" class="form-label field-label-accent">Nome completo</label>
       <input
         id="name"
         name="name"
         required
         minlength="5"
-        class="form-control"
+        class="form-control field-input-primary"
         type="text"
         placeholder="Alan Ryan"
         #name="ngModel"
         [(ngModel)]="userObj.name"
       />
       @if (name.touched || name.dirty) {
-
-      <div class="text-danger">
+      <div>
         @if(name.errors?.['required']) {
-        <span> Obrigatório </span>
+        <span class="validation-error-container"> Obrigatório </span>
         } @else if (name.errors?.['minlength']) {
-        <span> Pelo menos 5 caracteres </span>
+        <span class="validation-error-container"> Pelo menos 5 caracteres </span>
         }
       </div>
       }
     </div>
 
-    <div class="col-md-6">
-      <label for="username" class="form-label">Nome de usuário</label>
+    <div class="col-md-6 form-field-group">
+      <label for="username" class="form-label field-label-accent">Nome de usuário</label>
       <input
         id="username"
         name="username"
-        class="form-control"
+        class="form-control field-input-primary"
         type="text"
         placeholder="0nF1REy"
         [(ngModel)]="userObj.username"
       />
     </div>
 
-    <div class="col-md-6">
-      <label for="email" class="form-label">Email</label>
+    <div class="col-md-6 form-field-group">
+      <label for="email" class="form-label field-label-accent">Email</label>
       <input
         id="email"
         name="email"
-        class="form-control"
+        class="form-control field-input-primary"
         type="email"
         placeholder="nome@examplo.com"
         [(ngModel)]="userObj.email"
       />
     </div>
 
-    <div class="col-md-6">
-      <label for="password" class="form-label">Senha</label>
+    <div class="col-md-6 form-field-group">
+      <label for="password" class="form-label field-label-accent">Senha</label>
       <input
         id="password"
         name="password"
-        class="form-control"
+        class="form-control field-input-primary"
         type="password"
         placeholder="••••••••"
         [(ngModel)]="userObj.password"
       />
-      <div class="form-text text-muted">Pelo menos 6 caracteres</div>
+      <div class="form-text text-muted helper-text-muted">Pelo menos 6 caracteres</div>
     </div>
 
-    <div class="col-md-6">
-      <label for="city" class="form-label">Cidade</label>
-      <input id="city" name="city" class="form-control" type="text" [(ngModel)]="userObj.city" />
+    <div class="col-md-6 form-field-group">
+      <label for="city" class="form-label field-label-accent">Cidade</label>
+      <input
+        id="city"
+        name="city"
+        class="form-control field-input-primary"
+        type="text"
+        [(ngModel)]="userObj.city"
+      />
     </div>
 
-    <div class="col-md-6">
-      <label for="state" class="form-label">Estado</label>
-      <input id="state" name="state" class="form-control" type="text" [(ngModel)]="userObj.state" />
+    <div class="col-md-6 form-field-group">
+      <label for="state" class="form-label field-label-accent">Estado</label>
+      <input
+        id="state"
+        name="state"
+        class="form-control field-input-primary"
+        type="text"
+        [(ngModel)]="userObj.state"
+      />
     </div>
 
-    <div class="col-12 d-flex gap-2">
-      <button class="btn btn-primary" type="submit" [disabled]="formData.invalid">Salvar</button>
-      <button class="btn btn-outline-secondary" type="reset">Resetar</button>
+    <div class="col-12 d-flex gap-2 action-button-row">
+      <button
+        class="btn btn-primary submit-action-button"
+        type="submit"
+        [disabled]="formData.invalid"
+      >
+        Salvar
+      </button>
+      <button class="btn btn-outline-secondary reset-action-button" type="reset">Resetar</button>
     </div>
   </div>
 </form>
