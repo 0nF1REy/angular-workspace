@@ -1,33 +1,33 @@
-<div class="row form-row">
-  <div class="col-3 form-field">
+<div class="row form-row authentication-layout-container">
+  <div class="col-3 form-field input-field-wrapper">
     <input
       type="email"
       placeholder="Digite seu e-mail"
-      class="form-input"
+      class="form-input field-control-primary"
       [field]="loginForm.email"
     />
-    <div class="error-container">
+    <div class="error-container validation-message-box">
       <!-- @if(loginForm.email().invalid()) {
       <span class="text-danger">Email não válido</span>
       } -->
       @if (loginForm.email().errors()) { @for (item of loginForm.email().errors(); track $index) {
-      <span class="text-danger d-block error-message">{{ item.message }}</span>
+      <span class="text-danger d-block error-message feedback-alert-text">{{ item.message }}</span>
       } }
     </div>
   </div>
 
-  <div class="col-3 form-field">
+  <div class="col-3 form-field input-field-wrapper">
     <input
       type="password"
       placeholder="Digite sua senha"
-      class="form-input"
+      class="form-input field-control-primary"
       [field]="loginForm.password"
     />
   </div>
 </div>
 
-<div class="row form-debug">
-  <div class="col-4">
+<div class="row form-debug data-monitor-section">
+  <div class="col-4 code-preview-panel">
     {{ loginForm().value() | json }}
   </div>
 </div>
