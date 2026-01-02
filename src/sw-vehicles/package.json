@@ -1,12 +1,40 @@
 {
   "name": "sw-vehicles",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "Star Wars vehicles showcase application built with Angular 21, featuring vehicle catalog, shopping cart, and modern Angular signals for reactive state management",
+  "keywords": [
+    "angular",
+    "angular21",
+    "star-wars",
+    "vehicles",
+    "signals",
+    "shopping-cart",
+    "typescript",
+    "rxjs",
+    "computed-signals",
+    "linked-signals",
+    "demo",
+    "showcase"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
   },
   "prettier": {
     "printWidth": 100,
