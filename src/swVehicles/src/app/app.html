@@ -1,25 +1,31 @@
-<nav class="navbar">
-  <a class="navbar-brand">{{pageTitle}}</a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link"
-         [routerLink]="['/home']"
-         routerLinkActive="active">Home</a>
+<nav class="navigation-header header-yorozuya">
+  <a class="brand-logo-text">{{ pageTitle }}</a>
+  <ul class="navigation-list">
+    <li class="navigation-item">
+      <a class="navigation-link-action" [routerLink]="['/home']" routerLinkActive="active-state"
+        >Início</a
+      >
     </li>
-    <li class="nav-item">
-      <a class="nav-link"
-         [routerLink]="['/vehicles']"
-         routerLinkActive="active"
-         [routerLinkActiveOptions]="{ exact : true}">Vehicle List</a>
+    <li class="navigation-item">
+      <a
+        class="navigation-link-action"
+        [routerLink]="['/vehicles']"
+        routerLinkActive="active-state"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Lista de Veículos</a
+      >
     </li>
-    <li class="nav-item">
-      <a class="nav-link"
-         [routerLink]="['/subscribe']"
-         routerLinkActive="active">Subscribe</a>
+    <li class="navigation-item">
+      <a
+        class="navigation-link-action"
+        [routerLink]="['/subscribe']"
+        routerLinkActive="active-state"
+        >Inscrever-se</a
+      >
     </li>
   </ul>
 </nav>
 
-<div class="container">
+<div class="main-content-wrapper content-layout-area">
   <router-outlet></router-outlet>
 </div>

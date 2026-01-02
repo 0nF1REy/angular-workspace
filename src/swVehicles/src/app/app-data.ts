@@ -4,13 +4,12 @@ import { VehicleData } from './vehicles/vehicle-data';
 import { Film } from './films/film';
 import { FilmData } from './films/film-data';
 
-// Required class for the In Memory Web API
+// Classe necessária para a In Memory Web API
 export class AppData implements InMemoryDbService {
-
-  // Creates the 'in memory' database
-  // Can then issue http requests to retrieve this data,
-  // just as if the data were located on a backend server
-  createDb(): { vehicles: Vehicle[], films: Film[] } {
+  // Cria o banco de dados "em memória"
+  // Em seguida, é possível fazer requisições HTTP para obter esses dados,
+  // como se eles estivessem localizados em um servidor backend
+  createDb(): { vehicles: Vehicle[]; films: Film[] } {
     const vehicles = VehicleData.vehicles;
     const films = FilmData.films;
     return { vehicles, films };

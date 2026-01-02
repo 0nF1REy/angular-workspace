@@ -7,13 +7,13 @@ export const routes: Routes = [
   {
     path: 'vehicles',
     loadComponent: () =>
-      import('./vehicles/vehicle-shell/vehicle-shell').then(c => c.VehicleShell)
+      import('./vehicles/vehicle-shell/vehicle-shell').then((c) => c.VehicleShell),
   },
   {
     path: 'subscribe',
     loadComponent: () =>
-      import('./newsletter/subscribe-form/subscribe-form').then(c => c.SubscribeForm)
+      import('./newsletter/subscribe-form/subscribe-form').then((c) => c.SubscribeForm),
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', component: PageNotFound }
+  { path: '**', component: PageNotFound },
 ];
