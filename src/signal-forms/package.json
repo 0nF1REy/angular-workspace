@@ -1,6 +1,20 @@
 {
   "name": "signal-forms",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "Angular form comparison demo showcasing traditional reactive forms versus the new signal-based forms API in Angular 21",
+  "keywords": [
+    "angular",
+    "angular-forms",
+    "reactive-forms",
+    "signal-forms",
+    "angular-signals",
+    "form-validation",
+    "angular21",
+    "typescript",
+    "tailwindcss",
+    "demo",
+    "comparison"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
