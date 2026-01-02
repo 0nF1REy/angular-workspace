@@ -5,40 +5,40 @@
   <div class="card-body">
     <form>
       <div class="row">
-        <label class="row-label" for="firstNameId"> First Name </label>
+        <label class="row-label" for="firstNameId"> Nome </label>
         <div class="row-value">
           <input
             type="text"
             class="form-control"
             [field]="subscribeForm.firstName"
             id="firstNameId"
-            placeholder="First Name (optional)"
+            placeholder="Nome (opcional)"
           />
         </div>
       </div>
 
       <div class="row">
-        <label class="row-label" for="lastNameId"> Last Name </label>
+        <label class="row-label" for="lastNameId"> Sobrenome </label>
         <div class="row-value">
           <input
             type="text"
             class="form-control"
             [field]="subscribeForm.lastName"
             id="lastNameId"
-            placeholder="Last Name (optional)"
+            placeholder="Sobrenome (opcional)"
           />
         </div>
       </div>
 
       <div class="row">
-        <label class="row-label" for="emailId"> Email <span class="text-danger">*</span> </label>
+        <label class="row-label" for="emailId"> E-mail <span class="text-danger">*</span> </label>
         <div class="row-value">
           <input
             type="email"
             class="form-control"
             [field]="subscribeForm.email"
             id="emailId"
-            placeholder="Email (required)"
+            placeholder="E-mail (obrigatório)"
           />
         </div>
         @if (subscribeForm.email().invalid() && subscribeForm.email().touched()) {
@@ -51,14 +51,14 @@
       </div>
 
       <div class="row">
-        <label class="row-label" for="yearsAsFanId"> Years as a Fan </label>
+        <label class="row-label" for="yearsAsFanId"> Anos como fã </label>
         <div class="row-value">
           <input
             type="number"
             class="form-control"
             [field]="subscribeForm.yearsAsFan"
             id="yearsAsFanId"
-            placeholder="How many years have you been a Star Wars fan?"
+            placeholder="Há quantos anos você é fã de Star Wars?"
           />
         </div>
         @if (subscribeForm.yearsAsFan().invalid() && subscribeForm.yearsAsFan().touched()) {
@@ -74,13 +74,13 @@
         <div class="row-value">
           <button
             type="button"
-            title="Ensure the form is valid and required fields are entered before subscribing"
+            title="Certifique-se de que o formulário é válido e os campos obrigatórios foram preenchidos antes de se inscrever"
             class="btn btn-primary"
             (click)="subscribe()"
           >
-            Subscribe
+            Inscrever-se
           </button>
-          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
         </div>
       </div>
     </form>
