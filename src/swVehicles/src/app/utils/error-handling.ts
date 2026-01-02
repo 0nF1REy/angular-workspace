@@ -1,9 +1,9 @@
 export function getNestedError(errorObject: Error): string {
   if (!(errorObject instanceof Error)) {
-    return 'Unknown error';
+    return 'Erro desconhecido';
   }
 
-  // Check first for a cause
+  // Verifica primeiro se existe uma causa
   const cause = errorObject.cause as Record<string, any> | undefined;
   if (cause) {
     const body = cause['body'] as Record<string, any> | undefined;
@@ -14,9 +14,10 @@ export function getNestedError(errorObject: Error): string {
     }
   }
 
-  // Otherwise check for a message
+  // Caso contrário, verifica se existe uma mensagem
   if ('message' in errorObject) {
     return `${errorObject.message}`;
   }
-  return 'Unknown error';
+
+  return 'Erro desconhecido';
 }
