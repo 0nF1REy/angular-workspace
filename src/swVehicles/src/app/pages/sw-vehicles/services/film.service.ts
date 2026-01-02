@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, effect, inject } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { VehicleService } from '../sw-vehicles/vehicle.service';
+import { VehicleService } from '../vehicle.service';
 import { Film } from './film';
-import { getNestedError } from '../../core/utils/error-handling';
+import { getNestedError } from '../../../core/utils/error-handling';
 
 @Injectable({
   providedIn: 'root',
@@ -19,18 +19,6 @@ export class FilmService {
     stream: (p) => forkJoin(p.params.films.map((link) => this.http.get<Film>(link))),
     defaultValue: [],
   });
-
-  // Gerenciar a mensagem de erro no serviço
-  // OU no componente
-  // error = this.vehicleFilmsResource.error;
-  // errorMessage = computed(() => {
-  //   const err = this.error();
-  //   if (err) {
-  //     return `Erro ao recuperar filmes: ${getNestedError(err)}`;
-  //   } else {
-  //     return '';
-  //   }
-  // });
 
   // Acessar o resource gera um erro se a requisição HTTP falhar
   private eff = effect(() => {
