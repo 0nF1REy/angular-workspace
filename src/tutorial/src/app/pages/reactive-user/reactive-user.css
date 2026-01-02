@@ -1,0 +1,119 @@
+.account-registration-form {
+  background-color: #ffffff;
+  padding: 35px;
+  border: 4px solid #333333;
+  border-left: 15px solid #58b2dc;
+  box-shadow: 12px 12px 0px #333333;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-registration-form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(225deg, #e60012 0%, #e60012 10%, transparent 10%);
+}
+
+.field-label-standard {
+  font-weight: 800;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form-input-control {
+  border: 3px solid #333333;
+  border-radius: 0;
+  padding: 12px;
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #333333;
+  box-shadow: 6px 6px 0px #58b2dc;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input-control:focus {
+  outline: none;
+  border-color: #333333;
+  box-shadow: 6px 6px 0px #e60012;
+  transform: translateY(-2px);
+}
+
+.validation-feedback-area {
+  margin-top: 15px;
+  padding: 5px 12px;
+  background-color: #e60012;
+  border: 2px solid #333333;
+  display: inline-block;
+}
+
+.input-assist-text {
+  color: #666666 !important;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 8px;
+  font-size: 0.75rem;
+}
+
+.form-action-group {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 4px dashed #333333;
+}
+
+.btn-action-primary {
+  background-color: #58b2dc;
+  color: #ffffff;
+  border: 3px solid #333333;
+  border-radius: 0;
+  padding: 12px 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #333333;
+  transition: all 0.1s;
+}
+
+.btn-action-primary:hover:not(:disabled) {
+  background-color: #ffffff;
+  color: #58b2dc;
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #333333;
+}
+
+.btn-action-primary:disabled {
+  background-color: #eeeeee;
+  border-color: #cccccc;
+  color: #bbbbbb;
+  box-shadow: none;
+}
+
+.btn-action-outline {
+  background-color: #1a1a1a;
+  color: #d4af37;
+  border: 3px solid #d4af37;
+  border-radius: 0;
+  padding: 12px 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0px #333333;
+  transition: all 0.1s;
+}
+
+.btn-action-outline:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.btn-action-primary:active,
+.btn-action-outline:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0px 0px 0px #333333;
+}
