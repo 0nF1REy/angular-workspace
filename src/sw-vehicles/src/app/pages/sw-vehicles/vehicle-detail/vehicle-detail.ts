@@ -2,10 +2,11 @@ import { Component, computed, inject } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { VehicleService } from '../vehicle.service';
 import { FilmService } from '../services/film.service';
+import { TranslatePipe } from './translate.pipe';
 
 @Component({
   selector: 'sw-vehicle-detail',
-  imports: [CommonModule, DecimalPipe],
+  imports: [CommonModule, DecimalPipe, TranslatePipe],
   templateUrl: './vehicle-detail.html',
   styleUrl: './vehicle-detail.css',
 })

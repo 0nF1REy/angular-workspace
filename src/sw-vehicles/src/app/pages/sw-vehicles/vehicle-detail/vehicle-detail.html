@@ -40,7 +40,7 @@
         <ul class="list-group">
           @for (film of vehicleFilms(); track film) {
           <li class="list-group-item">
-            {{ film.title }}
+            {{ film | translate }}
           </li>
           }
         </ul>
