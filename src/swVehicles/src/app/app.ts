@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'swv-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  selector: 'sw-root',
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
-export class App {
-  pageTitle = 'Venda de Veículos - Star Wars';
-}
+export class App {}
