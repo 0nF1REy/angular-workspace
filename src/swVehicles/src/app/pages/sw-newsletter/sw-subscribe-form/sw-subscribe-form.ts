@@ -3,12 +3,12 @@ import { form, Field, submit } from '@angular/forms/signals';
 import { initialData, Subscription, subscriptionSchema } from '../subscription';
 
 @Component({
-  selector: 'swv-subscribe-form',
+  selector: 'sw-subscribe-form',
   imports: [Field],
-  templateUrl: './subscribe-form.html',
-  styleUrl: './subscribe-form.css',
+  templateUrl: './sw-subscribe-form.html',
+  styleUrl: './sw-subscribe-form.css',
 })
-export class SubscribeForm {
+export class SwSubscribeForm {
   subscribeMessage = signal('');
   errorMessage = signal('');
 

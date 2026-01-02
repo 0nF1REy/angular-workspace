@@ -12,7 +12,9 @@ export const routes: Routes = [
   {
     path: 'subscribe',
     loadComponent: () =>
-      import('./newsletter/subscribe-form/subscribe-form').then((c) => c.SubscribeForm),
+      import('./pages/sw-newsletter/sw-subscribe-form/sw-subscribe-form').then(
+        (c) => c.SwSubscribeForm
+      ),
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFound },
