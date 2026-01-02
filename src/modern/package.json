@@ -1,12 +1,34 @@
 {
   "name": "modern",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "A minimal Angular 21 project.",
+  "keywords": [
+    "angular",
+    "scss",
+    "components",
+    "typescript",
+    "frontend"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "homepage": "https://alan-ryan.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
   },
   "prettier": {
     "printWidth": 100,
