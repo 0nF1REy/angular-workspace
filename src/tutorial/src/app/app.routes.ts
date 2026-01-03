@@ -4,14 +4,19 @@ import { Layout } from './core/layout/layout';
 export const routes: Routes = [
   {
     path: '',
-    component: Layout,
-    children: [
-      {
-        path: '',
-        redirectTo: 'variables',
-        pathMatch: 'full',
-      },
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
+  },
+
+  {
+    path: '',
+    loadComponent: () => import('./core/layout/layout').then((m) => m.Layout),
+    children: [
       {
         path: 'variables',
         loadComponent: () => import('./pages/variables/variables').then((m) => m.Variables),
@@ -71,11 +76,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/life-cycle-ex/life-cycle-ex').then((m) => m.LifeCycleEx),
       },
-
-      {
-        path: '**',
-        loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
-      },
     ],
+  },
+
+  {
+    path: '**',
+    loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
   },
 ];
