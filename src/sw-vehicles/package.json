@@ -1,6 +1,6 @@
 {
   "name": "sw-vehicles",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Star Wars vehicles showcase application built with Angular 21, featuring vehicle catalog, shopping cart, and modern Angular signals for reactive state management",
   "keywords": [
     "angular",
