@@ -29,6 +29,13 @@ export const routes: Routes = [
           ).then((m) => m.SwSignalFormsConditionalValidation),
       },
       {
+        path: 'subscribe-03',
+        loadComponent: () =>
+          import(
+            './pages/sw-newsletter/sw-signal-forms-cross-field-validation/sw-signal-forms-cross-field-validation'
+          ).then((m) => m.SwSignalFormsCrossFieldValidation),
+      },
+      {
         path: '**',
         loadComponent: () => import('./pages/sw-not-found/sw-not-found').then((m) => m.SwNotFound),
       },
