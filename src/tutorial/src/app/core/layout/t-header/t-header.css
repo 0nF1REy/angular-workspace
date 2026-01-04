@@ -1,0 +1,15 @@
+.content-header {
+  flex-shrink: 0;
+  background-color: #252526;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 2px solid var(--gintama-cyan);
+}
+
+.content-header h2 {
+  color: var(--gintama-silver);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
