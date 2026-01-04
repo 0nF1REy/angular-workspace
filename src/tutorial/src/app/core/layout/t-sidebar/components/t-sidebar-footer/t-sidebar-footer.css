@@ -1,0 +1,9 @@
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(243, 244, 246, 0.05);
+  font-size: 0.75rem;
+  color: #4ca6b8;
+  font-weight: bold;
+  text-align: center;
+}

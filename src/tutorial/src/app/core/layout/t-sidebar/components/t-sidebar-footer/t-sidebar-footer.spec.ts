@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TSidebar } from './t-sidebar';
+import { TSidebarFooter } from './t-sidebar-footer';
 
-describe('TSidebar', () => {
-  let component: TSidebar;
-  let fixture: ComponentFixture<TSidebar>;
+describe('TSidebarFooter', () => {
+  let component: TSidebarFooter;
+  let fixture: ComponentFixture<TSidebarFooter>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TSidebar],
+      imports: [TSidebarFooter],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TSidebar);
+    fixture = TestBed.createComponent(TSidebarFooter);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

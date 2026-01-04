@@ -13,30 +13,8 @@
   border-right: 1px solid rgba(243, 244, 246, 0.1);
   height: 100%;
   overflow-y: auto;
-}
-
-.sidebar-header {
-  padding: 2.5rem 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  border-bottom: 1px solid rgba(76, 166, 184, 0.2);
-}
-
-.sidebar-header h5 {
-  color: var(--gintama-silver);
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  padding: 1.5rem;
-  border-top: 1px solid rgba(243, 244, 246, 0.05);
-  font-size: 0.75rem;
-  color: var(--gintama-cyan);
-  font-weight: bold;
-  text-align: center;
+  flex-direction: column;
 }
 
 .sidebar::-webkit-scrollbar {
