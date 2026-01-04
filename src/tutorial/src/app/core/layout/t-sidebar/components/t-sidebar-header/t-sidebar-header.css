@@ -1,13 +1,88 @@
 .sidebar-header {
-  padding: 2.5rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 15px;
-  border-bottom: 1px solid rgba(76, 166, 184, 0.2);
+  border-bottom: 1px solid rgba(76, 166, 184, 0.15);
+  background: linear-gradient(to bottom, rgba(76, 166, 184, 0.03), transparent);
 }
 
-.sidebar-header h5 {
-  color: #f3f4f6;
-  font-weight: 800;
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 42px;
+  background: rgba(26, 26, 27, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 166, 184, 0.3);
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  filter: brightness(1.2);
+}
+
+.logo-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--gintama-cyan);
+  filter: blur(12px);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  color: var(--gintama-silver);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.text-cyan {
+  color: var(--gintama-cyan);
+  margin-left: 5px;
+}
+
+.brand-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.55rem;
+  color: rgba(243, 244, 246, 0.4);
+  font-weight: 700;
   letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
