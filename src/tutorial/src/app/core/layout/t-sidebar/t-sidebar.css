@@ -12,16 +12,7 @@
   background-color: var(--gintama-black);
   border-right: 1px solid rgba(243, 244, 246, 0.1);
   height: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: rgba(76, 166, 184, 0.4);
-  border-radius: 10px;
+  overflow: hidden;
 }

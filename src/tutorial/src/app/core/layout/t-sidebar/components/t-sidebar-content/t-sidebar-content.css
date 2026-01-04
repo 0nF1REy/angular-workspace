@@ -1,23 +1,46 @@
 :host {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
 
   --gintama-black: #1a1a1b;
   --gintama-silver: #f3f4f6;
   --gintama-cyan: #4ca6b8;
 }
 
-.sidebar-content {
-  flex: 1;
-  overflow-y: auto;
-}
-
 .menu-label {
+  background-color: var(--gintama-black);
   padding: 1.5rem 1.5rem 0.75rem;
   font-size: 0.7rem;
   color: var(--gintama-cyan);
   letter-spacing: 2px;
   font-weight: 900;
   text-transform: uppercase;
+  transition: border-bottom 0.3s ease, padding 0.3s ease;
+  border-bottom: 1px solid transparent;
+  z-index: 10;
+}
+
+.menu-label.is-stuck {
+  border-bottom: 1px solid rgba(76, 166, 184, 0.25);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.menu-items-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 0.5rem;
+}
+
+.menu-items-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu-items-container::-webkit-scrollbar-thumb {
+  background: rgba(76, 166, 184, 0.4);
+  border-radius: 10px;
 }
 
 .custom-nav {

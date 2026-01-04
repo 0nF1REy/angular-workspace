@@ -1,5 +1,8 @@
-<div class="sidebar-content">
-  <div class="menu-label">Menu de Operações</div>
+<div class="menu-label" [class.is-stuck]="isScrolled">
+  Menu de Operações
+</div>
+
+<div class="menu-items-container" (scroll)="onScroll($event)">
   <ul class="nav flex-column custom-nav">
     @for (item of menu; track item.route) {
     <li class="nav-item">

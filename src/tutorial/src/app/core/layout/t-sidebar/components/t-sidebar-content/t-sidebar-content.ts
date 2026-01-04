@@ -9,6 +9,12 @@ import { TSidebarItem } from '../../models/t-sidebar.model';
   styleUrl: './t-sidebar-content.css',
 })
 export class TSidebarContent {
-  // O @Input permite que o pai envie os dados para cá
   @Input({ required: true }) menu: TSidebarItem[] = [];
+
+  isScrolled = false;
+
+  onScroll(event: Event): void {
+    const element = event.target as HTMLElement;
+    this.isScrolled = element.scrollTop > 0;
+  }
 }
