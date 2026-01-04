@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SIDEBAR_MENU } from './menu/t-sidebar-menu.data';
-import { TSidebarMenuItem } from './menu/t-sidebar-menu';
-import { TSidebarContent } from './t-sidebar-content/t-sidebar-content';
+import { SIDEBAR_MENU } from './models/t-sidebar.data';
+import { TSidebarItem } from './models/t-sidebar.model';
+import { TSidebarContent } from './components/t-sidebar-content/t-sidebar-content';
 
 @Component({
   selector: 't-sidebar',
@@ -10,5 +10,5 @@ import { TSidebarContent } from './t-sidebar-content/t-sidebar-content';
   styleUrl: './t-sidebar.css',
 })
 export class TSidebar {
-  menu: TSidebarMenuItem[] = SIDEBAR_MENU;
+  menu: TSidebarItem[] = SIDEBAR_MENU;
 }

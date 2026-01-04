@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { TSidebarMenuItem } from '../menu/t-sidebar-menu';
+import { TSidebarItem } from '../../models/t-sidebar.model';
 
 @Component({
   selector: 't-sidebar-content',
@@ -10,5 +10,5 @@ import { TSidebarMenuItem } from '../menu/t-sidebar-menu';
 })
 export class TSidebarContent {
   // O @Input permite que o pai envie os dados para cá
-  @Input({ required: true }) menu: TSidebarMenuItem[] = [];
+  @Input({ required: true }) menu: TSidebarItem[] = [];
 }

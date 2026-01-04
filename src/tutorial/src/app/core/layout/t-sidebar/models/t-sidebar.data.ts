@@ -1,6 +1,6 @@
-import { TSidebarMenuItem } from './t-sidebar-menu';
+import { TSidebarItem } from './t-sidebar.model';
 
-export const SIDEBAR_MENU: TSidebarMenuItem[] = [
+export const SIDEBAR_MENU: TSidebarItem[] = [
   {
     label: 'Variável',
     icon: 'bi-code-square',
