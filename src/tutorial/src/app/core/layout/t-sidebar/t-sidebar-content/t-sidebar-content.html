@@ -1,0 +1,13 @@
+<div class="sidebar-content">
+  <div class="menu-label">Menu de Operações</div>
+  <ul class="nav flex-column custom-nav">
+    @for (item of menu; track item.route) {
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">
+        <i class="bi {{ item.icon }} me-3"></i>
+        {{ item.label }}
+      </a>
+    </li>
+    }
+  </ul>
+</div>

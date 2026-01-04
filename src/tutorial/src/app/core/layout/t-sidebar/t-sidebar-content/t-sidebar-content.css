@@ -1,0 +1,48 @@
+:host {
+  display: contents;
+
+  --gintama-black: #1a1a1b;
+  --gintama-silver: #f3f4f6;
+  --gintama-cyan: #4ca6b8;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-label {
+  padding: 1.5rem 1.5rem 0.75rem;
+  font-size: 0.7rem;
+  color: var(--gintama-cyan);
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.custom-nav {
+  padding: 0 1rem;
+}
+
+.custom-nav .nav-link {
+  color: rgba(243, 244, 246, 0.7);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.custom-nav .nav-link:hover {
+  background-color: rgba(76, 166, 184, 0.1);
+  color: var(--gintama-silver);
+  transform: translateX(5px);
+}
+
+.custom-nav .nav-link.active {
+  background-color: var(--gintama-cyan);
+  color: var(--gintama-black);
+  font-weight: 800;
+}
