@@ -1,17 +1,28 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 
+import { routes } from './app.routes';
+import { tReducers } from './core/store';
+
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZonelessChangeDetection(),
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideStore(),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideStore(tReducers),
     provideEffects(),
+    provideStoreDevtools({
+      maxAge: 25,
+      logOnly: !isDevMode(),
+      trace: true,
+    }),
   ],
 };
