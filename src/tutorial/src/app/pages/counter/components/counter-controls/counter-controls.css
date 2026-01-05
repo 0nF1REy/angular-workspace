@@ -1,0 +1,36 @@
+.controls-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-counter {
+  background: transparent;
+  border: 1px solid var(--gintama-cyan);
+  color: var(--gintama-cyan);
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-counter:hover {
+  background-color: var(--gintama-cyan);
+  color: var(--gintama-black);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 166, 184, 0.3);
+}
+
+.btn-counter:active {
+  transform: scale(0.95);
+}
+
+.btn-decrement:hover {
+  background-color: #c1272d;
+  border-color: #c1272d;
+}

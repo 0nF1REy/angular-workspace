@@ -1,0 +1,38 @@
+.display-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.value-wrapper {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(76, 166, 184, 0.3);
+  min-width: 120px;
+  text-align: center;
+}
+
+.counter-value {
+  color: var(--gintama-silver);
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 15px rgba(243, 244, 246, 0.2);
+}
+
+.value-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: var(--gintama-cyan);
+  filter: blur(30px);
+  opacity: 0.1;
+  z-index: 1;
+}

@@ -1,31 +1,7 @@
-<div class="counter-container">
-  <div class="counter-card fade-in-up">
-    <!-- Cabeçalho do Card -->
-    <div class="card-header-custom">
-      <i class="bi bi-diagram-3 icon-accent"></i>
-      <div class="header-text">
-        <span class="title">Gestão de Estado</span>
-        <span class="subtitle">NgRx Store / Signals</span>
-      </div>
-    </div>
-
-    <!-- Área do Display -->
-    <div class="display-section">
-      <div class="value-wrapper">
-        <h1 class="counter-value">{{ counterValue() }}</h1>
-        <div class="value-glow"></div>
-      </div>
-    </div>
-
-    <!-- Controles -->
-    <div class="controls-section">
-      <button (click)="onDecrement()" class="btn-counter btn-decrement" title="Diminuir">
-        <i class="bi bi-dash-lg"></i>
-      </button>
-
-      <button (click)="onIncrement()" class="btn-counter btn-increment" title="Aumentar">
-        <i class="bi bi-plus-lg"></i>
-      </button>
-    </div>
+<div>
+  <div class="counter-card">
+    <counter-header />
+    <counter-display [value]="counterValue()" />
+    <counter-controls (incremented)="onIncrement()" (decremented)="onDecrement()" />
   </div>
 </div>
