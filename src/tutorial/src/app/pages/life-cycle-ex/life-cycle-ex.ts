@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'life-cycle-ex',
+  selector: 't-life-cycle-ex',
   standalone: true,
   imports: [],
   templateUrl: './life-cycle-ex.html',

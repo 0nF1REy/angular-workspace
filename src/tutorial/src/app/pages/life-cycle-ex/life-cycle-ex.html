@@ -1,1 +1,53 @@
-<p>life-cycle-ex works!</p>
+<div class="container-fluid fade-in-up">
+  <div class="card bg-dark text-silver border-cyan shadow">
+    <div class="card-header border-cyan-subtle">
+      <h5 class="m-0 text-cyan"><i class="bi bi-arrow-repeat me-2"></i>Ciclo de Vida</h5>
+    </div>
+
+    <div class="card-body">
+      <p class="text-muted small text-muted text-silver">
+        Abra o <strong>Console (F12)</strong> para visualizar a ordem de execução.
+      </p>
+
+      <div class="row g-3">
+        <!-- Principais -->
+        <div class="col-md-6">
+          <div class="hook-box highlight">
+            <h6>ngOnInit</h6>
+            <p>Inicialização do componente e chamadas de API.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="hook-box highlight">
+            <h6>ngOnDestroy</h6>
+            <p>Limpeza: cancela inscrições e libera memória.</p>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="col-md-6">
+          <div class="hook-box">
+            <h6>ngAfterViewInit</h6>
+            <p>Executado após o HTML e componentes filhos serem renderizados.</p>
+          </div>
+        </div>
+
+        <!-- Verificação -->
+        <div class="col-md-6">
+          <div class="hook-box">
+            <h6>ngDoCheck</h6>
+            <p>Verificação customizada de mudanças (roda com frequência).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer bg-transparent border-cyan-subtle">
+      <div class="d-flex align-items-center gap-2 text-warning small">
+        <i class="bi bi-exclamation-triangle"></i>
+        <span>Hooks de "Checked" e "DoCheck" rodam a cada ciclo de detecção.</span>
+      </div>
+    </div>
+  </div>
+</div>
