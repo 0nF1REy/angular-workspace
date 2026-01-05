@@ -12,7 +12,7 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     route: 'databinding',
   },
   {
-    label: 'Signals',
+    label: 'Signal',
     icon: 'bi-lightning-charge',
     route: 'signal',
   },
@@ -22,17 +22,17 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     route: 'control-flow',
   },
   {
-    label: 'ngClass & ngStyle',
+    label: 'Estilização Dinâmica',
     icon: 'bi-palette',
     route: 'dynamic-css-class',
   },
   {
-    label: 'Usuários',
+    label: 'Formulário',
     icon: 'bi-people',
     route: 'users',
   },
   {
-    label: 'Usuários Reativos',
+    label: 'Formulário Reativo',
     icon: 'bi-person-gear',
     route: 'reactive-users',
   },
@@ -52,8 +52,13 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     route: 'signal-form',
   },
   {
-    label: 'Life Cycle',
+    label: 'Ciclo de Vida',
     icon: 'bi-arrow-repeat',
     route: 'life-cycle',
+  },
+  {
+    label: 'Gestão de Estado (NgRx)',
+    icon: 'bi-diagram-3',
+    route: 'counter',
   },
 ];

@@ -79,6 +79,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/life-cycle-ex/life-cycle-ex').then((m) => m.LifeCycleEx),
       },
+      {
+        path: 'counter',
+        loadComponent: () => import('./pages/counter/counter').then((m) => m.Counter),
+      },
     ],
   },
 

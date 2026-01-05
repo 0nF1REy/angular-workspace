@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { CounterActions } from './counter.actions';
 
-export const initialState = 0;
+export const initialState = 21;
 
 export const counterReducer = createReducer(
   initialState,
