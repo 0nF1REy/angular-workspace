@@ -1,0 +1,124 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.counter-card {
+  background-color: rgba(26, 26, 27, 0.8);
+  border: 1px solid rgba(76, 166, 184, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.card-header-custom {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.icon-accent {
+  font-size: 1.5rem;
+  color: var(--gintama-cyan);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text .title {
+  color: var(--gintama-silver);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.header-text .subtitle {
+  color: rgba(243, 244, 246, 0.4);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.display-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.value-wrapper {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(76, 166, 184, 0.3);
+  min-width: 120px;
+  text-align: center;
+}
+
+.counter-value {
+  color: var(--gintama-silver);
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 15px rgba(243, 244, 246, 0.2);
+}
+
+.value-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: var(--gintama-cyan);
+  filter: blur(30px);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.controls-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-counter {
+  background: transparent;
+  border: 1px solid var(--gintama-cyan);
+  color: var(--gintama-cyan);
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-counter:hover {
+  background-color: var(--gintama-cyan);
+  color: var(--gintama-black);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 166, 184, 0.3);
+}
+
+.btn-counter:active {
+  transform: scale(0.95);
+}
+
+.btn-decrement:hover {
+  background-color: #c1272d;
+  border-color: #c1272d;
+}

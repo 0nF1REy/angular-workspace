@@ -1,11 +1,31 @@
-<div class="row">
-  <div class="col-3">
-    <button type="button" (click)="onDecrement()" class="btn btn-primary">Decremento</button>
-  </div>
-  <div class="col-2">
-    <h3>{{ counterValue() }}</h3>
-  </div>
-  <div class="col-3">
-    <button type="button" (click)="onIncrement()" class="btn btn-primary">Incremento</button>
+<div class="counter-container">
+  <div class="counter-card fade-in-up">
+    <!-- Cabeçalho do Card -->
+    <div class="card-header-custom">
+      <i class="bi bi-diagram-3 icon-accent"></i>
+      <div class="header-text">
+        <span class="title">Gestão de Estado</span>
+        <span class="subtitle">NgRx Store / Signals</span>
+      </div>
+    </div>
+
+    <!-- Área do Display -->
+    <div class="display-section">
+      <div class="value-wrapper">
+        <h1 class="counter-value">{{ counterValue() }}</h1>
+        <div class="value-glow"></div>
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls-section">
+      <button (click)="onDecrement()" class="btn-counter btn-decrement" title="Diminuir">
+        <i class="bi bi-dash-lg"></i>
+      </button>
+
+      <button (click)="onIncrement()" class="btn-counter btn-increment" title="Aumentar">
+        <i class="bi bi-plus-lg"></i>
+      </button>
+    </div>
   </div>
 </div>
