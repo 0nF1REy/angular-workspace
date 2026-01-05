@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'not-found',
+  selector: 't-not-found',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './not-found.html',

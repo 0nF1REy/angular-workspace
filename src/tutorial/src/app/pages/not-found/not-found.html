@@ -1,5 +1,23 @@
-<div class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
-  <h1 class="display-4 mb-3">404</h1>
-  <p class="lead mb-4">Página não encontrada!</p>
-  <a routerLink="/" class="btn btn-primary">Voltar para a página inicial</a>
+<div class="error-container">
+  <div class="background-glow"></div>
+
+  <div class="content-box">
+    <h1 class="glitch" data-text="404">404</h1>
+
+    <div class="info-wrapper">
+      <h2 class="error-subtitle">Ops! Página não encontrada</h2>
+      <p class="error-message">
+        Não conseguimos encontrar o que você estava procurando. Verifique se o endereço está correto
+        ou retorne ao início.
+      </p>
+    </div>
+
+    <a routerLink="/" class="btn-return">
+      <i class="bi bi-arrow-left me-2"></i>
+      Voltar para a página inicial
+    </a>
+  </div>
+
+  <div class="decor-circle circle-1"></div>
+  <div class="decor-circle circle-2"></div>
 </div>

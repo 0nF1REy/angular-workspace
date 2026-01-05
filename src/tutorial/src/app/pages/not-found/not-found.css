@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.error-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gintama-black);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.background-glow {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(76, 166, 184, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.content-box {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+}
+
+.glitch {
+  font-size: 10rem;
+  font-weight: 900;
+  color: var(--gintama-silver);
+  position: relative;
+  text-shadow: 0 0 20px rgba(76, 166, 184, 0.5);
+  animation: gentle-glow 4s ease-in-out infinite;
+  margin-bottom: 0;
+}
+
+@keyframes gentle-glow {
+  0% {
+    text-shadow: 0 0 20px rgba(76, 166, 184, 0.3), 0 0 40px rgba(76, 166, 184, 0.1);
+    opacity: 0.8;
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(76, 166, 184, 0.6), 0 0 60px rgba(76, 166, 184, 0.3);
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(76, 166, 184, 0.3), 0 0 40px rgba(76, 166, 184, 0.1);
+    opacity: 0.8;
+  }
+}
+
+.error-subtitle {
+  color: var(--gintama-cyan);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: rgba(243, 244, 246, 0.7);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.btn-return {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  border: 1px solid var(--gintama-cyan);
+  color: var(--gintama-cyan);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-return:hover {
+  background: var(--gintama-cyan);
+  color: var(--gintama-black);
+  box-shadow: 0 0 20px rgba(76, 166, 184, 0.4);
+  transform: translateY(-2px);
+}
+
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(76, 166, 184, 0.1);
+  animation: float 10s infinite ease-in-out;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
+}
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, 50px) rotate(10deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-10deg);
+  }
+}
