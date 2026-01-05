@@ -9,10 +9,15 @@
   "projects": {
     "tutorial": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "changeDetection": "OnPush",
+          "displayBlock": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "t",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -25,7 +30,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["./node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
