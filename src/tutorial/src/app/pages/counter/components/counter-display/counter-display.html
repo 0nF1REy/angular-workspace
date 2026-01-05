@@ -1,6 +1,8 @@
 <div class="display-section">
   <div class="value-wrapper">
-    <h1 class="counter-value">{{ value }}</h1>
+    <h1 class="counter-value" [class]="animationClass()">
+      {{ displayValue() }}
+    </h1>
     <div class="value-glow"></div>
   </div>
 </div>
