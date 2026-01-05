@@ -19,6 +19,7 @@
 - **[🎯 Sobre o Projeto](#sobre-o-projeto)**
 - **[📁 Estrutura do Repositório](#estrutura-do-repositorio)**
 - **[🚀 Como Executar](#como-executar)**
+- **[✨ Destaques dos Projetos](#destaques-dos-projetos)**
 - **[👤 Sobre o Desenvolvedor](#sobre-o-desenvolvedor)**
 - **[📚 Recursos Adicionais](#recursos-adicionais)**
 - **[📜 Licença](#licenca)**
@@ -45,9 +46,11 @@ Este repositório serve como um guia prático de aprendizado Angular. Cada proje
 ├── resources/
 │   └── images/
 ├── src/
+│   ├── modern/
 │   ├── ngrx-store/
 │   ├── signal-forms/
 │   ├── snowfall-animation/
+│   ├── sw-vehicles/
 │   └── tutorial/
 ├── LICENSE
 └── README.md
@@ -66,7 +69,7 @@ Este repositório serve como um guia prático de aprendizado Angular. Cada proje
 
    ```bash
    # Navegue até o projeto desejado
-   cd src/ngrx-store/
+   cd src/tutorial/
 
    # Instale as dependências
    npm install
@@ -86,6 +89,32 @@ Este repositório serve como um guia prático de aprendizado Angular. Cada proje
    # ou
    ng build
    ```
+
+## ✨ Destaques dos Projetos <a name="destaques-dos-projetos"></a>
+
+### Modern Angular App
+
+<img src="./resources/images/docs/project-highlights/modern.png" alt="modern">
+
+### NgRx Store Example
+
+<img src="./resources/images/docs/project-highlights/ngrx-store.png" alt="ngrx-store">
+
+### Signal Forms Example
+
+<img src="./resources/images/docs/project-highlights/signal-forms.png" alt="signal-forms">
+
+### Snowfall Animation
+
+<img src="./resources/images/docs/project-highlights/snowfall-animation.png" alt="snowfall-animation">
+
+### Star Wars Vehicles App
+
+<img src="./resources/images/docs/project-highlights/sw-vehicles.png" alt="sw-vehicles">
+
+### Tutorial App
+
+<img src="./resources/images/docs/project-highlights/tutorial.png" alt="tutorial">
 
 ## 👤 Sobre o Desenvolvedor <a name="sobre-o-desenvolvedor"></a>
 
