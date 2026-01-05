@@ -11,34 +11,6 @@
   border-bottom: 1px solid rgba(76, 166, 184, 0.1) !important;
 }
 
-.text-cyan {
-  color: #4ca6b8;
-}
-
 .text-silver {
-  color: #f2f3f5 !important;
-}
-
-.hook-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(243, 244, 246, 0.05);
-  padding: 1rem;
-  border-radius: 8px;
-  height: 100%;
-}
-
-.hook-box h6 {
-  color: #4ca6b8;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.hook-box p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: rgba(243, 244, 246, 0.6);
-}
-
-.highlight {
-  border-left: 3px solid #4ca6b8;
+  color: #ffffff !important;
 }

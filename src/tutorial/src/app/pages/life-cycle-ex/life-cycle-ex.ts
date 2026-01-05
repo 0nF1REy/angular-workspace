@@ -9,10 +9,14 @@ import {
   OnInit,
 } from '@angular/core';
 
+import { LifecycleHeader } from './components/lifecycle-header/lifecycle-header';
+import { LifecycleFooter } from './components/lifecycle-footer/lifecycle-footer';
+import { LifecycleHookBox } from './components/lifecycle-hook-box/lifecycle-hook-box';
+
 @Component({
   selector: 't-life-cycle-ex',
   standalone: true,
-  imports: [],
+  imports: [LifecycleHeader, LifecycleHookBox, LifecycleFooter],
   templateUrl: './life-cycle-ex.html',
   styleUrl: './life-cycle-ex.css',
 })
@@ -26,6 +30,40 @@ export class LifeCycleEx
     AfterViewChecked,
     OnDestroy
 {
+  readonly hooksList = [
+    { title: 'ngOnInit', highlight: true, desc: 'Inicialização do componente e chamadas de API.' },
+    {
+      title: 'ngOnDestroy',
+      highlight: true,
+      desc: 'Limpeza: cancela inscrições e libera memória.',
+    },
+    {
+      title: 'ngAfterViewInit',
+      highlight: false,
+      desc: 'Executado após o HTML e filhos serem renderizados.',
+    },
+    {
+      title: 'ngAfterViewChecked',
+      highlight: false,
+      desc: 'Verificação após cada renderização da View.',
+    },
+    {
+      title: 'ngAfterContentInit',
+      highlight: false,
+      desc: 'Executado após a projeção de conteúdo externo.',
+    },
+    {
+      title: 'ngAfterContentChecked',
+      highlight: false,
+      desc: 'Verificação após cada checagem de conteúdo projetado.',
+    },
+    {
+      title: 'ngDoCheck',
+      highlight: false,
+      desc: 'Detecção customizada de mudanças (roda com alta frequência).',
+    },
+  ];
+
   ngOnInit(): void {
     console.log('ngOnInit');
     // Invocação de funções de chamada de API
