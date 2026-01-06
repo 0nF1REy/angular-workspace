@@ -1,48 +1,52 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth/auth.service';
 
 @Component({
   selector: 't-login',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
-  loginObj: loginModel = new loginModel();
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  router = inject(Router);
-  http = inject(HttpClient);
+  loginObj = {
+    emailId: '',
+    password: '',
+  };
 
   onLogin() {
-    // if (this.loginObj.email == 'alanryan619@gmail.com' && this.loginObj.password == 'alan.2020') {
-    //   this.router.navigateByUrl('/variables');
-    // } else {
-    //   alert('Credenciais incorretas!');
-    // }
+    //   debugger;
+    //   if (
+    //     this.loginObj.emailId === 'kagura@yorozuya.edo' &&
+    //     this.loginObj.password === 'suKonbuPower'
+    //   ) {
+    //     localStorage.setItem('loggedUserId', '12345');
 
-    debugger;
-    this.http.post('https://api.freeprojectapi.com/api/UserApp/login', this.loginObj).subscribe({
+    //     this.router.navigateByUrl('/variables');
+    //   } else {
+    //     alert('Credenciais incorretas! (Teste Local)');
+    //   }
+    // }
+    this.authService.login(this.loginObj).subscribe({
       next: (result: any) => {
-        debugger;
-        localStorage.setItem('loggedUserId', result.data.userId);
-        this.router.navigateByUrl('/variables');
+        if (result.result) {
+          this.router.navigateByUrl('/variables');
+        } else {
+          alert(result.message || 'Credenciais incorretas!');
+        }
       },
-      error: (error: any) => {
-        debugger;
-        alert('Credenciais incorretas!');
+      error: (err: any) => {
+        if (err.status === 401 || err.status === 400) {
+          alert('E-mail ou senha inválidos!');
+        } else {
+          alert('Erro técnico na comunicação com o servidor. Tente novamente mais tarde.');
+        }
       },
     });
-  }
-}
-
-class loginModel {
-  emailId: string;
-  password: string;
-
-  constructor() {
-    this.emailId = '';
-    this.password = '';
   }
 }
