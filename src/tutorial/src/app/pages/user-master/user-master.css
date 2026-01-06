@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .registration-form-container {
   background-color: #ffffff;
   padding: 30px;

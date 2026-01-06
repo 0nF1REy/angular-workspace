@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .authentication-layout-container {
   padding: 40px;
   background-color: #ffffff;

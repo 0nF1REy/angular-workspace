@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .account-registration-form {
   background-color: #ffffff;
   padding: 35px;

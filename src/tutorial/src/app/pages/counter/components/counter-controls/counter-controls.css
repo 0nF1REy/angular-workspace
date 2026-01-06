@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .controls-section {
   display: flex;
   gap: 15px;
