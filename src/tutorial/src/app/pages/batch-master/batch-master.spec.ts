@@ -8,9 +8,8 @@ describe('BatchMaster', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BatchMaster]
-    })
-    .compileComponents();
+      imports: [BatchMaster],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BatchMaster);
     component = fixture.componentInstance;

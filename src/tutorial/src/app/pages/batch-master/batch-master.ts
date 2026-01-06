@@ -1,9 +1,9 @@
-import { BatchService } from './../../service/batch-service';
+import { BatchService } from '../../core/services/batch/batch-service';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Master } from '../../service/master';
+import { Master } from '../../core/services/master/master';
 
 @Component({
   selector: 't-batch-master',

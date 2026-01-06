@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Master } from '../../service/master';
+import { Master } from '../../core/services/master/master';
 
 @Component({
   selector: 't-control-flow',
