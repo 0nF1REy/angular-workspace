@@ -12,15 +12,15 @@ import { authGuard } from './core/guards/auth-guard';
 export const routes: Routes = [
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/ns-login').then((m) => m.NsLogin),
+    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
   },
   {
     path: 'register',
-    loadComponent: () => import('./pages/register/ns-register').then((m) => m.NsRegister),
+    loadComponent: () => import('./pages/register/register').then((m) => m.Register),
   },
   {
     path: '',
-    loadComponent: () => import('./pages/ns-main-layout').then((m) => m.NsMainLayout),
+    loadComponent: () => import('./pages/main-layout').then((m) => m.MainLayout),
     canActivate: [authGuard],
     providers: [provideState(cartFeature), provideEffects(cartEffects)],
     children: [
@@ -31,17 +31,17 @@ export const routes: Routes = [
       },
       {
         path: 'products',
-        loadComponent: () => import('./pages/products/ns-products').then((m) => m.NsProducts),
+        loadComponent: () => import('./pages/products/products').then((m) => m.Products),
         providers: [provideState(productFeature), provideEffects(productEffect)],
       },
       {
         path: 'profile',
-        loadComponent: () => import('./pages/profile/ns-profile').then((m) => m.NsProfile),
+        loadComponent: () => import('./pages/profile/profile').then((m) => m.Profile),
         providers: [provideState(profileFeature), provideEffects(profileEffect)],
       },
       {
         path: 'cart',
-        loadComponent: () => import('./pages/cart/ns-cart').then((m) => m.NsCart),
+        loadComponent: () => import('./pages/cart/cart').then((m) => m.Cart),
       },
     ],
   },

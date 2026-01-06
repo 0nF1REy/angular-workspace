@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { LucideAngularModule, Star } from 'lucide-angular';
 import { Product } from '../../pages/products/types/product-type';
-import { NsButton } from '../../shared/components/ns-button';
+import { Button } from '../../shared/components/button';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'ns-product-card',
-  imports: [NsButton, LucideAngularModule, CurrencyPipe],
+  imports: [Button, LucideAngularModule, CurrencyPipe],
   template: `
     <div
       class="relative overflow-hidden rounded-sm bg-[rgba(31,31,32,0.7)] border border-[#4CA6B8]"
@@ -58,7 +58,7 @@ import { CurrencyPipe } from '@angular/common';
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NsProductCard {
+export class ProductCard {
   readonly icons = { Star };
   readonly product = input.required<Product>();
   readonly addToCart = output<Product>();

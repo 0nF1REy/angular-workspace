@@ -9,7 +9,7 @@ import { FieldState } from '@angular/forms/signals';
     } }
   `,
 })
-export class NsFormErrors {
+export class FormErrors {
   readonly control = input.required<FieldState<unknown>>();
 
   protected readonly shouldShowError = computed(() => {

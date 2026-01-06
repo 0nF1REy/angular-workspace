@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { cartActions } from './cart/store/cart-actions';
-import { NsFooter } from '../core/components/ns-footer';
-import { NsHeader } from '../core/components/ns-header';
+import { Footer } from '../core/components/footer';
+import { Header } from '../core/components/header';
 
 @Component({
   selector: 'ns-main-layout',
-  imports: [RouterOutlet, NsHeader, NsFooter],
+  imports: [RouterOutlet, Header, Footer],
   template: `
     <ns-header />
     <div class="flex-1 container mx-auto">
@@ -19,7 +19,7 @@ import { NsHeader } from '../core/components/ns-header';
     class: 'min-h-screen flex flex-col bg-[#0F1115]',
   },
 })
-export class NsMainLayout {
+export class MainLayout {
   private readonly store = inject(Store);
   ngOnInit(): void {
     this.store.dispatch(cartActions.load());

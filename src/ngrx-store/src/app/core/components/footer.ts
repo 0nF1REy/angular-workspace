@@ -123,6 +123,6 @@ import { LucideAngularModule, Facebook, Twitter, Instagram } from 'lucide-angula
     </footer>
   `,
 })
-export class NsFooter {
+export class Footer {
   protected readonly icons = { Facebook, Twitter, Instagram };
 }

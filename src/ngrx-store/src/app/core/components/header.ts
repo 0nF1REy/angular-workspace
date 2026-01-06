@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { NsButton } from '../../shared/components/ns-button';
+import { Button } from '../../shared/components/button';
 import { authActions } from '../../shared/store/auth-actions';
 import { LucideAngularModule, LogOut, User, ShoppingCart } from 'lucide-angular';
 import { cartFeature } from '../../pages/cart/store/cart-feature';
@@ -10,7 +10,7 @@ import { cartFeature } from '../../pages/cart/store/cart-feature';
 @Component({
   selector: 'ns-header',
   standalone: true,
-  imports: [RouterLink, NsButton, LucideAngularModule],
+  imports: [RouterLink, Button, LucideAngularModule],
   template: `
     <div
       class="sticky top-0 z-50 w-full px-4 py-3 bg-[#1A1A1B] text-white shadow-lg border-b border-[#4CA6B8]"
@@ -64,7 +64,7 @@ import { cartFeature } from '../../pages/cart/store/cart-feature';
     </div>
   `,
 })
-export class NsHeader {
+export class Header {
   protected readonly icons = { LogOut, User, ShoppingCart };
   private readonly store = inject(Store);
 

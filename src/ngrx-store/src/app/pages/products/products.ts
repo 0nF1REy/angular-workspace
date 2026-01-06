@@ -3,14 +3,14 @@ import { Store } from '@ngrx/store';
 import { productActions } from './store/product-actions';
 import { productFeature } from './store/product-feature';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { NsProductCard } from '../../core/components/ns-product-card';
+import { ProductCard } from '../../core/components/product-card';
 import { FormsModule } from '@angular/forms';
 import { cartActions } from '../cart/store/cart-actions';
 import { Product } from './types/product-type';
 
 @Component({
   selector: 'ns-products',
-  imports: [NsProductCard, FormsModule],
+  imports: [ProductCard, FormsModule],
   template: `
     <div class="min-h-screen bg-[#0F1115] text-[#F3F4F6] py-10 px-4">
       <div class="max-w-6xl mx-auto space-y-10">
@@ -57,7 +57,7 @@ import { Product } from './types/product-type';
     </div>
   `,
 })
-export class NsProducts implements OnInit {
+export class Products implements OnInit {
   private readonly store = inject(Store);
   protected readonly products = toSignal(this.store.select(productFeature.selectFilteredProducts));
   protected readonly loading = toSignal(this.store.select(productFeature.selectLoading));

@@ -100,7 +100,7 @@ import { MyStorage } from '../../shared/services/storage';
   </div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NsProfile implements OnInit {
+export class Profile implements OnInit {
   protected readonly icons = { Mail, Phone, User, MapPin };
   private readonly store = inject(Store);
   private readonly storage = inject(MyStorage);

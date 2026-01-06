@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
-import { NsButton } from '../../shared/components/ns-button';
+import { Button } from '../../shared/components/button';
 import { RouterLink } from '@angular/router';
 import { form, Field } from '@angular/forms/signals';
-import { NsFormErrors } from '../../shared/components/ns-form-errors';
+import { FormErrors } from '../../shared/components/form-errors';
 import { registerSchema } from './register-schema';
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -12,7 +12,7 @@ import { authActions } from '../../shared/store/auth-actions';
 @Component({
   selector: 'ns-register',
   standalone: true,
-  imports: [NsButton, RouterLink, Field, NsFormErrors],
+  imports: [Button, RouterLink, Field, FormErrors],
   template: `
     <div
       class="w-full max-w-md p-8 bg-[#1A1A1B] rounded-2xl shadow-xl border border-[rgba(76,166,184,0.2)]"
@@ -107,7 +107,7 @@ import { authActions } from '../../shared/store/auth-actions';
     class: 'min-h-screen flex items-center justify-center bg-[#1A1A1B] p-4',
   },
 })
-export class NsRegister {
+export class Register {
   registerModel = signal({
     username: '',
     email: '',

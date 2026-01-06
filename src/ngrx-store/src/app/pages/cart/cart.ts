@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ShoppingBag, Plus, Minus, Trash2 } from 'lucide-angular';
-import { NsButton } from '../../shared/components/ns-button';
+import { Button } from '../../shared/components/button';
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { cartFeature } from './store/cart-feature';
@@ -10,7 +10,7 @@ import { cartActions } from './store/cart-actions';
 
 @Component({
   selector: 'ns-cart',
-  imports: [LucideAngularModule, RouterLink, NsButton, CurrencyPipe],
+  imports: [LucideAngularModule, RouterLink, Button, CurrencyPipe],
   template: `
     <div class="min-h-screen bg-[#0F1115] text-[#F3F4F6] py-10 px-4">
       <div class="max-w-6xl mx-auto space-y-10">
@@ -134,7 +134,7 @@ import { cartActions } from './store/cart-actions';
     </div>
   `,
 })
-export class NsCart {
+export class Cart {
   protected readonly icons = { ShoppingBag, Plus, Minus, Trash2 };
   private readonly store = inject(Store);
 

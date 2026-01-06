@@ -2,16 +2,16 @@ import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { form, Field, required, minLength } from '@angular/forms/signals';
 import { FormsModule } from '@angular/forms';
-import { NsFormErrors } from '../../shared/components/ns-form-errors';
+import { FormErrors } from '../../shared/components/form-errors';
 import { Store } from '@ngrx/store';
 import { authActions } from '../../shared/store/auth-actions';
 import { authFeatures } from '../../shared/store/auth-features';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { NsButton } from '../../shared/components/ns-button';
+import { Button } from '../../shared/components/button';
 
 @Component({
   selector: 'ns-login',
-  imports: [NsButton, RouterLink, Field, FormsModule, NsFormErrors],
+  imports: [Button, RouterLink, Field, FormsModule, FormErrors],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4 bg-[#1A1A1B]">
       <div class="w-full max-w-md">
@@ -95,7 +95,7 @@ import { NsButton } from '../../shared/components/ns-button';
     </div>
   `,
 })
-export class NsLogin {
+export class Login {
   loginModel = signal({
     username: 'johnd',
     password: 'm38rmF$',

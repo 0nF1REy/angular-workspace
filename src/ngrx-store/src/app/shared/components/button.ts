@@ -33,7 +33,7 @@ const iconSizeClasses: Record<ButtonSize, string> = {
     '[attr.aria-disabled]': 'disabled() || null',
   },
 })
-export class NsButton {
+export class Button {
   readonly variant = input<ButtonVariant>('primary');
   readonly size = input<ButtonSize>('md');
   readonly disabled = input<boolean | undefined>(false);
