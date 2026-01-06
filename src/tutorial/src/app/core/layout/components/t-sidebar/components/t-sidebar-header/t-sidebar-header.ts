@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { TState } from '../../../../store';
+import { TState } from '../../../../../store';
 
 @Component({
   selector: 't-sidebar-header',
