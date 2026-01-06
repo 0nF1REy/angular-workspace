@@ -1,6 +1,6 @@
 {
   "name": "tutorial",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "A small Angular 21 tutorial application demonstrating components, data binding, and template variables",
   "keywords": [
     "angular",
