@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'data-binding',
+  selector: 't-data-binding',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './data-binding.html',

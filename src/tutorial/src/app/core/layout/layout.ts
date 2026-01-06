@@ -4,7 +4,7 @@ import { TSidebar } from './t-sidebar/t-sidebar';
 import { THeader } from './t-header/t-header';
 
 @Component({
-  selector: 'layout',
+  selector: 't-layout',
   imports: [RouterOutlet, TSidebar, THeader],
   templateUrl: './layout.html',
   styleUrl: './layout.css',

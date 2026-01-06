@@ -3,7 +3,7 @@ import { Component, signal } from '@angular/core';
 import { email, Field, form, required, schema } from '@angular/forms/signals';
 
 @Component({
-  selector: 'signal-form-ex',
+  selector: 't-signal-form-ex',
   imports: [Field, JsonPipe],
   templateUrl: './signal-form-ex.html',
   styleUrl: './signal-form-ex.css',

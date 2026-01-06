@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'reactive-user',
+  selector: 't-reactive-user',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './reactive-user.html',

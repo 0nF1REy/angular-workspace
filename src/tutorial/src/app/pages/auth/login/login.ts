@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'login',
+  selector: 't-login',
   imports: [FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',

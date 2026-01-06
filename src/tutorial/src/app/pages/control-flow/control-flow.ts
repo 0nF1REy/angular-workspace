@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Master } from '../../service/master';
 
 @Component({
-  selector: 'control-flow',
+  selector: 't-control-flow',
   standalone: true,
   imports: [FormsModule, NgClass],
   templateUrl: './control-flow.html',

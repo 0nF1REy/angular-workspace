@@ -3,7 +3,7 @@ import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'dynamic-css-class',
+  selector: 't-dynamic-css-class',
   standalone: true,
   imports: [NgClass, FormsModule, NgStyle],
   templateUrl: './dynamic-css-class.html',

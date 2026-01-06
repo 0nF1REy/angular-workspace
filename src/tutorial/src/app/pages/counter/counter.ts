@@ -8,7 +8,7 @@ import { CounterDisplay } from './components/counter-display/counter-display';
 import { CounterControls } from './components/counter-controls/counter-controls';
 
 @Component({
-  selector: 'counter-page',
+  selector: 't-counter-page',
   standalone: true,
   imports: [CounterHeader, CounterDisplay, CounterControls],
   templateUrl: './counter.html',

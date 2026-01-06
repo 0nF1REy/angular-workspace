@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Master } from '../../service/master';
 
 @Component({
-  selector: 'batch-master',
+  selector: 't-batch-master',
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './batch-master.html',

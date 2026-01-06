@@ -12,7 +12,7 @@ export interface Competition {
 }
 
 @Component({
-  selector: 'project-competition',
+  selector: 't-project-competition',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './project-competition.html',

@@ -9,7 +9,7 @@ import {
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'variables',
+  selector: 't-variables',
   standalone: true,
   imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, SlicePipe, JsonPipe],
   templateUrl: './variables.html',
