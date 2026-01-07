@@ -1,0 +1,58 @@
+<!-- NAV -->
+<nav>
+  <mat-toolbar>
+    <span routerLink="/admin/dashboard">My App</span>
+  </mat-toolbar>
+</nav>
+<mat-drawer-container class="drawer-container">
+  <!-- side ||| push ||| over -->
+  <mat-drawer mode="side" #sideNav opened> Drawer content </mat-drawer>
+  <mat-drawer-content>
+    <!-- HEADER -->
+    <header>
+      <mat-toolbar>
+        <button mat-icon-button (click)="mudarSideNav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span routerLink="/admin/dashboard">My App</span>
+        <div>
+          <button mat-button [matMenuTriggerFor]="menuUsuarios">Usuários</button>
+          <button mat-button [matMenuTriggerFor]="menuPais">Pais</button>
+          <mat-menu #menuUsuarios="matMenu">
+            <button mat-menu-item routerLink="/admin/cadastro-usuarios" >Cadastrar</button>
+            <button mat-menu-item routerLink="./admin/pesquisa-usuarios">Pesquisar</button>
+          </mat-menu>
+          <mat-menu #menuPais="matMenu">
+            <button mat-menu-item>Cadastrar</button>
+            <button mat-menu-item>Listar</button>
+            <button mat-menu-item>Pesquisar</button>
+          </mat-menu>
+          <button mat-button [matMenuTriggerFor]="menuAlunos">Alunos</button>
+          <mat-menu #menuAlunos="matMenu">
+            <button mat-menu-item>Cadastrar</button>
+            <button mat-menu-item>Listar</button>
+            <button mat-menu-item>Pesquisar</button>
+          </mat-menu>
+          <button mat-button [matMenuTriggerFor]="menuCursos">Cursos</button>
+          <mat-menu #menuCursos="matMenu">
+            <button mat-menu-item>Cadastrar</button>
+            <button mat-menu-item>Listar</button>
+            <button mat-menu-item>Pesquisar</button>
+          </mat-menu>
+          <button mat-button [matMenuTriggerFor]="menuMatriculas">
+            Matriculas
+          </button>
+          <mat-menu #menuMatriculas="matMenu">
+            <button mat-menu-item>Matricular Aluno</button>
+            <button mat-menu-item>Listar</button>
+            <button mat-menu-item>Pesquisar</button>
+          </mat-menu>
+        </div>
+      </mat-toolbar>
+    </header>
+    <!-- MAIN -->
+    <main>
+      <router-outlet />
+    </main>
+  </mat-drawer-content>
+</mat-drawer-container>

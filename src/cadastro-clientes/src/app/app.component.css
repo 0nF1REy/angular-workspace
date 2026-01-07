@@ -1,0 +1,20 @@
+.drawer-container {
+  width: auto;
+  height: 93vh;
+  border: 1px solid #555;
+  background: #eee;
+}
+
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+main {
+  width: 85%;
+  display: block;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 25px;
+}

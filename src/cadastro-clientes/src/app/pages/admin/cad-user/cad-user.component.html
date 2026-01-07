@@ -1,0 +1,91 @@
+<div class="form">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Forneça o seu nome</mat-label>
+      <input matInput [(ngModel)]="nome" required />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Forneça o seu E-mail</mat-label>
+      <input
+        matInput
+        placeholder="usuario@example.com"
+        [(ngModel)]="email"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Sexo</mat-label>
+      <mat-select [(ngModel)]="sexo" required>
+        <mat-option value="m">Masculino</mat-option>
+        <mat-option value="f">Feminino</mat-option>
+        <mat-option value="n">Não informar</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Informe sua idade</mat-label>
+      <input
+        matInput
+        type="number"
+        step="1"
+        min="15"
+        [(ngModel)]="idade"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="!isCadastro">
+    <mat-form-field appearance="outline">
+      <mat-label>Digite sua senha atual</mat-label>
+      <input matInput type="password" [(ngModel)]="senhaAtual" required />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" [(ngModel)]="senha" required />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field
+      appearance="outline"
+      [color]="
+        senha === confSenha || (!confSenha && !isCadastro) ? 'primary' : 'warn'
+      "
+    >
+      <mat-label>Confirme a Senha</mat-label>
+      <input matInput type="password" [(ngModel)]="confSenha" required />
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="senha !== confSenha && confSenha" class="mensagem-erro">
+    As senhas não coincidem!
+  </div>
+
+  <div class="buttons-container">
+    <button
+      mat-stroked-button
+      id="btn-salvar"
+      [class]="classeBotao"
+      (click)="salvar()"
+      [disabled]="isCadastro && !isSenhasPreenchidas()"
+    >
+      {{ textoBotao }}
+    </button>
+
+    <button mat-stroked-button id="btn-cancelar" (click)="limpar()">
+      Cancelar
+    </button>
+  </div>
+</div>

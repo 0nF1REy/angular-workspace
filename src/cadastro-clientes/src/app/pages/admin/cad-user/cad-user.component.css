@@ -1,0 +1,49 @@
+.form {
+  display: block;
+  width: 70%;
+  margin-inline: auto;
+  background: linear-gradient(45deg, #101414, #2c3437);
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.form mat-form-field {
+  width: 100%;
+}
+
+.buttons-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buttons-container > button {
+  width: 45%;
+}
+
+.salvar {
+  background-color: #00d;
+  color: #fff;
+}
+
+#btn-salvar {
+  background-color: #00d;
+  color: #fff;
+}
+
+.atualizar {
+  background-color: rgba(138, 224, 88, 0.952);
+  color: #2f2f2f;
+}
+
+#btn-cancelar {
+  background-color: #a00;
+  color: #fff;
+}
+
+.mensagem-erro {
+  color: red;
+}
