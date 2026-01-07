@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { TSidebar } from './components/t-sidebar/t-sidebar';
 import { THeader } from './components/t-header/t-header';
+import { TFooter } from './components/t-footer/t-footer';
 
 @Component({
   selector: 't-layout',
-  imports: [RouterOutlet, TSidebar, THeader],
+  imports: [RouterOutlet, TSidebar, THeader, TFooter],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
