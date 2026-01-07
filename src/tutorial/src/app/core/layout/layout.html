@@ -6,7 +6,7 @@
       <div class="content-wrapper">
         <t-header></t-header>
 
-        <main (scroll)="onScroll($event)">
+        <main #scrollContainer (scroll)="onScroll($event)">
           <div class="p-4 content-inner">
             <div class="fade-in-up">
               <router-outlet></router-outlet>
