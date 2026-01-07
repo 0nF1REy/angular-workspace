@@ -1,7 +1,8 @@
 :host {
-  display: flex;
-  flex-direction: column;
+  display: block;
   height: 100vh;
+  background: radial-gradient(circle at bottom left, rgba(76, 166, 184, 0.12), transparent 70%),
+    radial-gradient(circle at top right, rgba(76, 166, 184, 0.05), transparent 50%);
 
   --gintama-black: #1a1a1b;
   --gintama-silver: #f3f4f6;
@@ -9,7 +10,6 @@
 }
 
 .sidebar {
-  background-color: var(--gintama-black);
   border-right: 1px solid rgba(243, 244, 246, 0.1);
   height: 100%;
   display: flex;

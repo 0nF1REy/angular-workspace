@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  flex: 1;
   overflow: hidden;
 
   --gintama-black: #1a1a1b;
@@ -10,7 +9,6 @@
 }
 
 .menu-label {
-  background-color: var(--gintama-black);
   padding: 1.5rem 1.5rem 0.75rem;
   font-size: 0.7rem;
   color: var(--gintama-cyan);

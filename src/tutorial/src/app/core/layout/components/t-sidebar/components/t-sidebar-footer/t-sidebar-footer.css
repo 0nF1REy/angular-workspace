@@ -1,12 +1,14 @@
 :host {
   display: block;
+  background: radial-gradient(circle at bottom left, rgba(24, 28, 29, 0.903), transparent 70%),
+    radial-gradient(circle at top right, rgba(27, 34, 35, 0.681), transparent 50%);
+  border-top: 1px solid rgba(31, 38, 39, 0.787);
 }
 
 .sidebar-footer {
   margin-top: auto;
   padding: 1.5rem;
   border-top: 1px solid rgba(76, 166, 184, 0.1);
-  background: linear-gradient(to top, rgba(76, 166, 184, 0.03), transparent);
   font-size: 0.75rem;
   color: #4ca6b8;
   font-weight: bold;
