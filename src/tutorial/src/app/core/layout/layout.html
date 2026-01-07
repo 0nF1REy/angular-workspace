@@ -1,18 +1,20 @@
 <div class="app-wrapper">
   <div class="container-fluid p-0">
-    <div class="row g-0 min-vh-100">
+    <div class="row g-0">
       <t-sidebar></t-sidebar>
 
-      <div class="content-wrapper col d-flex flex-column">
+      <div class="content-wrapper">
         <t-header></t-header>
 
-        <main class="flex-grow-1 p-4">
-          <div class="fade-in-up">
-            <router-outlet></router-outlet>
+        <main (scroll)="onScroll($event)">
+          <div class="p-4 content-inner">
+            <div class="fade-in-up">
+              <router-outlet></router-outlet>
+            </div>
           </div>
         </main>
 
-        <t-footer></t-footer>
+        <t-footer [class.footer-hidden]="!isAtBottom()"></t-footer>
       </div>
     </div>
   </div>

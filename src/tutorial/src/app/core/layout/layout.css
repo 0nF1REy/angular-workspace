@@ -1,31 +1,35 @@
 :host {
   --gintama-black: #1a1a1b;
-  --gintama-silver: #f3f4f6;
-  --gintama-cyan: #4ca6b8;
-  --gintama-red: #c1272d;
   --sidebar-width: 260px;
-}
-
-.app-wrapper {
-  background-color: var(--gintama-black);
+  display: block;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  color: var(--gintama-silver);
+}
+
+.app-wrapper, .container-fluid, .row {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
 }
 
 t-sidebar {
   flex: 0 0 var(--sidebar-width);
-  min-width: var(--sidebar-width);
-  height: 100vh;
-  z-index: 100;
+  width: var(--sidebar-width);
+  height: 100%;
 }
 
 .content-wrapper {
-  height: 100vh;
-  overflow: hidden;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 main {
@@ -34,17 +38,39 @@ main {
   background-color: var(--gintama-black);
 }
 
+.content-inner {
+  padding-bottom: 100px !important;
+}
+
+t-header {
+  display: block;
+  flex-shrink: 0;
+  z-index: 110;
+}
+
+t-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+t-footer.footer-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+
 .fade-in-up {
   animation: fadeInUp 0.4s ease-out forwards;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
