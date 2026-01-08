@@ -86,6 +86,11 @@ export const routes: Routes = [
         title: 'Gestão de Estado (NgRx)',
         loadComponent: () => import('./pages/counter/counter').then((m) => m.Counter),
       },
+      {
+        path: 'user-list',
+        title: 'Lista de Usuários',
+        loadComponent: () => import('./pages/user-list/user-list').then((m) => m.UserList),
+      },
     ],
   },
   {

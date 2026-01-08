@@ -61,4 +61,9 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     icon: 'bi-diagram-3',
     route: 'counter',
   },
+  {
+    label: 'Integração HTTP',
+    icon: 'bi-hdd-network',
+    route: 'user-list',
+  },
 ];
