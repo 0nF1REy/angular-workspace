@@ -1,3 +1,72 @@
 :host {
   display: block;
+  padding: 1rem;
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(76, 166, 184, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gintama-cyan);
+  background: rgba(76, 166, 184, 0.05);
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  background: var(--gintama-cyan);
+  color: var(--gintama-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+}
+
+.user-name {
+  color: var(--gintama-silver);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: rgba(243, 244, 246, 0.5);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(76, 166, 184, 0.1);
+  margin-bottom: 1rem;
+}
+
+.btn-profile {
+  background: transparent;
+  border: 1px solid rgba(76, 166, 184, 0.3);
+  color: var(--gintama-cyan);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-profile:hover {
+  background: var(--gintama-cyan);
+  color: var(--gintama-black);
 }

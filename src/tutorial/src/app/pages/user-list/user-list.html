@@ -1,1 +1,27 @@
-<p>user-list works!</p>
+<div class="container-fluid fade-in-up">
+  <div class="page-header mb-4">
+    <h3 class="text-cyan"><i class="bi bi-hdd-network me-2"></i>Diretório de Usuários</h3>
+    <p class="text-silver opacity-50 small">Dados recuperados via HttpClient de API externa</p>
+  </div>
+
+  <div class="row g-4">
+    @for (user of usersList(); track user.id) {
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="user-card">
+        <div class="card-glow"></div>
+        <div class="avatar-circle">
+          {{ user.name.charAt(0) }}
+        </div>
+        <h5 class="user-name">{{ user.name }}</h5>
+        <span class="user-email">{{ user.email }}</span>
+        <div class="divider"></div>
+        <button class="btn-profile">Ver Perfil</button>
+      </div>
+    </div>
+    } @empty {
+    <div class="col-12 text-center py-5">
+      <span class="text-silver opacity-50">Nenhum usuário encontrado.</span>
+    </div>
+    }
+  </div>
+</div>
