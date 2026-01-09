@@ -1,8 +1,14 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  
+  http = inject(HttpClient);
+
+  getAllProduct() {
+    return this.http.get(environment.API_URL + 'GetParentCategories');
+  }
 }
