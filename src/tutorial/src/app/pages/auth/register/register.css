@@ -149,18 +149,6 @@
   margin-bottom: 25px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-label {
   color: #333;
   font-weight: 600;
@@ -186,42 +174,6 @@
   border-color: #58b2dc;
   box-shadow: 0 0 0 0.2rem rgba(88, 178, 220, 0.25);
   transform: translateY(-2px);
-}
-
-.form-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.form-check-input {
-  margin-top: 4px;
-  cursor: pointer;
-}
-
-.form-check-input:checked {
-  background-color: #58b2dc;
-  border-color: #58b2dc;
-}
-
-.form-check-label {
-  font-size: 13px;
-  color: #666;
-  cursor: pointer;
-  line-height: 1.5;
-}
-
-.terms-link {
-  color: #58b2dc;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.terms-link:hover {
-  color: #e60012;
-  text-decoration: underline;
 }
 
 .register-btn {
@@ -303,10 +255,6 @@
 
   .icon-wrapper i {
     font-size: 60px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .circle-1,

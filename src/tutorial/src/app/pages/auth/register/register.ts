@@ -10,13 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class Register {
   registerObj = {
-    firstName: '',
-    lastName: '',
-    username: '',
+    fullName: '',
     emailId: '',
     password: '',
-    confirmPassword: '',
-    agreedToTerms: false,
   };
 
   onRegister() {

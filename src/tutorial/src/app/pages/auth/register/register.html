@@ -9,47 +9,17 @@
     </div>
 
     <form class="register-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="firstName" class="form-label">
-            <i class="bi bi-person-fill me-2"></i>Primeiro Nome
-          </label>
-          <input
-            type="text"
-            [(ngModel)]="registerObj.firstName"
-            name="firstName"
-            class="form-control"
-            id="firstName"
-            placeholder="Digite seu primeiro nome"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="lastName" class="form-label">
-            <i class="bi bi-person-fill me-2"></i>Último Nome
-          </label>
-          <input
-            type="text"
-            [(ngModel)]="registerObj.lastName"
-            name="lastName"
-            class="form-control"
-            id="lastName"
-            placeholder="Digite seu último nome"
-          />
-        </div>
-      </div>
-
       <div class="mb-4">
-        <label for="username" class="form-label">
-          <i class="bi bi-at me-2"></i>Nome de Usuário
+        <label for="fullName" class="form-label">
+          <i class="bi bi-person-fill me-2"></i>Nome Completo
         </label>
         <input
           type="text"
-          [(ngModel)]="registerObj.username"
-          name="username"
+          [(ngModel)]="registerObj.fullName"
+          name="fullName"
           class="form-control"
-          id="username"
-          placeholder="Escolha um nome de usuário"
+          id="fullName"
+          placeholder="Digite seu nome completo"
         />
       </div>
 
@@ -77,36 +47,6 @@
           id="password"
           placeholder="Crie uma senha segura"
         />
-      </div>
-
-      <div class="mb-4">
-        <label for="confirmPassword" class="form-label">
-          <i class="bi bi-lock-fill me-2"></i>Confirmar Senha
-        </label>
-        <input
-          type="password"
-          [(ngModel)]="registerObj.confirmPassword"
-          name="confirmPassword"
-          class="form-control"
-          id="confirmPassword"
-          placeholder="Confirme sua senha"
-        />
-      </div>
-
-      <div class="mb-4 form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="terms"
-          [(ngModel)]="registerObj.agreedToTerms"
-          name="terms"
-        />
-        <label class="form-check-label" for="terms">
-          Ao se registrar, você concorda com nossos
-          <a href="#" class="terms-link">termos de serviço</a>
-          e nossa
-          <a href="#" class="terms-link">política de privacidade</a>
-        </label>
       </div>
 
       <button type="submit" (click)="onRegister()" class="btn btn-primary w-100 register-btn">
