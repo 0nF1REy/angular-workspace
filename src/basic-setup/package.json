@@ -1,12 +1,36 @@
 {
   "name": "basic-setup",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Angular 21 basic setup with core services, pages, and environment configuration for customer and product modules",
+  "keywords": [
+    "angular",
+    "angular-cli",
+    "typescript",
+    "vitest",
+    "starter",
+    "scaffold",
+    "customers",
+    "products"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
   },
   "prettier": {
     "printWidth": 100,
