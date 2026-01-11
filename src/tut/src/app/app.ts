@@ -10,5 +10,12 @@ import { DatePipe } from '@angular/common';
 })
 export class App {
   protected readonly title = signal('tut');
-  protected readonly currentDate = signal(new Date());
+
+  name = 'Alan Ryan da Silva Domingues';
+  age = 21;
+  currentDate = signal(new Date());
+
+  updateName() {
+    this.name = 'Lorem ipsum';
+  }
 }

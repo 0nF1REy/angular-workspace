@@ -1,4 +1,21 @@
-<h1>Que calor</h1>
-<p>
-  A data de hoje é: <span>{{ currentDate() | date : 'dd/MM/yyyy' }}</span>
-</p>
+<div>
+  <header>
+    <hr />
+  </header>
+
+  <main>
+    <section>
+      <h1>title — {{ title() }}</h1>
+      <h2>name — {{ name }}</h2>
+    </section>
+
+    <aside>
+      <h3>age — {{ age }}</h3>
+      <h4>currentDate — {{ currentDate() | date : 'dd/MM/yyyy' }}</h4>
+    </aside>
+  </main>
+
+  <footer>
+    <hr />
+  </footer>
+</div>
