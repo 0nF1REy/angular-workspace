@@ -10,14 +10,18 @@ import { DatePipe } from '@angular/common';
 })
 export class App {
   protected readonly title = signal('tut');
+  private readonly INITIAL_NAME = 'Alan Ryan da Silva Domingues';
 
-  nameOne = 'Alan Ryan da Silva Domingues';
-  nameTwo = signal('Alan Ryan da Silva Domingues');
+  // nameOne = 'Alan Ryan da Silva Domingues';
+  // nameTwo = signal('Alan Ryan da Silva Domingues');
+
+  nameOne = this.INITIAL_NAME;
+  nameTwo = signal(this.INITIAL_NAME);
   age = 21;
   currentDate = signal(new Date());
 
   updateNameOne() {
-    this.nameOne = 'A. R. D. S. D';
+    this.nameOne = 'A. R. S. D';
   }
 
   updateNameTwo() {
