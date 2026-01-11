@@ -1,0 +1,444 @@
+/* Global Variables */
+$gintama-black: #1a1a1b;
+$gintama-cyan: #4ca6b8;
+$gintama-silver: #f3f4f6;
+$gintama-dark-gray: #2a2a2b;
+$gintama-light-gray: #e8e8e8;
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $gintama-black;
+  color: $gintama-silver;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+/* Scrollbar Styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $gintama-cyan $gintama-black;
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $gintama-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gintama-cyan;
+  border-radius: 999px;
+  border: 1px solid $gintama-black;
+
+  &:hover {
+    background: #5db7c9;
+  }
+
+  &:active {
+    background: $gintama-silver;
+  }
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: $gintama-silver;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Paragraphs and Text */
+p {
+  margin-bottom: 1rem;
+  color: $gintama-silver;
+}
+
+a {
+  color: $gintama-cyan;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #5db7c9;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $gintama-light-gray;
+  }
+}
+
+/* Buttons */
+button,
+input[type='button'],
+input[type='submit'] {
+  background-color: $gintama-cyan;
+  color: $gintama-black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+
+  &:hover {
+    background-color: #5db7c9;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background-color: $gintama-cyan;
+  }
+
+  &:disabled {
+    background-color: $gintama-dark-gray;
+    color: $gintama-light-gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  background-color: $gintama-dark-gray;
+  color: $gintama-silver;
+  border: 1px solid $gintama-cyan;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #5db7c9;
+    box-shadow: 0 0 0 3px rgba(76, 166, 184, 0.1);
+  }
+
+  &:disabled {
+    background-color: $gintama-black;
+    color: $gintama-light-gray;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: $gintama-silver;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  color: $gintama-silver;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, $gintama-cyan, transparent);
+  margin: 2rem 0;
+}
+
+/* Code */
+code,
+pre {
+  background-color: $gintama-dark-gray;
+  border: 1px solid $gintama-cyan;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #90ee90;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+
+  code {
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: $gintama-dark-gray;
+  border: 1px solid $gintama-cyan;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: rgba(76, 166, 184, 0.1);
+  border-bottom: 2px solid $gintama-cyan;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(76, 166, 184, 0.2);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: rgba(76, 166, 184, 0.05);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.rounded {
+  border-radius: 6px;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.slide-in-down {
+  animation: slideInDown 0.4s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  button,
+  input[type='button'],
+  input[type='submit'] {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+}
