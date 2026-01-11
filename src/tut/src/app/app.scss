@@ -141,3 +141,28 @@ footer {
   scrollbar-color: $gintama-cyan $gintama-black;
   scrollbar-gutter: stable;
 }
+
+button {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid $gintama-cyan;
+  color: $gintama-cyan;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: $gintama-cyan;
+    color: $gintama-black;
+    box-shadow: 0 0 20px rgba(76, 166, 184, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

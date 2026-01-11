@@ -6,7 +6,10 @@
   <main>
     <section>
       <h1>title — {{ title() }}</h1>
-      <h2>name — {{ name }}</h2>
+      <h2>nameOne — {{ nameOne }}</h2>
+      <p>nameTwo — {{ nameTwo() }}</p>
+      <button (click)="updateNameOne()">updateNameOne</button>
+      <button (click)="updateNameTwo()">updateNameTwo</button>
     </section>
 
     <aside>
