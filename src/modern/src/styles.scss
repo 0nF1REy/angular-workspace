@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+/* Definição de Variáveis (Design Tokens) */
+:root {
+  /* Cores Principais */
+  --primary: #4ca6b8;
+  --primary-hover: #5db7c9;
+  --primary-contrast: #1a1a1b;
+
+  /* Neutros / Backgrounds */
+  --bg-main: #1a1a1b;
+  --bg-surface: #2a2a2b;
+
+  /* Tipografia */
+  --text-main: #f3f4f6;
+  --text-muted: #e8e8e8;
+
+  /* Feedback e Estados */
+  --disabled-bg: #2a2a2b;
+  --disabled-text: #e8e8e8;
+
+  /* Bordas e Raio */
+  --radius-md: 6px;
+  --radius-full: 999px;
+
+  /* Transições */
+  --transition-fast: 0.3s ease;
+}
+
+/* Reset e estilos base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+/* Barra de rolagem */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-main);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--bg-main);
+
+  &:hover {
+    background: var(--primary-hover);
+  }
+
+  &:active {
+    background: var(--text-main);
+  }
+}
+
+/* Botões */
+button,
+.btn,
+input[type='button'],
+input[type='submit'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  text-decoration: none;
+
+  &:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    background-color: var(--primary);
+  }
+
+  &:disabled {
+    background-color: var(--disabled-bg);
+    color: var(--disabled-text);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+  }
+}
