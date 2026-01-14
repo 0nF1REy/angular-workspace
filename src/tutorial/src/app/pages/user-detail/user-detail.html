@@ -1,0 +1,41 @@
+<div class="container-fluid fade-in-up">
+  @if (isLoading()) {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <span>Sincronizando dados do usuário...</span>
+  </div>
+  } @else if (user(); as u) {
+  <div class="profile-grid">
+    <!-- Card Principal -->
+    <div class="profile-main-card">
+      <div class="avatar-large">{{ u.name.charAt(0) }}</div>
+      <h2>{{ u.name }}</h2>
+      <span class="username">@{{ u.username }}</span>
+
+      <div class="info-row mt-4">
+        <i class="bi bi-envelope text-cyan"></i>
+        <span>{{ u.email }}</span>
+      </div>
+      <div class="info-row">
+        <i class="bi bi-telephone text-cyan"></i>
+        <span>{{ u.phone }}</span>
+      </div>
+    </div>
+
+    <!-- Detalhes Secundários -->
+    <div class="details-column">
+      <div class="detail-card">
+        <h6><i class="bi bi-geo-alt me-2 text-cyan"></i>LOCALIZAÇÃO</h6>
+        <p>{{ u.address.street }}, {{ u.address.suite }}</p>
+        <p>{{ u.address.city }} - {{ u.address.zipcode }}</p>
+      </div>
+
+      <div class="detail-card mt-3">
+        <h6><i class="bi bi-building me-2 text-cyan"></i>EMPRESA</h6>
+        <p class="fw-bold">{{ u.company.name }}</p>
+        <p class="small opacity-50">"{{ u.company.catchPhrase }}"</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>

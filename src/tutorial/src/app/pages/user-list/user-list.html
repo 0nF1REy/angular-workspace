@@ -15,7 +15,7 @@
         <h5 class="user-name">{{ user.name }}</h5>
         <span class="user-email">{{ user.email }}</span>
         <div class="divider"></div>
-        <button class="btn-profile">Ver Perfil</button>
+        <button class="btn-profile" [routerLink]="['/user-list', user.id]">Ver Perfil</button>
       </div>
     </div>
     } @empty {

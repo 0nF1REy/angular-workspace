@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { User } from '../../core/services/user/user';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 't-user-list',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './user-list.html',
   styleUrl: './user-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

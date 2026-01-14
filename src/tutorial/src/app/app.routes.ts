@@ -97,6 +97,12 @@ export const routes: Routes = [
         title: 'Lista de Usuários',
         loadComponent: () => import('./pages/user-list/user-list').then((m) => m.UserList),
       },
+      {
+        path: 'user-list/:id',
+        title: 'Perfil do Usuário',
+        loadComponent: () =>
+          import('./pages/user-detail/user-detail').then((m) => m.UserDetail),
+      },
     ],
   },
   {
