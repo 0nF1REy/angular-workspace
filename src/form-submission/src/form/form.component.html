@@ -1,0 +1,41 @@
+<div class="form-container">
+  <h2>Cadastre-se</h2>
+  <form (submit)="onSubmit($event)">
+    <div class="field">
+      <label for="username">Nome de usuário</label>
+      <input id="username" type="text" [field]="form.username" />
+      @if (form.username().touched() && form.username().invalid()) {
+        <ul class="error-list">
+          @for (err of form.username().errors(); track $index) {
+            <li>{{ err.message }}</li>
+          }
+        </ul>
+      }
+    </div>
+
+    <div class="field">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" [field]="form.email" />
+      @if (form.email().touched() && form.email().invalid()) {
+        <ul class="error-list">
+          @for (err of form.email().errors(); track $index) {
+            <li>{{ err.message }}</li>
+          }
+        </ul>
+      }
+    </div>
+
+    <div class="actions">
+      <button
+        type="submit"
+        [disabled]="form().invalid() || form().submitting()"
+      >
+        @if (form().submitting()) {
+          Criando…
+        } @else {
+          Criar conta
+        }
+      </button>
+    </div>
+  </form>
+</div>
