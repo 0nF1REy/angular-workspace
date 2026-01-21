@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'm-hello',
@@ -14,5 +14,19 @@ export class Hello {
   onClick(): void {
     this.isDisabled = !this.isDisabled;
     console.log('O botão foi desabilitado!');
+  }
+
+  protected count = signal(0);
+
+  increateCounter() {
+    this.count.update((value) => value + 1);
+  }
+
+  decreaseCounter() {
+    this.count.update((value) => value - 1);
+  }
+
+  resetCounter() {
+    this.count.set(0);
   }
 }
