@@ -1,5 +1,5 @@
 {
-  "name": "form-submission",
+  "name": "ex-02-submission",
   "private": true,
   "scripts": {
     "start": "ng serve",
