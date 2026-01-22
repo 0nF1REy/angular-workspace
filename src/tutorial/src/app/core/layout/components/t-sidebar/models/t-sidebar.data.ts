@@ -66,4 +66,9 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     icon: 'bi-hdd-network',
     route: 'user-list',
   },
+  {
+    label: 'Meditação',
+    icon: 'bi-wind',
+    route: 'meditation',
+  },
 ];

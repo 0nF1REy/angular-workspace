@@ -72,7 +72,7 @@ export const routes: Routes = [
         title: 'Competição',
         loadComponent: () =>
           import('./pages/project-competition/project-competition').then(
-            (m) => m.ProjectCompetition
+            (m) => m.ProjectCompetition,
           ),
       },
       {
@@ -100,8 +100,12 @@ export const routes: Routes = [
       {
         path: 'user-list/:id',
         title: 'Perfil do Usuário',
-        loadComponent: () =>
-          import('./pages/user-detail/user-detail').then((m) => m.UserDetail),
+        loadComponent: () => import('./pages/user-detail/user-detail').then((m) => m.UserDetail),
+      },
+      {
+        path: 'meditation',
+        title: 'Meditação',
+        loadComponent: () => import('./pages/meditation/meditation').then((m) => m.Meditation),
       },
     ],
   },

@@ -1,0 +1,31 @@
+<div class="meditation-container fade-in-up">
+  <div class="glass-panel">
+    <div class="header">
+      <i class="bi bi-wind text-cyan"></i>
+      <h3>Espaço de Foco</h3>
+      <p>Sincronize sua mente com o ritmo digital</p>
+    </div>
+
+    <div class="breathing-area">
+      <div class="breathing-circle" [class]="breathState()">
+        <span class="breath-inner-text">{{ breathText() }}</span>
+        <div class="pulse-ring"></div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <div class="step">
+        <span class="sec">4s</span>
+        <span class="label">Inalação</span>
+      </div>
+      <div class="step">
+        <span class="sec">2s</span>
+        <span class="label">Pausa</span>
+      </div>
+      <div class="step">
+        <span class="sec">4s</span>
+        <span class="label">Exalação</span>
+      </div>
+    </div>
+  </div>
+</div>
