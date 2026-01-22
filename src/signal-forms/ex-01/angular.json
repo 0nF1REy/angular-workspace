@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-21": {
+    "ex-01": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,9 +25,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -57,10 +55,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-21:build:production"
+              "buildTarget": "ex-01:build:production"
             },
             "development": {
-              "buildTarget": "angular-21:build:development"
+              "buildTarget": "ex-01:build:development"
             }
           },
           "defaultConfiguration": "development"

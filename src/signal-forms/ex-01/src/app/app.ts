@@ -8,5 +8,5 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('angular-21');
+  protected readonly title = signal('ex-01');
 }
