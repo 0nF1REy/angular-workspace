@@ -8,7 +8,7 @@
       <p class="register-subtitle">Preencha os dados abaixo para se registrar</p>
     </div>
 
-    <form class="register-form">
+    <form class="register-form" (submit)="onRegister(); $event.preventDefault()">
       <div class="mb-4">
         <label for="fullName" class="form-label">
           <i class="bi bi-person-fill me-2"></i>Nome Completo
@@ -19,6 +19,7 @@
           name="fullName"
           class="form-control"
           id="fullName"
+          required
           placeholder="Digite seu nome completo"
         />
       </div>
@@ -30,9 +31,10 @@
         <input
           type="email"
           [(ngModel)]="registerObj.emailId"
-          name="email"
+          name="emailId"
           class="form-control"
           id="email"
+          required
           placeholder="Digite seu e-mail"
         />
       </div>
@@ -45,18 +47,24 @@
           name="password"
           class="form-control"
           id="password"
+          required
           placeholder="Crie uma senha segura"
         />
       </div>
 
-      <button type="submit" (click)="onRegister()" class="btn btn-primary w-100 register-btn">
-        <span class="btn-text">Registrar</span>
-        <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+      <button type="submit" [disabled]="isLoading()" class="btn btn-primary w-100 register-btn">
+        @if (isLoading()) {
+          <span class="spinner-border spinner-border-sm me-2"></span>
+          <span>Processando...</span>
+        } @else {
+          <span class="btn-text">Registrar</span>
+          <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+        }
       </button>
     </form>
 
     <div class="register-footer">
-      <p>Já tem uma conta? <a href="#" class="login-link">Faça login</a></p>
+      <p>Já tem uma conta? <a routerLink="/login" class="login-link">Faça login</a></p>
     </div>
   </div>
 
