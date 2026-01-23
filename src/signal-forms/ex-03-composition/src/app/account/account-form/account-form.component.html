@@ -1,0 +1,17 @@
+<div class="form">
+  <h3>Informações da Conta</h3>
+
+  <div class="field-group">
+    <label>
+      Nome
+      <input type="text" [field]="form().firstName" />
+      <app-validation-errors [fieldState]="form().firstName()" />
+    </label>
+
+    <label>
+      Sobrenome
+      <input type="text" [field]="form().lastName" />
+      <app-validation-errors [fieldState]="form().lastName()" />
+    </label>
+  </div>
+</div>

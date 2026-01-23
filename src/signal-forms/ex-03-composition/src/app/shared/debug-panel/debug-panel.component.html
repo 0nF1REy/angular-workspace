@@ -1,0 +1,15 @@
+<div class="debug">
+  <h3>Saída de Depuração</h3>
+
+  <div class="debug-section">
+    <strong>Valores do Formulário:</strong>
+    <pre>{{ formValue() | json }}</pre>
+  </div>
+
+  <div class="debug-section">
+    <strong>Formulário Válido:</strong>
+    <span [class.valid]="formValid()" [class.invalid]="!formValid()">
+      {{ formValid() }}
+    </span>
+  </div>
+</div>

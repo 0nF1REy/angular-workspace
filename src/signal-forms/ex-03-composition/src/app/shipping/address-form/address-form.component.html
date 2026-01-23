@@ -1,0 +1,31 @@
+<div class="form">
+  <h3>Endereço de Entrega</h3>
+
+  <div class="field-group">
+    <label>
+      Rua
+      <input type="text" [field]="form().street" />
+      <app-validation-errors [fieldState]="form().street()" />
+    </label>
+
+    <div class="row">
+      <label>
+        Cidade
+        <input type="text" [field]="form().city" />
+        <app-validation-errors [fieldState]="form().city()" />
+      </label>
+
+      <label>
+        Estado
+        <input type="text" [field]="form().state" />
+        <app-validation-errors [fieldState]="form().state()" />
+      </label>
+
+      <label>
+        CEP
+        <input type="text" [field]="form().zip" />
+        <app-validation-errors [fieldState]="form().zip()" />
+      </label>
+    </div>
+  </div>
+</div>
