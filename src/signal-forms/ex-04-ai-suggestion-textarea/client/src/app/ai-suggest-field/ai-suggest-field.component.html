@@ -1,0 +1,46 @@
+<div class="form-group">
+  <label>{{ label() }}</label>
+  <div class="textarea-wrapper">
+    <textarea
+      [placeholder]="placeholder()"
+      [value]="value()"
+      (input)="onInput($event)"
+      (blur)="onBlur()"
+      rows="5"
+    ></textarea>
+    <button
+      type="button"
+      class="magic-button"
+      (click)="submitRequest()"
+      [disabled]="isSubmitDisabled()"
+      title="Get AI suggestion"
+    >
+      <svg width="18" height="18" fill="currentColor" focusable="false" aria-hidden="true">
+        <use href="assets/icons/sparkle.svg#sparkle-icon"/>
+      </svg>
+    </button>
+  </div>
+  
+  @if (status() !== 'idle') {
+    <div class="suggestion-panel" [class]="status()">
+      <div class="suggestion-content">
+        @if (status() === 'loading') {
+          <span>Thinking...</span>
+        } @else if (status() === 'ready' && suggestion()) {
+          <span>{{ suggestion() }}</span>
+        } @else if (status() === 'error') {
+          <span>AI unavailable (kept your input)</span>
+        }
+      </div>
+      
+      @if (status() === 'ready' && suggestion()) {
+        <div class="suggestion-actions">
+          <button 
+            class="btn-accept" 
+            (click)="accept()"
+          >Accept</button>
+        </div>
+      }
+    </div>
+  }
+</div>
