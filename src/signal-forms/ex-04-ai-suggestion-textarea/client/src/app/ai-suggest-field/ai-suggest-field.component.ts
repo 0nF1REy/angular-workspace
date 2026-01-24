@@ -1,23 +1,30 @@
-import { Component, input, model, computed, signal, inject } from '@angular/core';
-import { FormValueControl } from '@angular/forms/signals';
-import { AiSuggestService } from './ai-suggest.service';
+import {
+  Component,
+  input,
+  model,
+  computed,
+  signal,
+  inject,
+} from "@angular/core";
+import { FormValueControl } from "@angular/forms/signals";
+import { AiSuggestService } from "./ai-suggest.service";
 
-type Status = 'idle' | 'loading' | 'ready' | 'error';
+type Status = "idle" | "loading" | "ready" | "error";
 
 @Component({
-  selector: 'ai-suggest-field',
-  templateUrl: './ai-suggest-field.component.html',
-  styleUrl: './ai-suggest-field.component.css'
+  selector: "ai-suggest-field",
+  templateUrl: "./ai-suggest-field.component.html",
+  styleUrl: "./ai-suggest-field.component.css",
 })
 export class AiSuggestFieldComponent implements FormValueControl<string> {
   label = input.required<string>();
-  placeholder = input<string>('');
-  value = model<string>('');
+  placeholder = input<string>("");
+  value = model<string>("");
   touched = model<boolean>(false);
 
-  protected status = signal<Status>('idle');
-  protected suggestion = signal<string>('');
-  
+  protected status = signal<Status>("idle");
+  protected suggestion = signal<string>("");
+
   private abortController: AbortController | null = null;
 
   private service = inject(AiSuggestService);
@@ -41,9 +48,7 @@ export class AiSuggestFieldComponent implements FormValueControl<string> {
     this.resetToIdle();
   }
 
-  protected isSubmitDisabled = computed(() =>
-    this.status() === 'loading'
-  );
+  protected isSubmitDisabled = computed(() => this.status() === "loading");
 
   private cancelPendingOperations() {
     if (this.abortController) {
@@ -53,32 +58,32 @@ export class AiSuggestFieldComponent implements FormValueControl<string> {
   }
 
   private resetToIdle() {
-    this.status.set('idle');
-    this.suggestion.set('');
+    this.status.set("idle");
+    this.suggestion.set("");
   }
 
   private async requestSuggestion(text: string) {
     this.abortController = new AbortController();
-    this.status.set('loading');
+    this.status.set("loading");
 
     try {
       const response = await this.service.suggest(
         text,
-        this.abortController.signal
+        this.abortController.signal,
       );
 
       if (response.suggestion?.length > 0) {
         this.suggestion.set(response.suggestion);
-        this.status.set('ready');
+        this.status.set("ready");
       } else {
         this.resetToIdle();
       }
     } catch (error: any) {
-      if (error.name === 'AbortError') {
+      if (error.name === "AbortError") {
         return;
       }
-      this.status.set('error');
-      this.suggestion.set('');
+      this.status.set("error");
+      this.suggestion.set("");
     } finally {
       this.abortController = null;
     }

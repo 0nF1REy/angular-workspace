@@ -15,8 +15,8 @@
 textarea {
   display: block;
   width: 100%;
-  padding-right: 40px; /* Make room for the button */
-  padding-bottom: 40px; /* Match bottom spacing */
+  padding-right: 40px;
+  padding-bottom: 40px;
   box-sizing: border-box;
   resize: none;
 }
@@ -42,7 +42,9 @@ textarea {
 
 .magic-button:hover:not(:disabled) {
   background: #2563eb;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transform: translateY(-1px);
 }
 
