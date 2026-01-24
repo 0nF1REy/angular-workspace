@@ -1,34 +1,36 @@
 <div class="card">
-  <h1>Create Listing</h1>
+  <h1>Criar Anúncio</h1>
+
   <form>
     <div class="form-group">
-      <label for="title">Title</label>
+      <label for="title">Título</label>
       <input
         id="title"
         type="text"
         [field]="formTree.title"
-        placeholder="Enter listing title"
+        placeholder="Digite o título do anúncio"
       />
     </div>
 
     <!-- <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description">Descrição</label>
       <textarea
       id="description"
-      placeholder="Describe your listing..."
+      placeholder="Descreva seu anúncio..."
       [field]="formTree.description"
       rows="5"
       ></textarea>
     </div> -->
 
     <ai-suggest-field
-      label="Description"
-      placeholder="Describe your listing..."
+      label="Descrição"
+      placeholder="Descreva seu anúncio..."
       [field]="formTree.description"
     />
   </form>
+
   <div class="preview-box">
-    <h3>Payload Preview</h3>
+    <h3>Prévia dos Dados</h3>
     <pre>{{ payloadPreview() }}</pre>
   </div>
 </div>

@@ -1,6 +1,6 @@
-import { Component, computed, signal } from '@angular/core';
-import { form, Field } from '@angular/forms/signals';
-import { AiSuggestFieldComponent } from './ai-suggest-field/ai-suggest-field.component';
+import { Component, computed, signal } from "@angular/core";
+import { form, Field } from "@angular/forms/signals";
+import { AiSuggestFieldComponent } from "./ai-suggest-field/ai-suggest-field.component";
 
 interface ListingModel {
   title: string;
@@ -8,14 +8,14 @@ interface ListingModel {
 }
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   imports: [Field, AiSuggestFieldComponent],
-  templateUrl: './app.component.html'
+  templateUrl: "./app.component.html",
 })
 export class AppComponent {
   private model = signal<ListingModel>({
-    title: '',
-    description: '',
+    title: "",
+    description: "",
   });
 
   protected formTree = form(this.model);
