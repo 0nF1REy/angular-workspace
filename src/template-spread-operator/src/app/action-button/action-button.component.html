@@ -1,0 +1,19 @@
+<button
+	type="button"
+	[disabled]="config().disabled"
+	[class.btn--danger]="config().tone === 'danger'"
+	[class.btn--warning]="config().tone === 'warning'"
+	[class.btn--neutral]="config().tone === 'neutral'"
+	(click)="handleClick()"
+	class="btn">
+	@if (config().icon) {
+		<span class="icon" [attr.data-icon]="config().icon">
+			@if (config().icon === 'trash') {
+				<svg width="16" height="16" fill="currentColor">
+					<use href="/icons.svg#trash-icon"></use>
+				</svg>
+			}
+		</span>
+	}
+	<span>{{ config().label }}</span>
+</button>

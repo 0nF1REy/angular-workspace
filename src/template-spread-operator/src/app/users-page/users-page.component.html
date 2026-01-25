@@ -1,0 +1,164 @@
+@let users = [
+	...pinnedUsers(),
+	...searchResults(),
+	...suggestedUsers(),
+	...invitedUsers()
+];
+
+@let sharedButtonConfig =
+  {
+    label: 'Excluir',
+    icon: 'trash',
+    confirm: true,
+  };
+
+@let sharedAdminButtonConfig = {
+	...sharedButtonConfig,
+	tone: 'danger',
+	disabled: isBusy(),
+};
+
+<div class="page-container">
+  <div class="controls">
+    <label>
+      <input type="checkbox" [checked]="isAdmin()" (change)="onAdminChange($event)" />
+      É admin
+    </label>
+
+    <label>
+      <input type="checkbox" [checked]="isBusy()" (change)="onBusyChange($event)" />
+      Está ocupado
+    </label>
+
+    @if (isAdmin()) {
+      <div>
+        <label>Excluir todos os usuários</label>
+
+        <!-- Antes -->
+        <app-action-button
+          [config]="{
+            label: 'Excluir',
+            icon: 'trash',
+            confirm: true,
+            tone: 'danger',
+            disabled: isBusy(),
+            telemetry: { event: 'delete_all_users', source: 'controls_menu' },
+          }"
+        />
+
+        <!-- Depois -->
+        <app-action-button
+          [config]="{
+						...sharedAdminButtonConfig,
+						telemetry: { event: 'delete_all_users', source: 'controls_menu' }
+					}"
+        />
+      </div>
+    }
+  </div>
+
+  <div class="users-section">
+    <div class="users-header">
+      <label>
+        <!-- Antes -->
+        <!-- <input
+					type="checkbox"
+					[checked]="selection().size === users().length"
+					[indeterminate]="selection().size > 0 && selection().size < users().length"
+					(change)="toggleAllSelection(users())"
+				/> -->
+
+        <!-- Depois -->
+        <input
+          type="checkbox"
+          [checked]="selection().size === users.length"
+          [indeterminate]="selection().size > 0 && selection().size < users.length"
+          (change)="toggleAllSelection(users)"
+        />
+        Selecionar todos
+      </label>
+
+      <span class="selection-count"> {{ selectedCount() }} selecionados </span>
+    </div>
+
+    <ul class="users-list">
+      <!-- Antes -->
+      <!-- @for (user of users(); track user.id) { -->
+
+      @for (user of users; track user.id) {
+        <li>
+          <label>
+            <input
+              type="checkbox"
+              [checked]="selection().has(user.id)"
+              (change)="toggleUserSelection(user.id)"
+            />
+            <span class="user-info">
+              <strong>{{ user.name }}</strong>
+              <span class="email">{{ user.email }}</span>
+            </span>
+          </label>
+
+          <div class="user-actions">
+            <!-- Antes -->
+            @if (isAdmin()) {
+              <app-action-button
+                [config]="{
+                  label: 'Excluir',
+                  icon: 'trash',
+                  confirm: true,
+                  tone: 'danger',
+                  disabled: isBusy(),
+                  telemetry: { event: 'delete_user', source: 'row_menu' },
+                }"
+              />
+            } @else {
+              <app-action-button
+                [config]="{
+                  label: 'Excluir',
+                  icon: 'trash',
+                  confirm: true,
+                  tone: 'warning',
+                  disabled: true,
+                  telemetry: {},
+                }"
+              />
+            }
+
+            <!-- Depois -->
+            @if (isAdmin()) {
+              <app-action-button
+                [config]="{
+								...sharedAdminButtonConfig,
+								telemetry: { event: 'delete_user', source: 'row_menu' }
+							}"
+              />
+            } @else {
+              <app-action-button
+                [config]="{
+								...sharedButtonConfig,
+								tone: 'warning',
+								disabled: true,
+								telemetry: {}
+							}"
+              />
+            }
+          </div>
+        </li>
+      }
+    </ul>
+
+    <div class="modify-users-section">
+      <app-action-button
+        [config]="{
+          label: 'Atualizar usuários',
+          icon: '',
+          tone: 'neutral',
+          disabled: false,
+          telemetry: { event: 'update_users', source: 'users_list' },
+        }"
+        (clicked)="modifyUsersList()"
+      />
+    </div>
+  </div>
+</div>
