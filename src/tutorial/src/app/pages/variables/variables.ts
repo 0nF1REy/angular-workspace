@@ -7,6 +7,7 @@ import {
   UpperCasePipe,
 } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 't-variables',
@@ -54,5 +55,6 @@ export class Variables {
     this.rollNo = 234;
   }
 
-  envVar = signal(env_var)
+  protected buildMode = signal(env_var);
+  protected configProfile = signal(environment.env_var);
 }

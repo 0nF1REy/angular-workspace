@@ -95,10 +95,21 @@
     </div>
   </div>
 
-  <footer class="env-footer">
-    <i class="bi bi-gear-fill me-2"></i>
-    <span
-      >Ambiente: <strong>{{ envVar() }}</strong></span
-    >
+  <footer class="system-status-bar">
+    <div class="status-group">
+      <div class="status-item">
+        <i class="bi bi-cpu-fill"></i>
+        <span class="status-label">Build Mode:</span>
+        <strong class="status-value highlight-red">{{ buildMode() }}</strong>
+      </div>
+
+      <div class="status-divider"></div>
+
+      <div class="status-item">
+        <i class="bi bi-gear-wide-connected"></i>
+        <span class="status-label">Profile:</span>
+        <strong class="status-value">{{ configProfile() }}</strong>
+      </div>
+    </div>
   </footer>
 </div>
