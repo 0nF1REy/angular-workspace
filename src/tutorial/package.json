@@ -1,6 +1,6 @@
 {
   "name": "tutorial",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "A small Angular 21 tutorial application demonstrating components, data binding, and template variables",
   "keywords": [
     "angular",
@@ -17,7 +17,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "mcp": "ng mcp"
+    "mcp": "ng mcp",
+    "dev:lab": "ng serve --define env_var=\"'Tutorial Lab Ativo'\""
   },
   "author": {
     "name": "Alan Ryan da Silva Domingues",
