@@ -1,51 +1,104 @@
-<div class="row section-container primary-theme">
-  <div class="col-3 data-item text-bold">
-    courseName => {{ courseName }}
-    <br />
-    uppercase => {{ courseName | uppercase }}
+<div class="variables-wrapper fade-in-up">
+  <div class="lab-header">
+    <h3 class="text-cyan"><i class="bi bi-code-square me-2"></i>Fundamentos: Variáveis e Pipes</h3>
+    <p class="text-silver opacity-50">Demonstração de tipos de dados e transformadores nativos</p>
   </div>
-  <div class="col-3 data-item text-bold">
-    courseName => {{ courseName }}
-    <br />
-    lowercase => {{ courseName | lowercase }}
+
+  <section class="lab-section">
+    <div class="section-title">Manipulação de Strings</div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="pipe-card">
+          <span class="label">Original</span>
+          <div class="value">{{ courseName }}</div>
+          <div class="divider"></div>
+          <span class="label text-cyan">Uppercase</span>
+          <div class="value transform">{{ courseName | uppercase }}</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pipe-card">
+          <span class="label">Original</span>
+          <div class="value">{{ courseName }}</div>
+          <div class="divider"></div>
+          <span class="label text-cyan">Lowercase</span>
+          <div class="value transform">{{ courseName | lowercase }}</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pipe-card">
+          <span class="label">TitleCase</span>
+          <div class="value">{{ courseDuration }}</div>
+          <div class="divider"></div>
+          <span class="label text-cyan">Resultado</span>
+          <div class="value transform">{{ courseDuration | titlecase }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section">
+    <div class="section-title">Formatação de Datas</div>
+    <div class="date-grid">
+      <div class="date-item">
+        <span class="format">Padrão</span>
+        <code>{{ currentDate | date }}</code>
+      </div>
+      <div class="date-item">
+        <span class="format">dd-MM-yyyy</span>
+        <code>{{ currentDate | date: 'dd-MM-yyyy' }}</code>
+      </div>
+      <div class="date-item">
+        <span class="format">dd-MMM-yy</span>
+        <code>{{ currentDate | date: 'dd-MMM-yy' }}</code>
+      </div>
+      <div class="date-item highlight">
+        <span class="format">Full Date</span>
+        <code>{{ currentDate | date: 'fullDate' }}</code>
+      </div>
+      <div class="date-item accent">
+        <span class="format">Time</span>
+        <code>{{ currentDate | date: 'hh:mm:ss' }}</code>
+      </div>
+    </div>
+  </section>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <section class="lab-section h-100">
+        <div class="section-title">Arrays & Slice</div>
+        <div class="pipe-card h-100">
+          <div class="array-visual">
+            @for (num of rollNoArray; track $index) {
+              <span class="array-pill">{{ num }}</span>
+            }
+          </div>
+          <div class="divider"></div>
+          <span class="label text-cyan">Slice (0 : 3)</span>
+          <div class="value">
+            @for (num of rollNoArray | slice: 0 : 3; track $index) {
+              <span class="array-pill highlight">{{ num }}</span>
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-md-6">
+      <section class="lab-section h-100">
+        <div class="section-title">Objetos & JSON Pipe</div>
+        <div class="code-panel">
+          <div class="panel-header">student_obj.json</div>
+          <pre><code>{{ studentObj | json }}</code></pre>
+        </div>
+      </section>
+    </div>
   </div>
-  <div class="col-3 data-item text-bold">
-    courseDuration => {{ courseDuration }}
-    <br />
-    courseDuration => {{ courseDuration | titlecase }}
-  </div>
-</div>
-<hr class="separator-line" />
-<div class="row section-container secondary-theme">
-  <div class="col-3 data-label">currentDate => {{ currentDate }}</div>
-  <div class="col-2 data-label highlight-box">currentDate => {{ currentDate | date }}</div>
-  <div class="col-2 data-label highlight-box">
-    currentDate => {{ currentDate | date : 'dd-MM-yyyy' }}
-  </div>
-  <div class="col-2 data-label highlight-box">
-    currentDate => {{ currentDate | date : 'dd-MM-yy' }}
-  </div>
-  <div class="col-2 data-label highlight-box">
-    currentDate => {{ currentDate | date : 'dd-MMM-yy' }}
-  </div>
-  <div class="col-2 data-label highlight-box">
-    currentDate => {{ currentDate | date : 'dd-MMMM-yy' }}
-  </div>
-  <div class="col-2 data-label highlight-box">
-    currentDate => {{ currentDate | date : 'hh:mm:ss' }}
-  </div>
-</div>
-<hr class="separator-line" />
-<div class="row section-container minimal-theme">
-  <div class="col-3 border-accent">rollNoArray => {{ rollNoArray }}</div>
-  <div class="col-3 border-accent">slice => {{ rollNoArray | slice : 0 : 3 }}</div>
-</div>
-<hr class="separator-line" />
-<div class="row section-container board-theme">
-  <div class="col-3 content-panel">
-    {{ studentObj }}
-  </div>
-  <div class="col-4 content-panel code-output">
-    {{ studentObj | json }}
-  </div>
+
+  <footer class="env-footer">
+    <i class="bi bi-gear-fill me-2"></i>
+    <span
+      >Ambiente: <strong>{{ envVar() }}</strong></span
+    >
+  </footer>
 </div>

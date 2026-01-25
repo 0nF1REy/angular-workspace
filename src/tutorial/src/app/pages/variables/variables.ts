@@ -6,7 +6,7 @@ import {
   TitleCasePipe,
   UpperCasePipe,
 } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 't-variables',
@@ -53,4 +53,6 @@ export class Variables {
 
     this.rollNo = 234;
   }
+
+  envVar = signal(env_var)
 }

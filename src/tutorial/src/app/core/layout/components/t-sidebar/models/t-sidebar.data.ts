@@ -2,7 +2,7 @@ import { TSidebarItem } from './t-sidebar.model';
 
 export const SIDEBAR_MENU: TSidebarItem[] = [
   {
-    label: 'Variável',
+    label: 'Fundamentos: Variáveis e Pipes',
     icon: 'bi-code-square',
     route: 'variables',
   },
