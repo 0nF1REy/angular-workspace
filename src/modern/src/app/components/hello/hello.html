@@ -5,7 +5,9 @@
     <button [disabled]="isDisabled" (click)="onClick()">Alternar</button>
   </div>
   <div>
-    <h1>{{ count() }}</h1>
+    <h1>count => {{ count() }}</h1>
+    <h1>DoubleCount => {{ doubleCount() }}</h1>
+    <h1>Método de Duplicação: {{ getDoubleCount() }}</h1>
     <button (click)="increateCounter()">+</button>
     <button (click)="decreaseCounter()">-</button>
     <button (click)="resetCounter()">Resetar</button>
