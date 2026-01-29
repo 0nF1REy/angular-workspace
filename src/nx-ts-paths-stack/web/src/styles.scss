@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --gintama-black: #1a1a1b;
+  --gintama-silver: #f3f4f6;
+  --gintama-cyan: #4ca6b8;
+  --gintama-red: #c1272d;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--gintama-black);
+  color: var(--gintama-silver);
+  font-family: 'Inter', sans-serif;
+}
