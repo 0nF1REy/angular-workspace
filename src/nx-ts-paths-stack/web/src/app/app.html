@@ -1,19 +1,74 @@
-<div class="data-access-container">
-  <h2>Data Access Service</h2>
+<section class="pretty-container">
+  <header class="pretty-header">
+    <h2>Resposta da API</h2>
+    <p class="pretty-subtitle">
+      Visualização formatada do usuário e da mensagem retornada pelo backend.
+    </p>
+  </header>
 
   @if (userStatus() === 'resolved') {
-  <p>User Data:</p>
-  <pre>{{ userData() | json }}</pre>
+  <div class="pretty-grid">
+    <article class="pretty-card">
+      <h3>Usuário</h3>
+      <dl class="pretty-dl">
+        <div>
+          <dt>ID</dt>
+          <dd>{{ userData()?.id }}</dd>
+        </div>
+        <div>
+          <dt>Nome</dt>
+          <dd>{{ userData()?.name }}</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd>{{ userData()?.email }}</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd><span class="pretty-badge">{{ userData()?.role }}</span></dd>
+        </div>
+        <div>
+          <dt>Ativo</dt>
+          <dd>
+            <span class="pretty-badge" [class.is-on]="userData()?.isActive">
+              {{ userData()?.isActive ? 'Sim' : 'Não' }}
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>Criado em</dt>
+          <dd>{{ userData()?.createdAt }}</dd>
+        </div>
+      </dl>
+    </article>
 
-  <hr />
+    <article class="pretty-card">
+      <h3>Resumo</h3>
+      <p class="pretty-lead">{{ apiResponse()?.message }}</p>
 
-  <p>Full API Response:</p>
-  <pre>{{ apiResponse() | json }}</pre>
+      <div class="pretty-meta">
+        <span class="pretty-pill">Status: {{ userStatus() }}</span>
+        <span class="pretty-pill">Endpoint: /api</span>
+      </div>
+
+      <details class="pretty-details">
+        <summary>Ver JSON completo</summary>
+        <pre class="pretty-pre">{{ apiResponse() | json }}</pre>
+      </details>
+    </article>
+  </div>
   } @else if (userStatus() === 'loading') {
-  <p>Loading...</p>
+  <div class="pretty-state">
+    <span class="spinner" aria-hidden="true"></span>
+    <p>Carregando dados...</p>
+  </div>
   } @else if (userStatus() === 'error') {
-  <p>Error loading data</p>
+  <div class="pretty-state is-error">
+    <p>Erro ao carregar dados. Verifique se a API está rodando.</p>
+  </div>
   } @else {
-  <p>Status: {{ userStatus() }}</p>
+  <div class="pretty-state">
+    <p>Status atual: <b>{{ userStatus() }}</b></p>
+  </div>
   }
-</div>
+</section>
