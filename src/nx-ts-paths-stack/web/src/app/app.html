@@ -1,11 +1,19 @@
 <div class="data-access-container">
   <h2>Data Access Service</h2>
-  @if (userStatus() === 'success') {
+
+  @if (userStatus() === 'resolved') {
   <p>User Data:</p>
   <pre>{{ userData() | json }}</pre>
+
+  <hr />
+
+  <p>Full API Response:</p>
+  <pre>{{ apiResponse() | json }}</pre>
   } @else if (userStatus() === 'loading') {
   <p>Loading...</p>
   } @else if (userStatus() === 'error') {
   <p>Error loading data</p>
+  } @else {
+  <p>Status: {{ userStatus() }}</p>
   }
 </div>
