@@ -1,0 +1,11 @@
+<div class="data-access-container">
+  <h2>Data Access Service</h2>
+  @if (userStatus() === 'success') {
+  <p>User Data:</p>
+  <pre>{{ userData() | json }}</pre>
+  } @else if (userStatus() === 'loading') {
+  <p>Loading...</p>
+  } @else if (userStatus() === 'error') {
+  <p>Error loading data</p>
+  }
+</div>
