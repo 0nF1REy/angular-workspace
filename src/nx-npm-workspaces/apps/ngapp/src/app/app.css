@@ -1,0 +1,54 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.user-data {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.loading {
+  color: #2196F3;
+  font-style: italic;
+}
+
+.error {
+  color: #f44336;
+  background: #ffebee;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #f44336;
+}
+
+.user-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-card p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.user-card strong {
+  color: #666;
+  display: inline-block;
+  min-width: 80px;
+}
+

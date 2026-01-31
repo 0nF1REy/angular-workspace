@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  
+  <div class="user-data">
+    <h2>User Resource Data</h2>
+    
+    @if (userResource.isLoading()) {
+      <p class="loading">Loading user data...</p>
+    }
+    
+    @if (userResource.error()) {
+      <p class="error">Error loading user: {{ userResource.error() }}</p>
+    }
+    
+    @if (userResource.value(); as user) {
+      <div class="user-card">
+        <p><strong>ID:</strong> {{ user.id }}</p>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+      </div>
+    }
+  </div>
+</div>
+

@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nestfullstack/data-access": [
+        "packages/client/data-access/src/index.ts"
+      ],
+      "@nestfullstack/datatypes": ["packages/shared/datatypes/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
