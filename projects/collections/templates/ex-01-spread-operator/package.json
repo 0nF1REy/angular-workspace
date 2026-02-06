@@ -1,5 +1,5 @@
 {
-  "name": "template-spread-operator",
+  "name": "ex-01-spread-operator",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",

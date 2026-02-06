@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "template-spread-operator": {
+    "ex-01-spread-operator": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -60,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "template-spread-operator:build:production"
+              "buildTarget": "ex-01-spread-operator:build:production"
             },
             "development": {
-              "buildTarget": "template-spread-operator:build:development"
+              "buildTarget": "ex-01-spread-operator:build:development"
             }
           },
           "defaultConfiguration": "development"
