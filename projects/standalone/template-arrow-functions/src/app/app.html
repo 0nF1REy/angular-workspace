@@ -1,0 +1,74 @@
+<h1>Resumo do Pedido</h1>
+<div class="card">
+  <div class="row">
+    <span>Qtd</span>
+    <div class="qty">
+      <!-- Exemplo 1: Antes -->
+      <!-- <button type="button" (click)="decrementQty()">−</button>
+      <strong>{{ qty() }}</strong>
+      <button type="button" (click)="incrementQty()">+</button> -->
+
+      <!-- Exemplo 1: Depois -->
+      <button type="button" (click)="qty.update(n => n > 0 ? n - 1 : 0)">−</button>
+      <strong>{{ qty() }}</strong>
+      <button type="button" (click)="qty.update(n => n + 1)">+</button>
+
+      <!-- Exemplo 2: Depois - NÃO FAÇA ISSO -->
+      <!-- <button type="button" (click)="() => qty.update(n => n + 1)">+</button> -->
+    </div>
+  </div>
+  <div class="row">
+    <span>Cupom</span>
+
+    <!-- Exemplo 1: Antes -->
+    <!-- <button type="button" (click)="toggleCoupon()">
+      {{ couponOn() ? 'Remover cupom de 20%' : 'Aplicar cupom de 20%' }}
+    </button> -->
+
+    <!-- Exemplo 1: Depois -->
+    <button type="button" (click)="couponOn.update(v => !v)">
+      {{ couponOn() ? 'Remover cupom de 20%' : 'Aplicar cupom de 20%' }}
+    </button>
+
+  </div>
+  <div class="row">
+    <span>Alíquota de Imposto</span>
+
+    <!-- Exemplo 1: Antes -->
+    <!-- <button type="button" (click)="increaseTax()">+1%</button> -->
+
+    <!-- Exemplo 1: Depois -->
+    <!-- <button type="button" (click)="taxRate.update(r => r + 0.01)">+1%</button> -->
+
+    <!-- <span>{{ taxRate() * 100 | number:'1.0-0' }}%</span> -->
+
+    <!-- Exemplo 3: Depois -->
+    <!-- <button type="button" (click)="settings.update(s => { taxRate: s.taxRate + 0.01 })">+1%</button> -->
+    <button type="button" (click)="settings.update(s => ({ taxRate: s.taxRate + 0.01 }))">+1%</button>
+    <span>{{ settings().taxRate * 100 | number:'1.0-0' }}%</span>
+
+  </div>
+  <hr />
+  <div class="row">
+    <span>Subtotal</span>
+    <span>{{ subtotal() | currency }}</span>
+  </div>
+  <div class="row">
+    <span>Com Desconto</span>
+    <span>{{ discounted() | currency }}</span>
+  </div>
+
+  <!-- Exemplo 4 -->
+  <div class="row">
+    <span>Frete (100 milhas)</span>
+    <span>
+      <!-- {{ ((dist, rate) => dist * rate | currency)(100, 0.05) }} -->
+      {{ ((dist, rate) => dist * rate)(100, 0.05) | currency }}
+    </span>
+  </div>
+
+  <div class="row total">
+    <strong>Total (com imposto)</strong>
+    <strong>{{ total() | currency }}</strong>
+  </div>
+</div>
