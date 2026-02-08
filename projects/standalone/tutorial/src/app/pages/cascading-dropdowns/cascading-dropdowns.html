@@ -1,64 +1,99 @@
-<form novalidate (submit)="onSubmit(); $event.preventDefault()" class="wrap">
-  <h3>Dropdowns em Cascata</h3>
-
-  <div class="field">
-    <label>Categoria</label>
-    <select [field]="f.categoryId">
-      <option value="" disabled>Escolha…</option>
-      @for (c of categories; track c.id) {
-        <option [value]="c.id">{{ c.name }}</option>
-      }
-    </select>
-    @if (f.categoryId().touched() && f.categoryId().invalid()) {
-      <small class="error">
-        {{ f.categoryId().errors()[0].message }}
-      </small>
-    }
-  </div>
-
-  <div class="field">
-    <label>Subcategoria</label>
-    <select [field]="f.subcategoryId">
-      <option value="" disabled>
-        {{ f.subcategoryId().disabled() ? 'Escolha a categoria primeiro…' : 'Escolha…' }}
-      </option>
-      @for (s of filteredSubcategories(); track s.id) {
-        <option [value]="s.id">{{ s.name }}</option>
-      }
-    </select>
-    @if (f.subcategoryId().touched() && f.subcategoryId().invalid()) {
-      <small class="error">
-        {{ f.subcategoryId().errors()[0].message }}
-      </small>
-    }
-  </div>
-
-  <div class="field">
-    <label>Produto</label>
-    <select [field]="f.productId">
-      <option value="" disabled>
-        {{ f.productId().disabled() ? 'Escolha a subcategoria primeiro…' : 'Escolha…' }}
-      </option>
-      @for (p of filteredProducts(); track p.id) {
-        <option [value]="p.id">{{ p.name }} — {{ displayPriceBRL(p.price) }}</option>
-      }
-    </select>
-    @if (f.productId().touched() && f.productId().invalid()) {
-      <small class="error">
-        {{ f.productId().errors()[0].message }}
-      </small>
-    }
-  </div>
-
-  @if (selectedProduct(); as prod) {
-    <div class="card">
-      <strong>Selecionado:</strong>
-      <div>{{ prod.name }}</div>
-      <div>{{ displayPriceBRL(prod.price) }}</div>
+<div class="cascading-container fade-in-up">
+  <form novalidate (submit)="onSubmit(); $event.preventDefault()" class="dropdown-card">
+    <div class="form-header">
+      <i class="bi bi-list-nested icon-accent"></i>
+      <div class="header-text">
+        <h3 class="m-0">Dropdowns em Cascata</h3>
+        <span class="subtitle">Seleção Hierárquica Reativa</span>
+      </div>
     </div>
-  }
 
-  <button type="submit" [disabled]="!f().valid()">Finalizar</button>
+    <div class="form-body">
+      <div class="field">
+        <label>Categoria</label>
+        <div class="select-wrapper">
+          <select [field]="f.categoryId" class="custom-select">
+            <option value="" disabled>Escolha uma categoria…</option>
+            @for (c of categories; track c.id) {
+              <option [value]="c.id">{{ c.name }}</option>
+            }
+          </select>
+          <i class="bi bi-chevron-down select-arrow"></i>
+        </div>
+        @if (f.categoryId().touched() && f.categoryId().invalid()) {
+          <small class="error-msg">
+            <i class="bi bi-exclamation-circle me-1"></i>
+            {{ f.categoryId().errors()[0].message }}
+          </small>
+        }
+      </div>
 
-  <pre class="debug">{{ model() | json }}</pre>
-</form>
+      <div class="field">
+        <label>Subcategoria</label>
+        <div class="select-wrapper" [class.disabled]="f.subcategoryId().disabled()">
+          <select [field]="f.subcategoryId" class="custom-select">
+            <option value="" disabled>
+              {{
+                f.subcategoryId().disabled() ? 'Aguardando categoria…' : 'Escolha uma subcategoria…'
+              }}
+            </option>
+            @for (s of filteredSubcategories(); track s.id) {
+              <option [value]="s.id">{{ s.name }}</option>
+            }
+          </select>
+          <i class="bi bi-chevron-down select-arrow"></i>
+        </div>
+        @if (f.subcategoryId().touched() && f.subcategoryId().invalid()) {
+          <small class="error-msg">
+            <i class="bi bi-exclamation-circle me-1"></i>
+            {{ f.subcategoryId().errors()[0].message }}
+          </small>
+        }
+      </div>
+
+      <div class="field">
+        <label>Produto</label>
+        <div class="select-wrapper" [class.disabled]="f.productId().disabled()">
+          <select [field]="f.productId" class="custom-select">
+            <option value="" disabled>
+              {{ f.productId().disabled() ? 'Aguardando subcategoria…' : 'Escolha um produto…' }}
+            </option>
+            @for (p of filteredProducts(); track p.id) {
+              <option [value]="p.id">{{ p.name }} — {{ displayPriceBRL(p.price) }}</option>
+            }
+          </select>
+          <i class="bi bi-chevron-down select-arrow"></i>
+        </div>
+        @if (f.productId().touched() && f.productId().invalid()) {
+          <small class="error-msg">
+            <i class="bi bi-exclamation-circle me-1"></i>
+            {{ f.productId().errors()[0].message }}
+          </small>
+        }
+      </div>
+
+      @if (selectedProduct(); as prod) {
+        <div class="selection-summary">
+          <div class="summary-content">
+            <div class="summary-label">Item Selecionado</div>
+            <div class="summary-name">{{ prod.name }}</div>
+            <div class="summary-price">{{ displayPriceBRL(prod.price) }}</div>
+          </div>
+          <i class="bi bi-check2-circle summary-icon"></i>
+        </div>
+      }
+    </div>
+
+    <div class="form-footer">
+      <button type="submit" [disabled]="!f().valid()" class="submit-btn">
+        <span>Finalizar Seleção</span>
+        <i class="bi bi-arrow-right-short"></i>
+      </button>
+    </div>
+
+    <div class="debug-section">
+      <div class="debug-header">Saída de Estado</div>
+      <pre>{{ model() | json }}</pre>
+    </div>
+  </form>
+</div>

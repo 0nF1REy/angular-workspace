@@ -1,3 +1,228 @@
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.cascading-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.dropdown-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(76, 166, 184, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.form-header {
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgba(76, 166, 184, 0.08), transparent);
+  border-bottom: 1px solid rgba(76, 166, 184, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.icon-accent {
+  font-size: 1.8rem;
+  color: var(--gintama-cyan);
+  filter: drop-shadow(0 0 8px rgba(76, 166, 184, 0.3));
+}
+
+.header-text h3 {
+  color: var(--gintama-silver);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: var(--gintama-cyan);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.form-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(243, 244, 246, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.select-wrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.custom-select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(76, 166, 184, 0.2);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: var(--gintama-silver);
+  appearance: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.custom-select:focus {
+  border-color: var(--gintama-cyan);
+  background: rgba(76, 166, 184, 0.05);
+  box-shadow: 0 0 15px rgba(76, 166, 184, 0.1);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--gintama-cyan);
+  font-size: 0.8rem;
+}
+
+.select-wrapper.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.select-wrapper.disabled .custom-select {
+  cursor: not-allowed;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.selection-summary {
+  margin-top: 1rem;
+  background: rgba(76, 166, 184, 0.1);
+  border: 1px solid rgba(76, 166, 184, 0.3);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.summary-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--gintama-cyan);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.summary-name {
+  color: var(--gintama-silver);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.summary-price {
+  color: var(--gintama-cyan);
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.summary-icon {
+  font-size: 2rem;
+  color: var(--gintama-cyan);
+  opacity: 0.5;
+}
+
+.form-footer {
+  padding: 0 2rem 2rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--gintama-cyan);
+  color: var(--gintama-cyan);
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--gintama-cyan);
+  color: var(--gintama-black);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(76, 166, 184, 0.2);
+}
+
+.submit-btn:disabled {
+  border-color: rgba(243, 244, 246, 0.1);
+  color: rgba(243, 244, 246, 0.1);
+  cursor: not-allowed;
+}
+
+.debug-section {
+  background: #0d0d0d;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.debug-header {
+  font-family: monospace;
+  font-size: 0.6rem;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #2ecc71;
+  font-family: 'Courier New', Courier, monospace;
 }
