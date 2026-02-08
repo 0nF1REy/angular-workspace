@@ -71,4 +71,9 @@ export const SIDEBAR_MENU: TSidebarItem[] = [
     icon: 'bi-wind',
     route: 'meditation',
   },
+  {
+    label: 'Dropdowns em Cascata',
+    icon: 'bi-list-nested',
+    route: 'cascading-dropdowns',
+  },
 ];
