@@ -1,0 +1,64 @@
+<form novalidate (submit)="onSubmit(); $event.preventDefault()" class="wrap">
+  <h3>Dropdowns em Cascata</h3>
+
+  <div class="field">
+    <label>Categoria</label>
+    <select [field]="f.categoryId">
+      <option value="" disabled>Escolha…</option>
+      @for (c of categories; track c.id) {
+        <option [value]="c.id">{{ c.name }}</option>
+      }
+    </select>
+    @if (f.categoryId().touched() && f.categoryId().invalid()) {
+      <small class="error">
+        {{ f.categoryId().errors()[0].message }}
+      </small>
+    }
+  </div>
+
+  <div class="field">
+    <label>Subcategoria</label>
+    <select [field]="f.subcategoryId">
+      <option value="" disabled>
+        {{ f.subcategoryId().disabled() ? 'Escolha a categoria primeiro…' : 'Escolha…' }}
+      </option>
+      @for (s of filteredSubcategories(); track s.id) {
+        <option [value]="s.id">{{ s.name }}</option>
+      }
+    </select>
+    @if (f.subcategoryId().touched() && f.subcategoryId().invalid()) {
+      <small class="error">
+        {{ f.subcategoryId().errors()[0].message }}
+      </small>
+    }
+  </div>
+
+  <div class="field">
+    <label>Produto</label>
+    <select [field]="f.productId">
+      <option value="" disabled>
+        {{ f.productId().disabled() ? 'Escolha a subcategoria primeiro…' : 'Escolha…' }}
+      </option>
+      @for (p of filteredProducts(); track p.id) {
+        <option [value]="p.id">{{ p.name }} — {{ displayPriceBRL(p.price) }}</option>
+      }
+    </select>
+    @if (f.productId().touched() && f.productId().invalid()) {
+      <small class="error">
+        {{ f.productId().errors()[0].message }}
+      </small>
+    }
+  </div>
+
+  @if (selectedProduct(); as prod) {
+    <div class="card">
+      <strong>Selecionado:</strong>
+      <div>{{ prod.name }}</div>
+      <div>{{ displayPriceBRL(prod.price) }}</div>
+    </div>
+  }
+
+  <button type="submit" [disabled]="!f().valid()">Finalizar</button>
+
+  <pre class="debug">{{ model() | json }}</pre>
+</form>

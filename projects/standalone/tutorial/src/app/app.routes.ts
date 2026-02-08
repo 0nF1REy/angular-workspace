@@ -107,6 +107,14 @@ export const routes: Routes = [
         title: 'Meditação',
         loadComponent: () => import('./pages/meditation/meditation').then((m) => m.Meditation),
       },
+      {
+        path: 'cascading-dropdowns',
+        title: 'Dropdowns em Cascata',
+        loadComponent: () =>
+          import('./pages/cascading-dropdowns/cascading-dropdowns').then(
+            (m) => m.CascadingDropdowns,
+          ),
+      },
     ],
   },
   {
