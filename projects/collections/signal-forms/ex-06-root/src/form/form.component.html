@@ -1,7 +1,6 @@
 <div class="form-container">
   <h2>Cadastrar-se</h2>
-  <form (submit)="onSubmit($event)" novalidate>
-    <!-- <form [formRoot]="form"> -->
+  <form [formRoot]="form" novalidate>
     <div class="field">
       <label for="username">Nome de usuário</label>
       <input id="username" type="text" [formField]="form.username" />
