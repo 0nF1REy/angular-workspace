@@ -1,0 +1,50 @@
+:root {
+  --gintama-black: #1a1a1b;
+  --gintama-cyan: #4ca6b8;
+  --gintama-silver: #f3f4f6;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: hsl(220 18% 10%);
+  color: var(--gintama-silver);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gintama-cyan) var(--gintama-black);
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gintama-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gintama-cyan);
+  border-radius: 999px;
+  border: 1px solid var(--gintama-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5db7c9;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--gintama-silver);
+}
