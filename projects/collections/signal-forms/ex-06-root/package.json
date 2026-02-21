@@ -1,5 +1,31 @@
 {
   "name": "ex-06-root",
+  "version": "0.1.0",
+  "description": "Standalone Angular application focused on FormRoot, demonstrating reactive forms and validation using Angular Signals API for signup.",
+  "keywords": [
+    "angular",
+    "signals",
+    "formroot",
+    "reactive forms",
+    "form validation",
+    "standalone component",
+    "typescript",
+    "signup",
+    "example"
+  ],
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/angular-workspace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/angular-workspace/issues"
+  },
   "private": true,
   "scripts": {
     "start": "ng serve",
